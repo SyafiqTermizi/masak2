@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Recipe, IngredientName, IngredientUnit, Ingredient
+from .models import Recipe, IngredientName, IngredientUnit, Ingredient, Media
 
 
 class RecipeAdmin(admin.ModelAdmin):
@@ -18,6 +18,12 @@ class IngredientUnitAdmin(admin.ModelAdmin):
 class IngredientAdmin(admin.ModelAdmin):
     pass
 
+
+class MediaAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Media, MediaAdmin)
 admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(IngredientUnit, IngredientUnitAdmin)
 admin.site.register(IngredientName, IngredientNameAdmin)
