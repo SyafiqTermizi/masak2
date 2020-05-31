@@ -21,15 +21,25 @@ class IngredientUnit(models.Model):
         return self.name
 
 
+class Ingredient(models.Model):
+    name = models.ForeignKey(IngredientName, on_delete=models.CASCADE)
+    unit = models.ForeignKey(
+        IngredientUnit,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
+    amount = models.CharField(max_length=255, blank=True)
+    note = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return f"{self.amount} {self.unit or ''} {self.name} {self.note or ''}"
+
+
 class Recipe(models.Model):
     name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    ingredient_amount = models.CharField(max_length=255)
-    ingredient_unit = models.ManyToManyField(IngredientUnit)
-    ingredient_name = models.ManyToManyField(
-        IngredientName,
-        related_name='recipes'
-    )
+    description = models.CharField(max_length=255, blank=True)
+    ingredient = models.ManyToManyField(Ingredient, related_name='recipes')
     cooking_step = models.TextField()
 
     def __str__(self):
