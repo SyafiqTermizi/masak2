@@ -4,7 +4,8 @@ from django.db import models
 class IngredientName(models.Model):
     name = models.CharField(
         max_length=255,
-        help_text="onions, flour..."
+        help_text="onions, flour...",
+        unique=True
     )
 
     def __str__(self):
@@ -14,7 +15,8 @@ class IngredientName(models.Model):
 class IngredientUnit(models.Model):
     name = models.CharField(
         max_length=255,
-        help_text="table spoon, kg, pinch..."
+        help_text="table spoon, kg, pinch...",
+        unique=True
     )
 
     def __str__(self):
@@ -22,7 +24,7 @@ class IngredientUnit(models.Model):
 
 
 class Ingredient(models.Model):
-    name = models.ForeignKey(IngredientName, on_delete=models.CASCADE)
+    name = models.ForeignKey(IngredientName, on_delete=models.CASCADE,)
     unit = models.ForeignKey(
         IngredientUnit,
         on_delete=models.CASCADE,
@@ -31,6 +33,14 @@ class Ingredient(models.Model):
     )
     amount = models.CharField(max_length=255, blank=True)
     note = models.CharField(max_length=255, blank=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['name', 'unit', 'amount',],
+                name='unique ingredients'
+            )
+        ]
 
     def __str__(self):
         return f"{self.amount} {self.unit or ''} {self.name} {self.note or ''}"
@@ -52,7 +62,7 @@ class Media(models.Model):
         ('VID', 'vid')
     )
     media_type = models.CharField(max_length=255, choices=MEDIA_TYPES)
-    image = models.CharField(max_length=255)
+    media = models.FileField(upload_to='recipes')
     recipe = models.ForeignKey(
         to=Recipe,
         related_name='medias',
