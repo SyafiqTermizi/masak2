@@ -35,6 +35,10 @@ LOCAL_APPS = [
     'recipes.apps.RecipesConfig'
 ]
 
+THIRD_PARTY_APP = [
+    'rest_framework'
+]
+
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +48,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APP + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,3 +135,5 @@ STATIC_URL = '/static/'
 
 # Custom user model
 AUTH_USER_MODEL='users.User'
+
+MEDIA_ROOT = 'medias/'
