@@ -4,10 +4,9 @@ from .models import Recipe, Ingredient, Media
 
 
 class MediaSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Media
-        fields = ('media_type', 'media')
+        fields = ("media_type", "media")
 
 
 class IngredientSerializer(serializers.ModelSerializer):
@@ -16,7 +15,7 @@ class IngredientSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ingredient
-        fields = ('name', 'unit', 'amount', 'note')
+        fields = ("name", "unit", "amount", "note")
 
 
 class RecipeSerializer(serializers.ModelSerializer):
@@ -25,4 +24,4 @@ class RecipeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Recipe
-        fields = '__all__'
+        fields = "__all__"

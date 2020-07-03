@@ -8,63 +8,140 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Ingredient',
+            name="Ingredient",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('amount', models.CharField(blank=True, max_length=255)),
-                ('note', models.CharField(blank=True, max_length=255)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("amount", models.CharField(blank=True, max_length=255)),
+                ("note", models.CharField(blank=True, max_length=255)),
             ],
         ),
         migrations.CreateModel(
-            name='IngredientName',
+            name="IngredientName",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(help_text='onions, flour...', max_length=255, unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        help_text="onions, flour...", max_length=255, unique=True
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='IngredientUnit',
+            name="IngredientUnit",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(help_text='table spoon, kg, pinch...', max_length=255, unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        help_text="table spoon, kg, pinch...",
+                        max_length=255,
+                        unique=True,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Recipe',
+            name="Recipe",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('description', models.CharField(blank=True, max_length=255)),
-                ('cooking_step', models.TextField()),
-                ('ingredient', models.ManyToManyField(related_name='recipes', to='recipes.Ingredient')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("description", models.CharField(blank=True, max_length=255)),
+                ("cooking_step", models.TextField()),
+                (
+                    "ingredient",
+                    models.ManyToManyField(
+                        related_name="recipes", to="recipes.Ingredient"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Media',
+            name="Media",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('media_type', models.CharField(choices=[('IMG', 'image'), ('VID', 'vid')], max_length=255)),
-                ('media', models.FileField(upload_to='recipes')),
-                ('recipe', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='medias', to='recipes.Recipe')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "media_type",
+                    models.CharField(
+                        choices=[("IMG", "image"), ("VID", "vid")], max_length=255
+                    ),
+                ),
+                ("media", models.FileField(upload_to="recipes")),
+                (
+                    "recipe",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="medias",
+                        to="recipes.Recipe",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='ingredient',
-            name='name',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recipes.IngredientName'),
+            model_name="ingredient",
+            name="name",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="recipes.IngredientName"
+            ),
         ),
         migrations.AddField(
-            model_name='ingredient',
-            name='unit',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='recipes.IngredientUnit'),
+            model_name="ingredient",
+            name="unit",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="recipes.IngredientUnit",
+            ),
         ),
         migrations.AddConstraint(
-            model_name='ingredient',
-            constraint=models.UniqueConstraint(fields=('name', 'unit', 'amount'), name='unique ingredients'),
+            model_name="ingredient",
+            constraint=models.UniqueConstraint(
+                fields=("name", "unit", "amount"), name="unique ingredients"
+            ),
         ),
     ]
