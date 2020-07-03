@@ -9,6 +9,9 @@ class IngredientGroup(models.Model):
         to=Recipe, on_delete=models.CASCADE, related_name="groups"
     )
 
+    def __str__(self):
+        return f"{self.recipe.name} {self.name}"
+
 
 class IngredientName(models.Model):
     name = models.CharField(max_length=255, help_text="onion, flour...")
@@ -34,10 +37,11 @@ class Ingredient(models.Model):
         related_name="ingredients",
     )
     unit = models.ForeignKey(to=IngredientUnit, on_delete=models.SET_NULL, null=True)
-    note = models.CharField(max_length=255)
+    amount = models.CharField(max_length=255)
+    note = models.CharField(max_length=255, blank=True)
     group = models.ForeignKey(
         to=IngredientGroup, on_delete=models.CASCADE, related_name="ingredients"
     )
 
     def __str__(self):
-        return self.name
+        return self.name.name
