@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Recipe, Ingredient, Media
+from .models import Recipe, Media
 
 
 class MediaSerializer(serializers.ModelSerializer):
@@ -9,17 +9,7 @@ class MediaSerializer(serializers.ModelSerializer):
         fields = ("media_type", "media")
 
 
-class IngredientSerializer(serializers.ModelSerializer):
-    name = serializers.CharField()
-    unit = serializers.CharField()
-
-    class Meta:
-        model = Ingredient
-        fields = ("name", "unit", "amount", "note")
-
-
 class RecipeSerializer(serializers.ModelSerializer):
-    ingredient = IngredientSerializer(many=True)
     medias = MediaSerializer(many=True)
 
     class Meta:
