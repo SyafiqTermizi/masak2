@@ -36,6 +36,7 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APP = [
+    'corsheaders',
     'rest_framework'
 ]
 
@@ -53,6 +54,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APP + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -137,3 +139,5 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL='users.User'
 
 MEDIA_ROOT = 'medias/'
+
+CORS_ORIGIN_ALLOW_ALL = True
