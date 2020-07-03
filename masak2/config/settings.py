@@ -30,7 +30,11 @@ ALLOWED_HOSTS = os.environ["DJANGO_ALLOWED_HOSTS"].split(",")
 
 # Application definition
 
-LOCAL_APPS = ["users.apps.UsersConfig", "recipes.apps.RecipesConfig"]
+LOCAL_APPS = [
+    "users.apps.UsersConfig",
+    "recipes.apps.RecipesConfig",
+    "ingredients.apps.IngredientsConfig",
+]
 
 THIRD_PARTY_APP = ["corsheaders", "rest_framework"]
 
