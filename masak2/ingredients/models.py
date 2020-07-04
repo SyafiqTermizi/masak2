@@ -14,7 +14,10 @@ class IngredientGroup(models.Model):
 
 
 class IngredientName(models.Model):
-    name = models.CharField(max_length=255, help_text="onion, flour...")
+    name = models.CharField(max_length=255, help_text="onion, flour...", unique=True)
+
+    class Meta:
+        ordering = ("name",)
 
     def __str__(self):
         return self.name
@@ -24,6 +27,9 @@ class IngredientUnit(models.Model):
     name = models.CharField(
         max_length=255, help_text="table spoon, kg, pinch...", unique=True
     )
+
+    class Meta:
+        ordering = ("name",)
 
     def __str__(self):
         return self.name
