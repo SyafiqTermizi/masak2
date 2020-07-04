@@ -34,6 +34,7 @@ LOCAL_APPS = [
     "users.apps.UsersConfig",
     "recipes.apps.RecipesConfig",
     "ingredients.apps.IngredientsConfig",
+    "steps.apps.StepsConfig",
 ]
 
 THIRD_PARTY_APP = ["corsheaders", "rest_framework"]
