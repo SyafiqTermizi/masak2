@@ -131,5 +131,6 @@ STATIC_URL = "/static/"
 AUTH_USER_MODEL = "users.User"
 
 MEDIA_ROOT = "medias/"
+MEDIA_URL = "/medias/"
 
 CORS_ORIGIN_ALLOW_ALL = True
