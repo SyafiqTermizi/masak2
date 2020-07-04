@@ -36,8 +36,10 @@ class Ingredient(models.Model):
         null=True,
         related_name="ingredients",
     )
-    unit = models.ForeignKey(to=IngredientUnit, on_delete=models.SET_NULL, null=True)
-    amount = models.CharField(max_length=255)
+    unit = models.ForeignKey(
+        to=IngredientUnit, on_delete=models.SET_NULL, null=True, blank=True
+    )
+    amount = models.CharField(max_length=255, blank=True, null=True)
     note = models.CharField(max_length=255, blank=True)
     group = models.ForeignKey(
         to=IngredientGroup, on_delete=models.CASCADE, related_name="ingredients"
