@@ -10,8 +10,9 @@ class MediaSerializer(serializers.ModelSerializer):
 
 
 class RecipeSerializer(serializers.ModelSerializer):
+    created_by = serializers.CharField()
     medias = MediaSerializer(many=True)
 
     class Meta:
         model = Recipe
-        fields = "__all__"
+        fields = ("name", "description", "difficulty", "created_by", "medias")

@@ -11,6 +11,9 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class IngredientSerializer(serializers.ModelSerializer):
+    unit = serializers.CharField()
+    name = serializers.CharField()
+
     class Meta:
         model = Ingredient
         fields = ("name", "unit", "note", "group")
