@@ -4,7 +4,7 @@ from steps.views import StepViewSet
 from ingredients.views import IngredientViewSet, GroupViewSet
 from recipes.views import RecipeViewSet
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 router.register(r"steps", StepViewSet)
 router.register(r"ingredients", IngredientViewSet)
 router.register(r"groups", GroupViewSet)
