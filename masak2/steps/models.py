@@ -4,7 +4,9 @@ from recipes.models import Recipe
 
 
 class Step(models.Model):
-    recipe = models.ForeignKey(to=Recipe, on_delete=models.CASCADE)
+    recipe = models.ForeignKey(
+        to=Recipe, on_delete=models.CASCADE, related_name="steps"
+    )
     step = models.TextField()
 
     def __str__(self):
