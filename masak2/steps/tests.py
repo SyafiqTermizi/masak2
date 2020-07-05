@@ -1,3 +1,5 @@
-from django.test import TestCase
+import pytest
 
-# Create your tests here.
+
+def test_step_str(step):
+    assert step.__str__() == str(step)

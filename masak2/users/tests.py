@@ -1,3 +1,5 @@
-from django.test import TestCase
+import pytest
 
-# Create your tests here.
+
+def test_user_str(user):
+    assert user.__str__() == str(user)
