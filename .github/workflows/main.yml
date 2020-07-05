@@ -26,4 +26,4 @@ jobs:
       run: docker-compose -f docker/docker-compose.test.yml up -d
 
     - name: Run unit test inside docker container
-      run: docker-compose -f docker/docker-compose.test.yml run masak_web poetry run pytest ./masak2
+      run: docker container exec masak_web poetry run pytest ./masak2
