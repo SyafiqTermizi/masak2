@@ -1,0 +1,31 @@
+{
+  "name": "masak2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-cli --watch --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SyafiqTermizi/masak2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SyafiqTermizi/masak2/issues"
+  },
+  "homepage": "https://github.com/SyafiqTermizi/masak2#readme",
+  "devDependencies": {
+    "@types/node": "^14.0.19",
+    "@types/webpack": "^4.41.21",
+    "ts-loader": "^7.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6",
+    "webpack": "^4.43.0",
+    "webpack-bundle-tracker": "^1.0.0-alpha.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
