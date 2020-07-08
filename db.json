@@ -1,0 +1,235 @@
+[
+{
+  "model": "recipes.media",
+  "pk": 1,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/jimsalmonpatties.jpg",
+    "recipe": 1
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 1,
+  "fields": {
+    "name": "",
+    "recipe": 1
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 1,
+  "fields": {
+    "name": "salmon"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 2,
+  "fields": {
+    "name": "saltine crackers"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 3,
+  "fields": {
+    "name": "eggs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 4,
+  "fields": {
+    "name": "mayonnaise"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 5,
+  "fields": {
+    "name": "Worcestershire sauce"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 6,
+  "fields": {
+    "name": "fresh lemon juice"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 7,
+  "fields": {
+    "name": "red pepper flakes"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 8,
+  "fields": {
+    "name": "dry mustard"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 9,
+  "fields": {
+    "name": "vegetable oil"
+  }
+},
+{
+  "model": "ingredients.ingredientunit",
+  "pk": 1,
+  "fields": {
+    "name": "ounce"
+  }
+},
+{
+  "model": "ingredients.ingredientunit",
+  "pk": 2,
+  "fields": {
+    "name": "tablespoons"
+  }
+},
+{
+  "model": "ingredients.ingredientunit",
+  "pk": 3,
+  "fields": {
+    "name": "teaspoons"
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 1,
+  "fields": {
+    "name": 1,
+    "unit": 1,
+    "amount": "14.75",
+    "note": "drained and flaked",
+    "group": 1
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 2,
+  "fields": {
+    "name": 2,
+    "unit": 1,
+    "amount": "4",
+    "note": "crushed",
+    "group": 1
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 3,
+  "fields": {
+    "name": 3,
+    "unit": null,
+    "amount": "2",
+    "note": "",
+    "group": 1
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 4,
+  "fields": {
+    "name": 4,
+    "unit": 2,
+    "amount": "2",
+    "note": "",
+    "group": 1
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 5,
+  "fields": {
+    "name": 5,
+    "unit": 3,
+    "amount": "1 1/2",
+    "note": "",
+    "group": 1
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 6,
+  "fields": {
+    "name": 6,
+    "unit": 3,
+    "amount": "1 1/2",
+    "note": "",
+    "group": 1
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 7,
+  "fields": {
+    "name": 7,
+    "unit": 3,
+    "amount": "1",
+    "note": "",
+    "group": 1
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 8,
+  "fields": {
+    "name": 9,
+    "unit": 2,
+    "amount": "2",
+    "note": "or as needed",
+    "group": 1
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 1,
+  "fields": {
+    "recipe": 1,
+    "step": "Mix both amounts of salmon, crushed crackers, eggs, mayonnaise, Worcestershire sauce, lemon juice, red pepper flakes, and dry mustard together in a bowl. Chill in refrigerator to allow flavors to combine, 30 minutes. Form mixture into 6 patties."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 2,
+  "fields": {
+    "recipe": 1,
+    "step": "Heat vegetable oil in a skillet over medium heat; fry the salmon patties until golden brown, about 4 minutes per side."
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$hcQZ6CLMvX96$vtqB6maijZ2SHcRA6vnXaTXyxL6ACfPlNiYFJzDPcpo=",
+    "last_login": "2020-07-06T15:39:33.805Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-07-06T15:39:23.921Z",
+    "email": "admin@example.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 1,
+  "fields": {
+    "name": "Jim's Salmon Patties",
+    "description": "",
+    "difficulty": 1,
+    "created_by": 1
+  }
+}
+]
