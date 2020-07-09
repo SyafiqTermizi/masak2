@@ -1,6 +1,25 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 
-export const Hello: React.FC = () => <h1>Hello World</h1>;
+import { Navbar } from "./components/navbar";
 
-ReactDom.render(<Hello />, document.getElementById("root"));
+import "bootstrap/dist/css/bootstrap.min.css";
+
+export const Hello: React.FC = () => (
+  <div className="row">
+    <div className="col-12">
+      <h1>Hello World</h1>
+    </div>
+  </div>
+);
+
+const Elem = () => (
+  <>
+    <Navbar />
+    <div className="container">
+      <Hello />
+    </div>
+  </>
+);
+
+ReactDom.render(<Elem />, document.getElementById("root"));
