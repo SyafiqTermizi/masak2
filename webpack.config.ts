@@ -17,6 +17,10 @@ const config: webpack.Configuration = {
         test: /\.js$/,
         loader: "source-map-loader",
       },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader",
+      },
     ],
   },
   resolve: {
@@ -25,7 +29,7 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve("./static/bundles/"),
     filename: "[name].js",
-  }
+  },
 };
 
 export default config;
