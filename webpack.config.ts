@@ -1,6 +1,5 @@
 import * as path from "path";
 import * as webpack from "webpack";
-import BundleTracker from "webpack-bundle-tracker";
 
 const config: webpack.Configuration = {
   context: __dirname,
@@ -13,6 +12,11 @@ const config: webpack.Configuration = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader",
+      },
     ],
   },
   resolve: {
@@ -21,16 +25,7 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve("./static/bundles/"),
     filename: "[name].js",
-  },
-
-  plugins: [
-    new BundleTracker({
-      path: ".",
-      filename: "./webpack-stats.json",
-      integrity: true,
-      integrityHashes: ["sha256", "sha384", "sha512"],
-    }),
-  ],
+  }
 };
 
 export default config;

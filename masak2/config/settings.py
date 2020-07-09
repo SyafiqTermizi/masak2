@@ -37,7 +37,7 @@ LOCAL_APPS = [
     "steps.apps.StepsConfig",
 ]
 
-THIRD_PARTY_APP = ["corsheaders", "rest_framework", "webpack_loader"]
+THIRD_PARTY_APP = ["corsheaders", "rest_framework"]
 
 DJANGO_APPS = [
     "django.contrib.admin",
@@ -127,20 +127,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_URL = "/static/"
-
-# Django webpack loader
-# https://github.com/owais/django-webpack-loader
-WEBPACK_LOADER = {
-    "DEFAULT": {
-        "CACHE": not DEBUG,
-        "BUNDLE_DIR_NAME": "bundles/",  # must end with slash
-        "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats.json"),
-        "POLL_INTERVAL": 0.1,
-        "TIMEOUT": None,
-        "IGNORE": [r".+\.hot-update.js", r".+\.map"],
-        "LOADER_CLASS": "webpack_loader.loader.WebpackLoader",
-    }
-}
 
 # Custom user model
 AUTH_USER_MODEL = "users.User"
