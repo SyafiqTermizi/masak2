@@ -9,7 +9,7 @@ from .models import Recipe, Media
 class MediaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Media
-        fields = ("media_type", "media")
+        fields = ("id", "media_type", "media", "recipe")
 
 
 class RecipeSerializer(serializers.ModelSerializer):
