@@ -34,7 +34,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "@syafiqtermizi/masak2-store": "^1.0.1",
+    "@syafiqtermizi/masak2-store": "^1.0.2",
     "bootstrap": "^5.0.0-alpha1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
