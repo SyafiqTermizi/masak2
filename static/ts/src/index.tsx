@@ -1,25 +1,19 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
+import { Provider } from "react-redux";
+import { store } from "@syafiqtermizi/masak2-store";
 
 import { Navbar } from "./components/navbar";
-
+import Recipes from "./pages/Recipes";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const Hello: React.FC = () => (
-  <div className="row">
-    <div className="col-12">
-      <h1>Hello World</h1>
-    </div>
-  </div>
-);
-
 const Elem = () => (
-  <>
+  <Provider store={store}>
     <Navbar />
     <div className="container">
-      <Hello />
+      <Recipes />
     </div>
-  </>
+  </Provider>
 );
 
 ReactDom.render(<Elem />, document.getElementById("root"));
