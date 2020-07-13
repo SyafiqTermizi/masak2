@@ -1,25 +1,41 @@
 import * as React from "react";
 import { useState } from "react";
-
 import { Formik, Form, Field } from "formik";
+import axios from "axios";
+import Cookie from "js-cookie";
 
 export const RecipeForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
+  const token = Cookie.get("csrftoken");
   const initialValues = {
     name: "",
     difficulty: "",
-    image: "",
+    file: "",
     description: "",
     ingredients: "",
     directions: "",
   };
-  const onSubmit = (values: any) => console.log(values);
+
+  const onSubmit = (values: any) => {
+    console.log(values);
+    axios
+      .post("http://localhost:8000/api/recipes/", values, {
+        headers: {
+          "X-CSRFToken": token,
+        },
+      })
+      .then((res) => {
+        console.log(res.status);
+      });
+  };
+
   const handleFileUpload = (file: any, setValue: any) => {
-    setValue("image", file);
+    setValue("file", file);
     setImageURL(URL.createObjectURL(file));
     setImageName(file.name);
   };
+
   return (
     <div className="row mt-5">
       <div className="col-12">
@@ -61,7 +77,7 @@ export const RecipeForm = () => {
                     handleFileUpload(file, setFieldValue);
                   }}
                   type="file"
-                  name="image"
+                  name="file"
                   className="form-file-input"
                   id="recipe-image"
                   required
