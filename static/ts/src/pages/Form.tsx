@@ -11,27 +11,29 @@ export const RecipeForm = () => {
   const initialValues = {
     name: "",
     difficulty: "",
-    file: "",
+    media: "",
     description: "",
     ingredients: "",
     directions: "",
   };
 
   const onSubmit = (values: any) => {
-    console.log(values);
+    const form = new FormData();
+    Object.keys(values).forEach((key) => form.append(key, values[key]));
+
     axios
-      .post("http://localhost:8000/api/recipes/", values, {
+      .post("http://localhost:8000/api/recipes/", form, {
         headers: {
           "X-CSRFToken": token,
+          "Content-Type": "multipart/form-data",
         },
       })
-      .then((res) => {
-        console.log(res.status);
-      });
+      .then((res) => console.log(res.status))
+      .catch((err) => console.log(err.response.data));
   };
 
   const handleFileUpload = (file: any, setValue: any) => {
-    setValue("file", file);
+    setValue("media", file);
     setImageURL(URL.createObjectURL(file));
     setImageName(file.name);
   };
@@ -77,7 +79,7 @@ export const RecipeForm = () => {
                     handleFileUpload(file, setFieldValue);
                   }}
                   type="file"
-                  name="file"
+                  name="media"
                   className="form-file-input"
                   id="recipe-image"
                   required

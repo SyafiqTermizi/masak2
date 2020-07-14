@@ -13,10 +13,10 @@ class MediaSerializer(serializers.ModelSerializer):
 
 
 class RecipeSerializer(serializers.ModelSerializer):
-    created_by = serializers.CharField()
-    medias = MediaSerializer(many=True)
-    groups = GroupSerializer(many=True)
-    steps = StepSerializer(many=True)
+    created_by = serializers.CharField(read_only=True)
+    medias = MediaSerializer(many=True, read_only=True)
+    groups = GroupSerializer(many=True, read_only=True)
+    steps = StepSerializer(many=True, read_only=True)
 
     class Meta:
         model = Recipe
