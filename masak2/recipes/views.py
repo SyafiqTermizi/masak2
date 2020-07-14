@@ -4,11 +4,10 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 
 from steps.serializers import StepSerializer
-from ingredients.serializers import IngredientSerializer
 from ingredients.models import IngredientGroup, IngredientName, Ingredient
 
 from .models import Recipe
-from .serializers import RecipeSerializer
+from .serializers import RecipeSerializer, MediaSerializer
 
 
 class RecipeViewSet(ModelViewSet):
@@ -18,16 +17,14 @@ class RecipeViewSet(ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         recipe = None
-
         recipe_serializer = self.get_serializer(data=request.data)
+
         if recipe_serializer.is_valid(raise_exception=True):
             recipe = recipe_serializer.save(created_by=request.user)
 
-            ingredients = request.data["ingredients"]
-            self.create_ingredients(recipe, ingredients)
-
-            directions = request.data["directions"]
-            self.create_directions(recipe, directions)
+            self.create_ingredients(recipe, request.data["ingredients"])
+            self.create_directions(recipe, request.data["directions"])
+            self.create_media(recipe, request.data["media"])
 
         return Response(status=200)
 
@@ -46,3 +43,10 @@ class RecipeViewSet(ModelViewSet):
         step_serializer = StepSerializer(data=steps, many=True)
         step_serializer.is_valid(raise_exception=True)
         step_serializer.save()
+
+    def create_media(self, recipe, media):
+        media_serializer = MediaSerializer(
+            data={"media": media, "media_type": "IMG", "recipe": recipe.id,}
+        )
+        media_serializer.is_valid(raise_exception=False)
+        media_serializer.save()

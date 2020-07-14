@@ -18,7 +18,7 @@ class Recipe(models.Model):
 
 class Media(models.Model):
     MEDIA_TYPES = (("IMG", "image"), ("VID", "vid"))
-    media_type = models.CharField(max_length=255, choices=MEDIA_TYPES)
+    media_type = models.CharField(max_length=255, choices=MEDIA_TYPES, default="IMG")
     media = models.FileField(upload_to="recipes")
     recipe = models.ForeignKey(
         to=Recipe, related_name="medias", on_delete=models.CASCADE
