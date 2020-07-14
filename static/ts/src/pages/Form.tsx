@@ -4,6 +4,8 @@ import { Formik, Form, Field } from "formik";
 import axios from "axios";
 import Cookie from "js-cookie";
 
+import { textToIngredient, textToStep } from "../utils";
+
 export const RecipeForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
@@ -19,7 +21,12 @@ export const RecipeForm = () => {
 
   const onSubmit = (values: any) => {
     const form = new FormData();
-    Object.keys(values).forEach((key) => form.append(key, values[key]));
+    const req = {
+      ...values,
+      ingredients: textToIngredient(values["ingredients"]),
+      directions: textToStep(values["directions"]),
+    };
+    Object.keys(req).forEach((key) => form.append(key, req[key]));
 
     axios
       .post("http://localhost:8000/api/recipes/", form, {
