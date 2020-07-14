@@ -5,8 +5,8 @@ from .models import IngredientGroup, IngredientName, IngredientUnit, Ingredient
 
 
 class IngredientSerializer(serializers.ModelSerializer):
-    unit = serializers.CharField()
-    name = serializers.CharField()
+    unit = serializers.CharField(read_only=True)
+    name = serializers.CharField(read_only=True)
 
     class Meta:
         model = Ingredient
