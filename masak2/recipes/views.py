@@ -26,7 +26,8 @@ class RecipeViewSet(ModelViewSet):
             self.create_directions(recipe, request.data["directions"])
             self.create_media(recipe, request.data["media"])
 
-        return Response(status=200)
+        headers = self.get_success_headers(recipe_serializer.data)
+        return Response(data=recipe_serializer.data, status=200, headers=headers)
 
     def create_ingredients(self, recipe, ingredients):
         group = IngredientGroup.objects.create(recipe=recipe)
