@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { Formik, Form, Field } from "formik";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
 
@@ -10,6 +11,7 @@ export const RecipeForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
   const token = Cookie.get("csrftoken");
+  const history = useHistory();
   const initialValues = {
     name: "",
     difficulty: "",
@@ -35,7 +37,7 @@ export const RecipeForm = () => {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((res) => console.log(res.status))
+      .then((_) => history.push("/"))
       .catch((err) => console.log(err.response.data));
   };
 
