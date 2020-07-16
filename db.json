@@ -9,11 +9,147 @@
   }
 },
 {
+  "model": "recipes.media",
+  "pk": 2,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/air-fryer-chicken-thighs-5.jpg",
+    "recipe": 2
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 3,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/telurdadar.jpg",
+    "recipe": 3
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 4,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/fried-rice.jpg",
+    "recipe": 4
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 5,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/home-fries.jpeg",
+    "recipe": 5
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 6,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/peanut-butter-cookies.jpg",
+    "recipe": 6
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 7,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/chocolate-chip-cookies-from-scratch1.jpg",
+    "recipe": 7
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 8,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/chocolate-cake.jpg",
+    "recipe": 8
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 9,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/chicken-kabobs-1-1096x1644.jpg",
+    "recipe": 9
+  }
+},
+{
   "model": "ingredients.ingredientgroup",
   "pk": 1,
   "fields": {
     "name": "",
     "recipe": 1
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 2,
+  "fields": {
+    "name": "",
+    "recipe": 2
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 3,
+  "fields": {
+    "name": "",
+    "recipe": 3
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 4,
+  "fields": {
+    "name": "",
+    "recipe": 4
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 5,
+  "fields": {
+    "name": "",
+    "recipe": 5
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 6,
+  "fields": {
+    "name": "",
+    "recipe": 6
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 7,
+  "fields": {
+    "name": "",
+    "recipe": 7
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 8,
+  "fields": {
+    "name": "",
+    "recipe": 8
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 9,
+  "fields": {
+    "name": "",
+    "recipe": 9
   }
 },
 {
@@ -77,6 +213,447 @@
   "pk": 9,
   "fields": {
     "name": "vegetable oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 10,
+  "fields": {
+    "name": "4 eaches skin-on, boneless chicken thighs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 11,
+  "fields": {
+    "name": "2 teaspoons extra-virgin olive oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 12,
+  "fields": {
+    "name": "1 teaspoon smoked paprika"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 13,
+  "fields": {
+    "name": "\u00be teaspoon garlic powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 14,
+  "fields": {
+    "name": "\u00bd teaspoon salt"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 15,
+  "fields": {
+    "name": "\u00bd teaspoon ground black pepper"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 16,
+  "fields": {
+    "name": "2 tablespoons olive oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 17,
+  "fields": {
+    "name": "3 eggs, beaten"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 18,
+  "fields": {
+    "name": "1 tablespoon crumbled goat cheese, or to taste"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 19,
+  "fields": {
+    "name": "2 teaspoons chopped chives, divided, or to taste"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 20,
+  "fields": {
+    "name": "1 pinch sea salt and ground black pepper to taste"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 21,
+  "fields": {
+    "name": "2 cups enriched white rice"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 22,
+  "fields": {
+    "name": "4 cups of water"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 23,
+  "fields": {
+    "name": "\u2154 cup chopped baby carrots "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 24,
+  "fields": {
+    "name": "\u00bd cup of frozen green peas"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 25,
+  "fields": {
+    "name": "2 tablespoons vegetable oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 26,
+  "fields": {
+    "name": "2 eggs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 27,
+  "fields": {
+    "name": "3 tablespoons soy sauce to taste"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 28,
+  "fields": {
+    "name": "2 tablespoons sesame oil, to taste "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 29,
+  "fields": {
+    "name": "3 large russet potatoes, peeled and quartered"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 30,
+  "fields": {
+    "name": "1 tablespoon butter"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 31,
+  "fields": {
+    "name": "Salt and freshly ground black pepper to taste"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 32,
+  "fields": {
+    "name": "\u00bc teaspoon paprika"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 33,
+  "fields": {
+    "name": "cayenne pepper to taste"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 34,
+  "fields": {
+    "name": "1 pinch garlic powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 35,
+  "fields": {
+    "name": "1 pinch onion powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 36,
+  "fields": {
+    "name": "Chopped fresh chives (optional)"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 37,
+  "fields": {
+    "name": "\u00be cup butter softened"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 38,
+  "fields": {
+    "name": "\u00bd cup white sugar "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 39,
+  "fields": {
+    "name": "\u00bd cup firmly packed brown sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 40,
+  "fields": {
+    "name": "1 egg"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 41,
+  "fields": {
+    "name": "1 teaspoon vanilla extract, or more to taste"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 42,
+  "fields": {
+    "name": "1 cup peanut butter"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 43,
+  "fields": {
+    "name": "1\u2009\u00be cups unbleached flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 44,
+  "fields": {
+    "name": "\u00be teaspoon baking soda"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 45,
+  "fields": {
+    "name": "10 ounces chocolate chunks (such as Ghirardelli\u00ae Bittersweet Chocolate)"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 46,
+  "fields": {
+    "name": "1 serving nonstick cooking spray "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 47,
+  "fields": {
+    "name": "1 cup all-purpose flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 48,
+  "fields": {
+    "name": "\u00bc cup unsweetened cocoa powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 49,
+  "fields": {
+    "name": "1 teaspoon baking powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 50,
+  "fields": {
+    "name": "\u00bd teaspoon of sea salt"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 51,
+  "fields": {
+    "name": "\u00bd cup butter, cut into chunks"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 52,
+  "fields": {
+    "name": "\u00be cup semisweet chocolate chips"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 53,
+  "fields": {
+    "name": "\u2154 cup brown sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 54,
+  "fields": {
+    "name": "\u00bd cup white sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 55,
+  "fields": {
+    "name": "1 teaspoon vanilla extract"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 56,
+  "fields": {
+    "name": "1 tablespoon sea salt, or as needed"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 57,
+  "fields": {
+    "name": "1 (18.25 ounce) package devil's food cake mix"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 58,
+  "fields": {
+    "name": "1 (5.9 ounces) package instant chocolate pudding mix"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 59,
+  "fields": {
+    "name": "1 cup sour cream"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 60,
+  "fields": {
+    "name": "1 cup of vegetable oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 61,
+  "fields": {
+    "name": "4 eggs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 62,
+  "fields": {
+    "name": "\u00bd cup of warm water"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 63,
+  "fields": {
+    "name": "2 cups semisweet chocolate chips "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 64,
+  "fields": {
+    "name": "\u00bc cup of vegetable oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 65,
+  "fields": {
+    "name": "\u2153 cup honey"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 66,
+  "fields": {
+    "name": "\u2153 cup of soy sauce"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 67,
+  "fields": {
+    "name": "\u00bc teaspoon ground black pepper"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 68,
+  "fields": {
+    "name": "8 skinless, boneless chicken breast halves - cut into 1-inch cubes "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 69,
+  "fields": {
+    "name": "2 cloves garlic"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 70,
+  "fields": {
+    "name": "5 small onions, cut into 2-inch pieces "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 71,
+  "fields": {
+    "name": "2 red bell peppers, cut into 2-inch pieces "
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 72,
+  "fields": {
+    "name": "12 eaches skewers"
   }
 },
 {
@@ -189,6 +766,721 @@
   }
 },
 {
+  "model": "ingredients.ingredient",
+  "pk": 9,
+  "fields": {
+    "name": 10,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 2
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 10,
+  "fields": {
+    "name": 11,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 2
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 11,
+  "fields": {
+    "name": 12,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 2
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 12,
+  "fields": {
+    "name": 13,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 2
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 13,
+  "fields": {
+    "name": 14,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 2
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 14,
+  "fields": {
+    "name": 15,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 2
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 15,
+  "fields": {
+    "name": 16,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 3
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 16,
+  "fields": {
+    "name": 17,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 3
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 17,
+  "fields": {
+    "name": 18,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 3
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 18,
+  "fields": {
+    "name": 19,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 3
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 19,
+  "fields": {
+    "name": 20,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 3
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 20,
+  "fields": {
+    "name": 21,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 21,
+  "fields": {
+    "name": 22,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 22,
+  "fields": {
+    "name": 23,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 23,
+  "fields": {
+    "name": 24,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 24,
+  "fields": {
+    "name": 25,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 25,
+  "fields": {
+    "name": 26,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 26,
+  "fields": {
+    "name": 27,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 27,
+  "fields": {
+    "name": 28,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 4
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 28,
+  "fields": {
+    "name": 29,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 29,
+  "fields": {
+    "name": 16,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 30,
+  "fields": {
+    "name": 30,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 31,
+  "fields": {
+    "name": 31,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 32,
+  "fields": {
+    "name": 32,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 33,
+  "fields": {
+    "name": 33,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 34,
+  "fields": {
+    "name": 34,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 35,
+  "fields": {
+    "name": 35,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 36,
+  "fields": {
+    "name": 36,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 37,
+  "fields": {
+    "name": 37,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 38,
+  "fields": {
+    "name": 38,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 39,
+  "fields": {
+    "name": 39,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 40,
+  "fields": {
+    "name": 40,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 41,
+  "fields": {
+    "name": 41,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 42,
+  "fields": {
+    "name": 42,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 43,
+  "fields": {
+    "name": 43,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 44,
+  "fields": {
+    "name": 44,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 45,
+  "fields": {
+    "name": 45,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 46,
+  "fields": {
+    "name": 46,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 47,
+  "fields": {
+    "name": 47,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 48,
+  "fields": {
+    "name": 48,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 49,
+  "fields": {
+    "name": 49,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 50,
+  "fields": {
+    "name": 50,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 51,
+  "fields": {
+    "name": 51,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 52,
+  "fields": {
+    "name": 52,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 53,
+  "fields": {
+    "name": 53,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 54,
+  "fields": {
+    "name": 54,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 55,
+  "fields": {
+    "name": 26,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 56,
+  "fields": {
+    "name": 55,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 57,
+  "fields": {
+    "name": 56,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 58,
+  "fields": {
+    "name": 57,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 59,
+  "fields": {
+    "name": 58,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 60,
+  "fields": {
+    "name": 59,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 61,
+  "fields": {
+    "name": 60,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 62,
+  "fields": {
+    "name": 61,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 63,
+  "fields": {
+    "name": 62,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 64,
+  "fields": {
+    "name": 63,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 65,
+  "fields": {
+    "name": 64,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 66,
+  "fields": {
+    "name": 65,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 67,
+  "fields": {
+    "name": 66,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 68,
+  "fields": {
+    "name": 67,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 69,
+  "fields": {
+    "name": 68,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 70,
+  "fields": {
+    "name": 69,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 71,
+  "fields": {
+    "name": 70,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 72,
+  "fields": {
+    "name": 71,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 73,
+  "fields": {
+    "name": 72,
+    "unit": null,
+    "amount": null,
+    "note": "",
+    "group": 9
+  }
+},
+{
   "model": "steps.step",
   "pk": 1,
   "fields": {
@@ -205,11 +1497,267 @@
   }
 },
 {
+  "model": "steps.step",
+  "pk": 3,
+  "fields": {
+    "recipe": 2,
+    "step": "Preheat an air fryer to 400 degrees F (200 degrees C)."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 4,
+  "fields": {
+    "recipe": 2,
+    "step": "Pat chicken thighs dry with a paper towel and brush the skin-side of each piece with olive oil. Place chicken thighs, skin-side down, in a single layer on a plate."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 5,
+  "fields": {
+    "recipe": 2,
+    "step": "Combine the smoked paprika, garlic powder, salt, and pepper in a bowl and sprinkle half the seasoning mixture evenly over the 4 chicken thighs. Turn thighs over and evenly sprinkle remaining seasoning mixture on top. Place chicken thighs in the air fryer basket in a single layer, skin-side up."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 6,
+  "fields": {
+    "recipe": 2,
+    "step": "Fry in the preheated air fryer until chicken is brown and juices run clear about 18 minutes. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C)."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 7,
+  "fields": {
+    "recipe": 3,
+    "step": "Heat olive oil in a large skillet over medium heat, swirling the oil to coat the skillet. Pour eggs into hot skillet; eggs will bubble and firm immediately."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 8,
+  "fields": {
+    "recipe": 3,
+    "step": "Lift cooked edges of the omelet with a rubber spatula and tilt the skillet so that the uncooked egg runs underneath the lifted edge. Continue cooking, lifting edges and tilting the skillet, until omelet is almost completely set, 1 to 2 minutes total cooking time; remove from heat. Spread out any runny egg evenly on the top of the omelet with a rubber spatula."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 9,
+  "fields": {
+    "recipe": 3,
+    "step": "Sprinkle goat cheese, 1 1/2 teaspoons chives, sea salt, and black pepper over the omelet. Gently lift one edge and fold 1/3 of the omelet into the center over the cheese and chives. Fold the opposite 1/3 of the omelet into the center. Slide omelet to the edge of the skillet and flip, folded side down, onto a plate. Top with remaining chives."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 10,
+  "fields": {
+    "recipe": 4,
+    "step": "In a saucepan, combine rice and water. Bring to a boil. Reduce heat, cover, and simmer for 20 minutes."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 11,
+  "fields": {
+    "recipe": 4,
+    "step": "In a small saucepan, boil carrots in water for about 3 to 5 minutes. Drop peas into boiling water, and drain."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 12,
+  "fields": {
+    "recipe": 4,
+    "step": "Heat wok over high heat. Pour in oil, then stir in carrots and peas; cook about 30 seconds. Crack in eggs, stirring quickly to scramble eggs with vegetables. Stir in cooked rice. Shake in soy sauce, and toss rice to coat. Drizzle with sesame oil, and toss again."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 13,
+  "fields": {
+    "recipe": 5,
+    "step": "Arrange potato pieces evenly on a microwave-safe plate. Microwave on high until just tender, about 4 minutes. Let cool to room temperature. Cut potatoes into bite-size chunks."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 14,
+  "fields": {
+    "recipe": 5,
+    "step": "Heat butter and olive oil in a non-stick skillet over medium-high heat. When butter melts and starts to turn brown, swirl the pan and add the potatoes. Shake pan to arrange in an even layer. Season with salt, pepper, paprika, garlic powder, and onion powder."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 15,
+  "fields": {
+    "recipe": 5,
+    "step": "As potatoes brown, toss them and keep turning them every few minutes until they are crusty and crispy-edged and rich reddish-brown color, 10 to 12 minutes. If potatoes seem to be cooking too quickly, reduce heat to medium. Serve topped with chopped chives."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 16,
+  "fields": {
+    "recipe": 6,
+    "step": "Preheat oven to 375 degrees F (190 degrees C)."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 17,
+  "fields": {
+    "recipe": 6,
+    "step": "Beat butter, white sugar, and brown sugar together with an electric mixer in a large bowl until light and fluffy. Beat egg and vanilla extract into the butter mixture. Add peanut butter and beat until incorporated."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 18,
+  "fields": {
+    "recipe": 6,
+    "step": "Sift flour and baking soda together in a separate bowl; mix into the butter mixture. Fold chocolate chunks into the mixture."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 19,
+  "fields": {
+    "recipe": 6,
+    "step": "Spread the batter into a 13x9-inch baking dish."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 20,
+  "fields": {
+    "recipe": 6,
+    "step": "Bake in the preheated oven until a toothpick inserted into the center comes out clean, 20 to 25 minutes. Cool completely before cutting into squares."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 21,
+  "fields": {
+    "recipe": 7,
+    "step": "Preheat the oven to 350 degrees F (175 degrees C). Line 2 large baking sheets with parchment paper and spray with cooking spray."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 22,
+  "fields": {
+    "recipe": 7,
+    "step": "Combine flour, cocoa powder, baking powder, and 1/2 teaspoon sea salt in a bowl."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 23,
+  "fields": {
+    "recipe": 7,
+    "step": "Place butter in a saucepan over low heat and cook until melted, 3 to 5 minutes. Add chocolate chips and stir until completely melted. Remove from the heat."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 24,
+  "fields": {
+    "recipe": 7,
+    "step": "Combine brown sugar, white sugar, eggs, and vanilla extract in a bowl and beat with an electric mixer until creamy. Pour a small amount of the chocolate mixture into the egg mixture and stir until well combined. Slowly add remaining chocolate mixture, stirring constantly so the eggs don't curdle. Fold in the flour mixture until just combined. Do not overmix."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 25,
+  "fields": {
+    "recipe": 7,
+    "step": "Drop 6 large scoops of batter about 2 inches apart onto each of the prepared baking sheets."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 26,
+  "fields": {
+    "recipe": 7,
+    "step": "Bake in the preheated oven, until cookies have spread and flattened to a diameter of 4 1/2 inches or larger, and the tops, are crinkled and puffed, 12 to 14 minutes. Immediately sprinkle with sea salt."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 27,
+  "fields": {
+    "recipe": 7,
+    "step": "Place baking sheets on a wire rack and cool for 18 to 20 minutes. Remove cookies with a spatula onto a serving platter."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 28,
+  "fields": {
+    "recipe": 8,
+    "step": "Preheat oven to 350 degrees F (175 degrees C)."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 29,
+  "fields": {
+    "recipe": 8,
+    "step": "In a large bowl, mix together the cake and pudding mixes, sour cream, oil, beaten eggs, and water. Stir in the chocolate chips and pour batter into a well-greased 12 cup bundt pan."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 30,
+  "fields": {
+    "recipe": 8,
+    "step": "Bake for 50 to 55 minutes, or until the top is springy to the touch and a wooden toothpick inserted comes out clean. Cool cake thoroughly in pan at least an hour and a half before inverting onto a plate If desired, dust the cake with powdered sugar."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 31,
+  "fields": {
+    "recipe": 9,
+    "step": "In a large bowl, whisk together oil, honey, soy sauce, and pepper. Before adding chicken, reserve a small amount of marinade to brush onto kabobs while cooking. Place the chicken, garlic, onions, and peppers in the bowl, and marinate in the refrigerator at least 2 hours (the longer the better)."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 32,
+  "fields": {
+    "recipe": 9,
+    "step": "Preheat the grill for high heat."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 33,
+  "fields": {
+    "recipe": 9,
+    "step": "Drain marinade from the chicken and vegetables, and discard marinade. Thread chicken and vegetables alternately onto the skewers."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 34,
+  "fields": {
+    "recipe": 9,
+    "step": "Lightly oil the grill grate. Place the skewers on the grill. Cook for 12 to 15 minutes, until chicken juices run clear. Turn and brush with reserved marinade frequently."
+  }
+},
+{
   "model": "users.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$180000$hcQZ6CLMvX96$vtqB6maijZ2SHcRA6vnXaTXyxL6ACfPlNiYFJzDPcpo=",
-    "last_login": "2020-07-06T15:39:33.805Z",
+    "last_login": "2020-07-15T20:34:09.834Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -229,6 +1777,86 @@
     "name": "Jim's Salmon Patties",
     "description": "",
     "difficulty": 1,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 2,
+  "fields": {
+    "name": "Air Fryer Chicken Thighs",
+    "description": "Tasty, quick, chicken thighs, with juicy meat and crispy skin; you will love this chicken that is ready for the table in less than 30 minutes!",
+    "difficulty": 1,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 3,
+  "fields": {
+    "name": "Simple Italian Omelet",
+    "description": "I'm calling this an 'Italian' omelet for a couple of reasons. First, I used olive oil instead of butter, and, second, I cooked the eggs quickly in a hot pan, letting them get a little golden-brown.",
+    "difficulty": 1,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 4,
+  "fields": {
+    "name": "Fried Rice Restaurant Style",
+    "description": "A quick fried rice like you get at your favorite Chinese restaurant. A couple of eggs, baby carrots, peas, and soy sauce is all you need.",
+    "difficulty": 2,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 5,
+  "fields": {
+    "name": "Quick & Crispy Home Fries",
+    "description": "In order to get a crispy crust like the fries at your local diner, you need to precook and cool them. When you pan-fry a cold starch, it gets a beautifully crispy surface.",
+    "difficulty": 1,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 6,
+  "fields": {
+    "name": "Peanut Butter Chocolate Chunk Bars",
+    "description": "An amazing treat that will satisfy any craving for peanut butter and chocolate.",
+    "difficulty": 3,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 7,
+  "fields": {
+    "name": "Salted Chocolate Cookies",
+    "description": "The addition of sea salt takes these big, soft, chocolaty, fudgy cookies to another level. Chocolate lovers will find these cookies irresistible.",
+    "difficulty": 3,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 8,
+  "fields": {
+    "name": "Chocolate Cake",
+    "description": "This cake won me First Prize at the county fair last year. It is very chocolaty.",
+    "difficulty": 3,
+    "created_by": 1
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 9,
+  "fields": {
+    "name": "Yummy Honey Chicken Kabobs",
+    "description": "Honey chicken kabobs with veggies. You can marinate overnight and make these kabobs for an outdoor barbecue as a tasty alternative to the usual barbecue fare!",
+    "difficulty": 2,
     "created_by": 1
   }
 }
