@@ -4,7 +4,7 @@ import * as webpack from "webpack";
 const config: webpack.Configuration = {
   context: __dirname,
   devtool: "inline-source-map",
-  entry: "./static/ts/src/index",
+  entry: "./static/ts/src/Index",
   module: {
     rules: [
       {
