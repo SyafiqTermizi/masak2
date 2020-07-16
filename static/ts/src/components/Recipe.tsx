@@ -20,7 +20,7 @@ export const Recipe: React.FC<Props> = ({
   created_by,
   medias,
 }) => (
-  <div className="col-3">
+  <div className="recipe-item">
     <div className="card">
       {medias.length >= 1 && (
         <img src={medias[0].media} alt={name} height="300px" />

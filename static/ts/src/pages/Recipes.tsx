@@ -10,6 +10,8 @@ import {
 
 import { Recipe } from "../components/Recipe";
 
+import "./recipe.css";
+
 interface Props {
   recipes: RecipeState;
   medias: MediaState;
@@ -39,7 +41,7 @@ const Recipes: React.FC<Props> = ({ recipes, medias, retrieveRecipe }) => {
     );
   });
 
-  return <div className="row mt-5">{elem}</div>;
+  return <div className="row mt-5 recipe-container">{elem}</div>;
 };
 
 const mapStateToProps = (state: StateTree) => ({
