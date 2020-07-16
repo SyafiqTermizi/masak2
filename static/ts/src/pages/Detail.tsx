@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import { StateTree } from "@syafiqtermizi/masak2-store";
-import { StepState, Step } from "@syafiqtermizi/masak2-store/lib/steps";
+import { StepState } from "@syafiqtermizi/masak2-store/lib/steps";
 import { MediaState } from "@syafiqtermizi/masak2-store/lib/medias";
 import { GroupState } from "@syafiqtermizi/masak2-store/lib/groups";
 import { RecipeState } from "@syafiqtermizi/masak2-store/lib/recipes";
