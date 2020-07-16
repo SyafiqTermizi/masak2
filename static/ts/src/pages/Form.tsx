@@ -3,10 +3,9 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
-import Cookie from "js-cookie";
 import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
 
+import axios from "../axiosConfig";
 import { textToIngredient, textToStep } from "../utils";
 
 interface Props {
@@ -16,7 +15,6 @@ interface Props {
 const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
-  const token = Cookie.get("csrftoken");
   const history = useHistory();
   const initialValues = {
     name: "",
@@ -37,17 +35,15 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
     Object.keys(req).forEach((key) => form.append(key, req[key]));
 
     axios
-      .post("http://localhost:8000/api/recipes/", form, {
-        headers: {
-          "X-CSRFToken": token,
-          "Content-Type": "multipart/form-data",
-        },
+      .post("/recipes/", form, {
+        headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {
-        retrieveRecipe();
-        res.data.id
-          ? history.push(`/detail/${res.data.id}`)
-          : history.push("/");
+        retrieveRecipe().then(() => {
+          res.data.id
+            ? history.push(`/detail/${res.data.id}`)
+            : history.push("/");
+        });
       })
       .catch((err) => console.log(err.response.data));
   };
