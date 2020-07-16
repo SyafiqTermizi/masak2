@@ -1,56 +1,57 @@
 import * as React from "react";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
-export interface Media {
-  id: number;
-  media_type: string;
-  media: string;
-  recipe: number;
+import { StateTree } from "@syafiqtermizi/masak2-store";
+import { StepState, Step } from "@syafiqtermizi/masak2-store/lib/steps";
+import { MediaState } from "@syafiqtermizi/masak2-store/lib/medias";
+import { GroupState } from "@syafiqtermizi/masak2-store/lib/groups";
+import { RecipeState } from "@syafiqtermizi/masak2-store/lib/recipes";
+import { IngredientState } from "@syafiqtermizi/masak2-store/lib/ingredients";
+
+interface Props {
+  recipes: RecipeState;
+  medias: MediaState;
+  groups: GroupState;
+  ingredients: IngredientState;
+  steps: StepState;
 }
 
-export interface Ingredient {
-  id: number;
-  name: string;
-  unit: string;
-  note: string;
-  group: number;
-  amount: string;
-}
-
-export interface Group {
-  id: number;
-  name: string;
-  recipe: number;
-  ingredients: Ingredient[];
-}
-
-export interface Step {
-  id: number;
-  step: string;
-  recipe: number;
-}
-export interface Recipe {
-  id: number;
-  name: string;
-  description: string;
-  difficulty: number;
-  created_by: string;
-  medias: Media[];
-  groups: Group[];
-  steps: Step[];
-}
-
-export const Detail: React.FC = () => {
-  const [recipe, setRecipe] = useState<Recipe | undefined>();
+const Detail: React.FC<Props> = ({
+  recipes,
+  medias,
+  groups,
+  ingredients,
+  steps,
+}) => {
   const { id } = useParams();
+  const localRecipes = recipes[id];
+  const localMedias = Object.values(medias).filter(
+    (media) => media.recipe === parseInt(id)
+  );
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/recipes/2")
-      .then((res) => setRecipe(res.data));
-  }, []);
+  const localGroups = Object.values(groups).filter(
+    (group) => group.recipe === parseInt(id)
+  );
+
+  const localGroupsIngredient = localGroups.map((group) => ({
+    ...group,
+    ingredients: Object.values(ingredients).filter(
+      (ingredient) => ingredient.group === group.id
+    ),
+  }));
+
+  const localSteps = Object.values(steps).filter(
+    (step) => step.recipe === parseInt(id)
+  );
+
+  const recipe = {
+    ...localRecipes,
+    medias: localMedias,
+    groups: localGroupsIngredient,
+    steps: localSteps,
+  };
+
   return (
     <>
       <div className="row mt-5 justify-content-md-center">
@@ -95,3 +96,13 @@ export const Detail: React.FC = () => {
     </>
   );
 };
+
+const mapStateToProps = (state: StateTree) => ({
+  recipes: state.recipe,
+  medias: state.media,
+  groups: state.group,
+  ingredients: state.ingredient,
+  steps: state.step,
+});
+
+export default connect(mapStateToProps)(Detail);
