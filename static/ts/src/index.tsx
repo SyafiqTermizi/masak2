@@ -6,6 +6,7 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 
 import { Navbar } from "./components/Navbar";
 import { RecipeForm } from "./pages/Form";
+import { Detail } from "./pages/Detail";
 import Recipes from "./pages/Recipes";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,6 +19,9 @@ const Elem = () => (
         <Switch>
           <Route path="/create">
             <RecipeForm />
+          </Route>
+          <Route path="/detail/:id">
+            <Detail />
           </Route>
           <Route path="/">
             <Recipes />
