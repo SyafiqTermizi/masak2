@@ -1,13 +1,19 @@
 import * as React from "react";
 import { useState } from "react";
+import { connect } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
+import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
 
 import { textToIngredient, textToStep } from "../utils";
 
-export const RecipeForm = () => {
+interface Props {
+  retrieveRecipe: () => any;
+}
+
+const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
   const token = Cookie.get("csrftoken");
@@ -37,7 +43,12 @@ export const RecipeForm = () => {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((_) => history.push("/"))
+      .then((res) => {
+        retrieveRecipe();
+        res.data.id
+          ? history.push(`/detail/${res.data.id}`)
+          : history.push("/");
+      })
       .catch((err) => console.log(err.response.data));
   };
 
@@ -142,3 +153,6 @@ export const RecipeForm = () => {
     </div>
   );
 };
+
+const mapDispatchToProps = { retrieveRecipe };
+export default connect(null, mapDispatchToProps)(RecipeForm);
