@@ -5,22 +5,10 @@ import { Media } from "@syafiqtermizi/masak2-store/lib/medias";
 interface Props {
   id: number;
   name: string;
-  description: string;
-  rating: number;
-  difficulty: number;
-  created_by: string;
   medias: Media[];
 }
 
-export const Recipe: React.FC<Props> = ({
-  id,
-  name,
-  description,
-  rating,
-  difficulty,
-  created_by,
-  medias,
-}) => (
+export const Recipe: React.FC<Props> = ({ id, name, medias }) => (
   <div className="recipe-item">
     <Link to={`/detail/${id}`}>
       <div className="card">

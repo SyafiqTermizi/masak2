@@ -32,10 +32,6 @@ const Recipes: React.FC<Props> = ({ recipes, medias, retrieveRecipe }) => {
         key={id}
         id={recipe.id}
         name={recipe.name}
-        description={recipe.description}
-        rating={recipe.rating}
-        difficulty={recipe.difficulty}
-        created_by={recipe.created_by}
         medias={recipeMedias}
       />
     );
