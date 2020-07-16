@@ -39,7 +39,6 @@
     "@syafiqtermizi/masak2-store": "^1.0.3",
     "bootstrap": "^5.0.0-alpha1",
     "formik": "^2.1.5",
-    "js-cookie": "^2.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
