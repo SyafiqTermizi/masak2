@@ -22,7 +22,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
     const form = new FormData();
     const req = {
       ...values,
-      ingredients: textToIngredient(values["ingredients"]),
+      groups: textToIngredient(values["ingredients"]),
       steps: textToStep(values["steps"]),
     };
     Object.keys(req).forEach((key) => form.append(key, req[key]));
@@ -38,7 +38,10 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
             : history.push("/");
         });
       })
-      .catch((err) => actions.setErrors(err.response.data));
+      .catch((err) => {
+        console.log(err.response.data);
+        actions.setErrors(err.response.data);
+      });
   };
 
   const handleFileUpload = (file: any, setValue: any) => {

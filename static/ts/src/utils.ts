@@ -2,11 +2,15 @@ export const textToIngredient = (text: string) => {
   const ingredientArray = text.split("\n");
   const ingredients = ingredientArray.map((ingredient) => ({
     name: ingredient,
-    unit: "",
     amount: "",
     note: "",
   }));
-  return JSON.stringify(ingredients);
+  return JSON.stringify([
+    {
+      name: "",
+      ingredients: ingredients,
+    },
+  ]);
 };
 
 export const textToStep = (text: string) => {
