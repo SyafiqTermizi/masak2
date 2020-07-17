@@ -49,5 +49,5 @@ class RecipeViewSet(ModelViewSet):
         media_serializer = MediaSerializer(
             data={"media": media, "media_type": "IMG", "recipe": recipe.id,}
         )
-        media_serializer.is_valid(raise_exception=False)
+        media_serializer.is_valid(raise_exception=True)
         media_serializer.save()
