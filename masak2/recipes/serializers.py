@@ -23,7 +23,7 @@ class MediaSerializer(serializers.ModelSerializer):
 
 class RecipeSerializer(serializers.ModelSerializer):
     created_by = serializers.CharField(read_only=True)
-    medias = MediaSerializer(many=True)
+    medias = MediaSerializer(many=True, read_only=True)
     steps = StepSerializer(many=True)
     groups = GroupSerializer(many=True)
 
@@ -41,16 +41,10 @@ class RecipeSerializer(serializers.ModelSerializer):
         )
 
     def create(self, validated_data):
-        media_arr = validated_data.pop("medias")
         step_arr = validated_data.pop("steps")
         groups_arr = validated_data.pop("groups")
 
         recipe = Recipe.objects.create(**validated_data)
-
-        medias = []
-        for media in media_arr:
-            medias.append(Media(recipe=recipe, **media))
-        Media.objects.bulk_create(medias)
 
         steps = []
         for step in step_arr:

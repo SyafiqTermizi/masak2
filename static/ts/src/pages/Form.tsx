@@ -19,33 +19,30 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const history = useHistory();
 
   const onSubmit = (values: any, actions: any) => {
-    const form = new FormData();
     const req = {
       ...values,
       groups: textToIngredient(values["ingredients"]),
       steps: textToStep(values["steps"]),
     };
-    Object.keys(req).forEach((key) => form.append(key, req[key]));
+
+    const form = new FormData();
+    form.append("medias", values["medias"]);
+
+    const config = {
+      headers: { "Content-Type": "multipart/form-data" },
+    };
 
     axios
-      .post("/recipes/", form, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-      .then((res) => {
-        retrieveRecipe().then(() => {
-          res.data.id
-            ? history.push(`/detail/${res.data.id}`)
-            : history.push("/");
-        });
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-        actions.setErrors(err.response.data);
-      });
+      .post("/recipes/", req)
+      .then((res) => axios.post(`/medias/?recipe=${res.data.id}`, form, config))
+      .then((res) =>
+        retrieveRecipe().then(() => history.push(`/detail/${res.data.recipe}`))
+      )
+      .catch((err) => actions.setErrors(err.response.data));
   };
 
   const handleFileUpload = (file: any, setValue: any) => {
-    setValue("medias  ", file);
+    setValue("medias", file);
     setImageURL(URL.createObjectURL(file));
     setImageName(file.name);
   };

@@ -36,13 +36,15 @@ const Detail: React.FC<Props> = ({ getRecipe }) => {
     <>
       <div className="row mt-5 justify-content-md-center">
         <div className="col-6">
-          <img
-            src={recipe?.medias[0].media}
-            alt={recipe?.name}
-            width="100%"
-            height="300px"
-            style={{ objectFit: "cover" }}
-          />
+          {recipe.medias.length > 0 && (
+            <img
+              src={recipe?.medias[0].media}
+              alt={recipe?.name}
+              width="100%"
+              height="300px"
+              style={{ objectFit: "cover" }}
+            />
+          )}
         </div>
       </div>
       <div className="row mt-5 justify-content-md-center">

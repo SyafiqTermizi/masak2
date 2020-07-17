@@ -5,12 +5,12 @@ export const textToIngredient = (text: string) => {
     amount: "",
     note: "",
   }));
-  return JSON.stringify([
+  return [
     {
       name: "",
       ingredients: ingredients,
     },
-  ]);
+  ];
 };
 
 export const textToStep = (text: string) => {
@@ -18,5 +18,5 @@ export const textToStep = (text: string) => {
   const steps = stepArray.map((step) => ({
     step,
   }));
-  return JSON.stringify(steps);
+  return steps;
 };
