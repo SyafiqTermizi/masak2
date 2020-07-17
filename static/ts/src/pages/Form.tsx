@@ -15,17 +15,10 @@ interface Props {
 const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
-  const history = useHistory();
-  const initialValues = {
-    name: "",
-    difficulty: "",
-    medias: "",
-    description: "",
-    ingredients: "",
-    steps: "",
-  };
 
-  const onSubmit = (values: any) => {
+  const history = useHistory();
+
+  const onSubmit = (values: any, actions: any) => {
     const form = new FormData();
     const req = {
       ...values,
@@ -45,7 +38,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
             : history.push("/");
         });
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => actions.setErrors(err.response.data));
   };
 
   const handleFileUpload = (file: any, setValue: any) => {
@@ -58,18 +51,27 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
     <div className="row mt-5">
       <div className="col-12">
         <Formik
-          onSubmit={(values) => onSubmit(values)}
-          initialValues={initialValues}
+          onSubmit={(values, actions) => onSubmit(values, actions)}
+          initialValues={{
+            name: "",
+            difficulty: "",
+            medias: "",
+            description: "",
+            ingredients: "",
+            steps: "",
+          }}
         >
-          {({ setFieldValue }) => (
+          {({ setFieldValue, errors }) => (
             <Form>
               <div className="mb-3">
                 <Field
                   placeholder="Recipe Name"
                   type="text"
                   name="name"
-                  className="form-control"
-                  required
+                  className={
+                    errors.name ? "form-control is-invalid" : "form-control"
+                  }
+                  required={true}
                 />
               </div>
               <div className="mb-3">
@@ -77,8 +79,12 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   type="number"
                   name="difficulty"
                   placeholder="Difficulty"
-                  className="form-control"
-                  required
+                  className={
+                    errors.difficulty
+                      ? "form-control is-invalid"
+                      : "form-control"
+                  }
+                  required={true}
                 />
               </div>
               {imageURL && (
@@ -96,9 +102,13 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   }}
                   type="file"
                   name="medias  "
-                  className="form-file-input"
+                  className={
+                    errors.steps
+                      ? "form-file-input is-invalid"
+                      : "form-file-input"
+                  }
                   id="recipe-image"
-                  required
+                  required={true}
                 />
                 <label className="form-file-label" htmlFor="recipe-image">
                   <span className="form-file-text">
@@ -114,7 +124,6 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   name="description"
                   id="recipe-description"
                   className="form-control"
-                  required
                 />
               </div>
               <div className="mb-3">
@@ -134,9 +143,11 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   as="textarea"
                   name="steps"
                   id="steps"
-                  className="form-control"
+                  className={
+                    errors.steps ? "form-control is-invalid" : "form-control"
+                  }
                   placeholder="Put each step on its own line"
-                  required
+                  required={true}
                 />
               </div>
               <button type="submit" className="btn btn-primary">
