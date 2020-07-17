@@ -4,6 +4,8 @@ from .models import Step
 
 
 class StepSerializer(serializers.ModelSerializer):
+    recipe = serializers.IntegerField(source="recipe.pk", read_only=True)
+
     class Meta:
         model = Step
-        fields = "__all__"
+        fields = ("id", "recipe", "step")

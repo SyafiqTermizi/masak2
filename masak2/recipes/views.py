@@ -17,14 +17,19 @@ class RecipeViewSet(ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         recipe = None
-        recipe_serializer = self.get_serializer(data=request.data)
+        req = {
+            "name": request.data["name"],
+            "description": request.data["description"],
+            "difficulty": request.data["difficulty"],
+            "medias": [{"media": request.data["medias"]}],
+            "steps": json.loads(request.data["steps"]),
+        }
+        recipe_serializer = self.get_serializer(data=req)
 
         if recipe_serializer.is_valid(raise_exception=True):
             recipe = recipe_serializer.save(created_by=request.user)
 
             self.create_ingredients(recipe, request.data["ingredients"])
-            self.create_directions(recipe, request.data["directions"])
-            self.create_media(recipe, request.data["media"])
 
         headers = self.get_success_headers(recipe_serializer.data)
         return Response(data=recipe_serializer.data, status=200, headers=headers)
@@ -38,16 +43,3 @@ class RecipeViewSet(ModelViewSet):
 
         for name in ingredient_names:
             Ingredient.objects.create(name=name, group=group)
-
-    def create_directions(self, recipe, directions):
-        steps = [{**item, "recipe": recipe.id} for item in json.loads(directions)]
-        step_serializer = StepSerializer(data=steps, many=True)
-        step_serializer.is_valid(raise_exception=True)
-        step_serializer.save()
-
-    def create_media(self, recipe, media):
-        media_serializer = MediaSerializer(
-            data={"media": media, "media_type": "IMG", "recipe": recipe.id,}
-        )
-        media_serializer.is_valid(raise_exception=True)
-        media_serializer.save()
