@@ -19,10 +19,10 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const initialValues = {
     name: "",
     difficulty: "",
-    media: "",
+    medias: "",
     description: "",
     ingredients: "",
-    directions: "",
+    steps: "",
   };
 
   const onSubmit = (values: any) => {
@@ -30,7 +30,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
     const req = {
       ...values,
       ingredients: textToIngredient(values["ingredients"]),
-      directions: textToStep(values["directions"]),
+      steps: textToStep(values["steps"]),
     };
     Object.keys(req).forEach((key) => form.append(key, req[key]));
 
@@ -49,7 +49,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   };
 
   const handleFileUpload = (file: any, setValue: any) => {
-    setValue("media", file);
+    setValue("medias  ", file);
     setImageURL(URL.createObjectURL(file));
     setImageName(file.name);
   };
@@ -95,7 +95,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                     handleFileUpload(file, setFieldValue);
                   }}
                   type="file"
-                  name="media"
+                  name="medias  "
                   className="form-file-input"
                   id="recipe-image"
                   required
@@ -129,11 +129,11 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="directions">Directions</label>
+                <label htmlFor="steps">steps</label>
                 <Field
                   as="textarea"
-                  name="directions"
-                  id="directions"
+                  name="steps"
+                  id="steps"
                   className="form-control"
                   placeholder="Put each step on its own line"
                   required
