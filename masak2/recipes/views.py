@@ -3,11 +3,8 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 
-from steps.serializers import StepSerializer
-from ingredients.models import IngredientGroup, IngredientName, Ingredient
-
 from .models import Recipe
-from .serializers import RecipeSerializer, MediaSerializer
+from .serializers import RecipeSerializer
 
 
 class RecipeViewSet(ModelViewSet):
