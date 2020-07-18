@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { StateTree } from "@syafiqtermizi/masak2-store";
 import { MediaState } from "@syafiqtermizi/masak2-store/lib/medias";
 import {
-  retrieveRecipe,
+  retrieveRecipes,
   RecipeState,
 } from "@syafiqtermizi/masak2-store/lib/recipes";
 
@@ -15,12 +15,12 @@ import "./recipe.css";
 interface Props {
   recipes: RecipeState;
   medias: MediaState;
-  retrieveRecipe: () => any;
+  retrieveRecipes: () => any;
 }
 
-const Recipes: React.FC<Props> = ({ recipes, medias, retrieveRecipe }) => {
+const Recipes: React.FC<Props> = ({ recipes, medias, retrieveRecipes }) => {
   useEffect(() => {
-    retrieveRecipe();
+    retrieveRecipes();
   }, []);
 
   const elem = Object.keys(recipes).map((id) => {
@@ -46,7 +46,7 @@ const mapStateToProps = (state: StateTree) => ({
 });
 
 const mapDispatchToProps = {
-  retrieveRecipe,
+  retrieveRecipes,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipes);
