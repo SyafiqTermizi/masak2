@@ -62,9 +62,7 @@ class RecipeSerializer(serializers.ModelSerializer):
 
                 unit = ingredient.pop("unit", None)
                 if unit:
-                    unit = IngredientUnit.objects.get_or_create(
-                        name=ingredient.pop("unit")
-                    )[0]
+                    unit = IngredientUnit.objects.get_or_create(name=unit)[0]
 
                 Ingredient.objects.create(
                     name=name, group=group, unit=unit, **ingredient,
