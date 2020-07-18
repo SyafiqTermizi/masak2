@@ -6,9 +6,9 @@ name: Unit Test
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,11 +19,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Run docker-compose
-      run: docker-compose -f docker/docker-compose.test.yml up -d
+      - name: Run docker-compose
+        run: docker-compose -f docker/docker-compose.test.yml up -d
 
-    - name: Run unit test inside docker container
-      run: docker container exec masak_web poetry run pytest ./masak2
+      - name: Run unit test inside docker container
+        run: docker container exec masak_web poetry run pytest ./masak2
