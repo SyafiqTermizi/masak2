@@ -3,16 +3,16 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import { useHistory } from "react-router-dom";
-import { retrieveRecipes } from "@syafiqtermizi/masak2-store/lib/recipes";
+import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
 
 import axios from "../axiosConfig";
 import { textToIngredient, textToStep } from "../utils";
 
 interface Props {
-  retrieveRecipes: () => any;
+  retrieveRecipe: (id: number) => any;
 }
 
-const RecipeForm: React.FC<Props> = ({ retrieveRecipes }) => {
+const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
 
@@ -36,7 +36,9 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipes }) => {
       .post("/recipes/", req)
       .then((res) => axios.post(`/medias/?recipe=${res.data.id}`, form, config))
       .then((res) =>
-        retrieveRecipes().then(() => history.push(`/detail/${res.data.recipe}`))
+        retrieveRecipe(res.data.recipe).then(() =>
+          history.push(`/detail/${res.data.recipe}`)
+        )
       )
       .catch((err) => actions.setErrors(err.response.data));
   };
@@ -161,5 +163,5 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipes }) => {
   );
 };
 
-const mapDispatchToProps = { retrieveRecipes };
+const mapDispatchToProps = { retrieveRecipe };
 export default connect(null, mapDispatchToProps)(RecipeForm);

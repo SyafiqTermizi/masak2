@@ -1,11 +1,13 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import { StateTree } from "@syafiqtermizi/masak2-store";
 import { Step } from "@syafiqtermizi/masak2-store/lib/steps";
-import { Ingredient } from "@syafiqtermizi/masak2-store/lib/ingredients";
 import { Media } from "@syafiqtermizi/masak2-store/lib/medias";
+import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
+import { Ingredient } from "@syafiqtermizi/masak2-store/lib/ingredients";
 
 interface Recipe {
   id: number;
@@ -24,19 +26,27 @@ interface Recipe {
   }[];
 }
 
-interface Props {
-  getRecipe: (id: string) => Recipe;
+interface PropsFromDispatch {
+  retrieveRecipe: (id: number) => any;
 }
 
-export const Detail: React.FC<Props> = ({ getRecipe }) => {
+interface PropsFromState {
+  getRecipe: (id: string) => Recipe;
+}
+interface Props extends PropsFromState, PropsFromDispatch {}
+
+export const Detail: React.FC<Props> = ({ getRecipe, retrieveRecipe }) => {
   const { id } = useParams();
-  const recipe = getRecipe(id);
+  let recipe = getRecipe(id);
+  if (!recipe.name) {
+    retrieveRecipe(parseInt(id)).then(() => (recipe = getRecipe(id)));
+  }
 
   return (
     <>
       <div className="row mt-5 justify-content-md-center">
         <div className="col-6">
-          {recipe.medias.length > 0 && (
+          {recipe && recipe.medias.length > 0 && (
             <img
               src={recipe?.medias[0].media}
               alt={recipe?.name}
@@ -79,7 +89,7 @@ export const Detail: React.FC<Props> = ({ getRecipe }) => {
   );
 };
 
-const mapStateToProps = (state: StateTree) => ({
+const mapStateToProps = (state: StateTree): PropsFromState => ({
   getRecipe: (id: string) => ({
     ...state.recipe[id],
     medias: Object.values(state.media).filter(
@@ -99,4 +109,8 @@ const mapStateToProps = (state: StateTree) => ({
   }),
 });
 
-export default connect(mapStateToProps)(Detail);
+const mapDispatchToProps = {
+  retrieveRecipe,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);
