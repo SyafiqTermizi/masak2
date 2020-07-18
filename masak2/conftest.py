@@ -59,3 +59,26 @@ def ingredient_data(ingredient):
         "unit": ingredient.unit.name,
         "amount": ingredient.amount,
     }
+
+
+@pytest.fixture
+def recipe_data(recipe):
+    return {
+        "name": "recipe name",
+        "description": "description",
+        "difficulty": 1,
+        "groups": [
+            {
+                "name": "",
+                "ingredients": [
+                    {
+                        "name": "an ingredient name",
+                        "note": "",
+                        "amount": "",
+                        "unit": "kg",
+                    }
+                ],
+            }
+        ],
+        "steps": [{"step": "steps"}],
+    }
