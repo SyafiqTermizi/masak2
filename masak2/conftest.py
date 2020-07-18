@@ -48,3 +48,14 @@ def step(recipe):
 def user():
     return UserModel(username="username", password="password", email="email")
 
+
+@pytest.fixture
+def ingredient_data(ingredient):
+    return {
+        "id": None,
+        "group": None,
+        "note": "",
+        "name": ingredient.name.name,
+        "unit": ingredient.unit.name,
+        "amount": ingredient.amount,
+    }
