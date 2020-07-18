@@ -41,7 +41,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "@syafiqtermizi/masak2-store": "^1.1.1",
+    "@syafiqtermizi/masak2-store": "^1.1.2",
     "bootstrap": "^5.0.0-alpha1",
     "formik": "^2.1.5",
     "popper.js": "^1.16.1",
