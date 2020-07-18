@@ -28,7 +28,7 @@ interface Props {
   getRecipe: (id: string) => Recipe;
 }
 
-const Detail: React.FC<Props> = ({ getRecipe }) => {
+export const Detail: React.FC<Props> = ({ getRecipe }) => {
   const { id } = useParams();
   const recipe = getRecipe(id);
 
@@ -49,8 +49,8 @@ const Detail: React.FC<Props> = ({ getRecipe }) => {
       </div>
       <div className="row mt-5 justify-content-md-center">
         <div className="col-6">
-          <h3>{recipe?.name}</h3>
-          <h6>{recipe?.description}</h6>
+          <h3 data-testid="title">{recipe?.name}</h3>
+          <h6 data-testid="description">{recipe?.description}</h6>
         </div>
       </div>
       <div className="row mt-5 justify-content-md-center">
