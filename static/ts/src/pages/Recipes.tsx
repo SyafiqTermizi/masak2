@@ -10,15 +10,17 @@ import {
 
 import { Recipe } from "../components/Recipe";
 
-import "./recipe.css";
-
 interface Props {
   recipes: RecipeState;
   medias: MediaState;
   retrieveRecipes: () => any;
 }
 
-const Recipes: React.FC<Props> = ({ recipes, medias, retrieveRecipes }) => {
+export const Recipes: React.FC<Props> = ({
+  recipes,
+  medias,
+  retrieveRecipes,
+}) => {
   useEffect(() => {
     retrieveRecipes();
   }, []);
