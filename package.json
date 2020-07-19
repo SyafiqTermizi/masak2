@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-cli --watch --mode development",
+    "build": "webpack-cli --config webpack.config.prod.ts --mode production",
     "test": "jest"
   },
   "repository": {
@@ -19,6 +20,12 @@
   },
   "homepage": "https://github.com/SyafiqTermizi/masak2#readme",
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
     "@types/jest": "^26.0.5",
@@ -29,6 +36,8 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
     "@types/webpack": "^4.41.21",
+    "babel-loader": "^8.1.0",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "css-loader": "^3.6.0",
     "jest": "^26.1.0",
     "source-map-loader": "^1.0.1",
@@ -37,6 +46,7 @@
     "ts-loader": "^7.0.5",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },
