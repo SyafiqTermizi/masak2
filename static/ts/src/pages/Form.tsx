@@ -81,6 +81,8 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   type="number"
                   name="difficulty"
                   placeholder="Difficulty"
+                  min="1"
+                  max="3"
                   className={
                     errors.difficulty
                       ? "form-control is-invalid"
@@ -88,6 +90,9 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   }
                   required={true}
                 />
+                <div className="form-text">
+                  A number from 1 to 3. 1 being the easiest 3 the hardest
+                </div>
               </div>
               {imageURL && (
                 <div className="mb-3">
@@ -136,6 +141,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   id="ingredients"
                   className="form-control"
                   placeholder="Put each ingredient on each own line"
+                  rows="7"
                   required
                 />
               </div>
@@ -149,6 +155,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                     errors.steps ? "form-control is-invalid" : "form-control"
                   }
                   placeholder="Put each step on its own line"
+                  rows="7"
                   required={true}
                 />
               </div>
