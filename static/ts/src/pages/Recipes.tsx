@@ -37,13 +37,14 @@ export const Recipes: React.FC<Props> = ({
           key={id}
           id={recipe.id}
           name={recipe.name}
+          description={recipe.description}
           medias={recipeMedias}
         />
       )
     );
   });
 
-  return <div className="row mt-5 recipe-container">{elem}</div>;
+  return <div className="row mt-5 recipes-container">{elem}</div>;
 };
 
 const mapStateToProps = (state: StateTree) => ({

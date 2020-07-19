@@ -51,6 +51,9 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@syafiqtermizi/masak2-store": "^1.1.2",
     "bootstrap": "^5.0.0-alpha1",
     "formik": "^2.1.5",

@@ -1,14 +1,42 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-.recipe-container {
+body {
+  font-size: 14px;
+  color: #484848;
+  line-height: 1.43;
+}
+
+.recipes-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
 }
-.recipe-item {
-  width: 400px !important;
+
+.recipes-item {
+  width: 350px !important;
   margin: 15px !important;
 }
+
 .ingredient-done {
   text-decoration: line-through;
+}
+
+.recipes-item .card {
+  border-style: none;
+}
+
+.recipes-item .card img {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.recipes-item a {
+  text-decoration: none;
+  color: #484848;
+}
+
+.recipes-item h6 {
+  margin-top: 5px;
 }
