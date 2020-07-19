@@ -1,9 +1,10 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 .recipe-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 .recipe-item {
   width: 400px !important;
   margin: 15px !important;

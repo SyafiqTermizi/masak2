@@ -9,8 +9,6 @@ import RecipeForm from "./pages/Form";
 import Detail from "./pages/Detail";
 import Recipes from "./pages/Recipes";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 const Elem = () => (
   <Provider store={store}>
     <HashRouter>
