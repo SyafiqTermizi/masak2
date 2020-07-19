@@ -49,7 +49,11 @@ test("Detail page should render correctly with given props", () => {
 
   const { getByAltText, getByTestId } = render(
     <HashRouter>
-      <Detail getRecipe={propsFunc} retrieveRecipe={(id) => id} />
+      <Detail
+        getRecipe={propsFunc}
+        toggleIngredient={(id) => null}
+        retrieveRecipe={(id) => id}
+      />
     </HashRouter>
   );
 
