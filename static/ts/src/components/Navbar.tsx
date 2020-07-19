@@ -17,7 +17,7 @@ export const Navbar = () => (
 
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
-        <li className="nav-item active">
+        <li className="nav-item">
           <NavLink activeClassName="active" className="nav-link" to="/">
             Home
           </NavLink>
