@@ -6,6 +6,10 @@ body {
   line-height: 1.43;
 }
 
+.navbar-active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 .recipes-container {
   display: flex;
   flex-direction: row;

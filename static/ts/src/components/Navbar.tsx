@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbar = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav className="navbar navbar-active navbar-expand-lg navbar-light bg-white fixed-top">
     <div className="container">
       <Link className="navbar-brand" to="/">
         <FontAwesomeIcon
