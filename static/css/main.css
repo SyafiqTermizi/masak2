@@ -9,3 +9,6 @@
   width: 400px !important;
   margin: 15px !important;
 }
+.ingredient-done {
+  text-decoration: line-through;
+}

@@ -22,7 +22,9 @@ export const Recipes: React.FC<Props> = ({
   retrieveRecipes,
 }) => {
   useEffect(() => {
-    retrieveRecipes();
+    if (Object.keys(recipes).length === 1) {
+      retrieveRecipes();
+    }
   }, []);
 
   const elem = Object.keys(recipes).map((id) => {
@@ -30,12 +32,14 @@ export const Recipes: React.FC<Props> = ({
     const recipeMedias = recipe.medias.map((id) => medias[id]);
 
     return (
-      <Recipe
-        key={id}
-        id={recipe.id}
-        name={recipe.name}
-        medias={recipeMedias}
-      />
+      recipe.name && (
+        <Recipe
+          key={id}
+          id={recipe.id}
+          name={recipe.name}
+          medias={recipeMedias}
+        />
+      )
     );
   });
 

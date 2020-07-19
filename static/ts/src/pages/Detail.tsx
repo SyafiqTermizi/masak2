@@ -6,7 +6,10 @@ import { StateTree } from "@syafiqtermizi/masak2-store";
 import { Step } from "@syafiqtermizi/masak2-store/lib/steps";
 import { Media } from "@syafiqtermizi/masak2-store/lib/medias";
 import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
-import { Ingredient } from "@syafiqtermizi/masak2-store/lib/ingredients";
+import {
+  Ingredient,
+  toggleIngredient,
+} from "@syafiqtermizi/masak2-store/lib/ingredients";
 
 interface Recipe {
   id: number;
@@ -27,6 +30,7 @@ interface Recipe {
 
 interface PropsFromDispatch {
   retrieveRecipe: (id: number) => any;
+  toggleIngredient: (id: number) => void;
 }
 
 interface PropsFromState {
@@ -34,7 +38,11 @@ interface PropsFromState {
 }
 interface Props extends PropsFromState, PropsFromDispatch {}
 
-export const Detail: React.FC<Props> = ({ getRecipe, retrieveRecipe }) => {
+export const Detail: React.FC<Props> = ({
+  getRecipe,
+  retrieveRecipe,
+  toggleIngredient,
+}) => {
   const { id } = useParams();
   let recipe = getRecipe(id);
   if (!recipe.name) {
@@ -67,7 +75,11 @@ export const Detail: React.FC<Props> = ({ getRecipe, retrieveRecipe }) => {
           <ul>
             {recipe?.groups.map((group) =>
               group.ingredients.map((ingredient) => (
-                <li key={ingredient.id}>
+                <li
+                  className={ingredient.isDone ? "ingredient-done" : ""}
+                  key={ingredient.id}
+                  onClick={() => toggleIngredient(ingredient.id)}
+                >
                   {ingredient.amount} {ingredient.unit} {ingredient.name}
                 </li>
               ))
@@ -110,6 +122,7 @@ const mapStateToProps = (state: StateTree): PropsFromState => ({
 
 const mapDispatchToProps = {
   retrieveRecipe,
+  toggleIngredient,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
