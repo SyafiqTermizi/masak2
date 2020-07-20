@@ -1,0 +1,19 @@
+.ingredient-done {
+  text-decoration: line-through;
+}
+
+.detail-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-image {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.detail-list li {
+  margin-bottom: 8px;
+}

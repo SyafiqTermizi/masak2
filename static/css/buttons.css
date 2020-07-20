@@ -1,0 +1,13 @@
+.btn-light {
+  border-radius: 25px;
+  border: none;
+  background-color: white;
+}
+
+.btn-light:hover {
+  background-color: lightgray;
+}
+
+.btn-light:focus {
+  box-shadow: none !important;
+}

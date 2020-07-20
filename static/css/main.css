@@ -1,69 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./buttons.css";
+@import "./navbar.css";
+@import "./recipes.css";
+@import "./detail.css";
 
 body {
   font-size: 14px;
   color: #484848;
   line-height: 1.43;
-}
-
-.navbar {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.navbar .btn-light {
-  border-radius: 25px;
-  border: none;
-  background-color: white;
-}
-
-.navbar .btn-light:hover {
-  background-color: lightgray;
-}
-
-.navbar .btn-light:focus {
-  box-shadow: none;
-}
-
-.recipes-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: flex-start;
-}
-
-.recipes-item {
-  width: 250px !important;
-  margin: 15px !important;
-}
-
-@media (max-width: 641px) {
-  .recipes-container {
-    justify-content: space-evenly;
-  }
-  .recipes-item {
-    width: 350px !important;
-  }
-}
-
-.ingredient-done {
-  text-decoration: line-through;
-}
-
-.recipes-item .card {
-  border-style: none;
-}
-
-.recipes-item .card img {
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.recipes-item a {
-  text-decoration: none;
-  color: #484848;
-}
-
-.recipes-item h6 {
-  margin-top: 5px;
 }
