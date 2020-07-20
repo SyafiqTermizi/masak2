@@ -1,7 +1,8 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { StateTree } from "@syafiqtermizi/masak2-store";
 import { Step } from "@syafiqtermizi/masak2-store/lib/steps";
 import { Media } from "@syafiqtermizi/masak2-store/lib/medias";
@@ -52,26 +53,46 @@ export const Detail: React.FC<Props> = ({
   return (
     <>
       <div className="row mt-5 justify-content-md-center">
-        <div className="col-6">
+        <div className="col-8">
+          <h3 data-testid="title">
+            <b>{recipe?.name}</b>
+          </h3>
+          <div className="detail-title">
+            <div>
+              <FontAwesomeIcon icon={faStar} />{" "}
+              {(Math.random() * 4 + 1).toFixed(2)} <b>.</b> By{" "}
+              {recipe.created_by}
+            </div>
+            <div className="btn btn-sm btn-light">
+              <FontAwesomeIcon icon={faHeart} /> Save
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row mt-3 justify-content-md-center">
+        <div className="col-8">
           {recipe && recipe.medias.length > 0 && (
             <img
               src={recipe?.medias[0].media}
               alt={recipe?.name}
               width="100%"
-              height="300px"
-              style={{ objectFit: "cover" }}
+              height="400px"
+              className="detail-image"
             />
           )}
         </div>
       </div>
-      <div className="row mt-5 justify-content-md-center">
-        <div className="col-6">
-          <h3 data-testid="title">{recipe?.name}</h3>
-          <h6 data-testid="description">{recipe?.description}</h6>
+      <div className="row justify-content-md-center mt-3">
+        <div className="col-8">
+          <h6 data-testid="description">
+            <b>{recipe?.description}</b>
+          </h6>
+          <hr />
         </div>
       </div>
-      <div className="row mt-5 justify-content-md-center">
-        <div className="col-6">
+      <div className="row mt-3 justify-content-md-center detail-list">
+        <div className="col-8">
+          <h4>Ingredients</h4>
           <ul>
             {recipe?.groups.map((group) =>
               group.ingredients.map((ingredient) => (
@@ -85,15 +106,24 @@ export const Detail: React.FC<Props> = ({
               ))
             )}
           </ul>
+          <hr />
         </div>
       </div>
-      <div className="row mt-5 justify-content-md-center">
-        <div className="col-6">
+      <div className="row mt-3 justify-content-md-center detail-list">
+        <div className="col-8">
+          <h4>Directions</h4>
           <ul>
             {recipe?.steps.map((step) => (
               <li key={step.id}>{step.step}</li>
             ))}
           </ul>
+        </div>
+      </div>
+      <div className="row mt-3 pb-5 justify-content-md-center">
+        <div className="col-8">
+          <button type="button" className="btn btn-block btn-outline-dark">
+            I made it!
+          </button>
         </div>
       </div>
     </>
