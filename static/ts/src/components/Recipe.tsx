@@ -23,9 +23,9 @@ export const Recipe: React.FC<Props> = ({ id, name, medias, description }) => (
           {(Math.random() * 4 + 1).toFixed(2)}
         </span>
         <h6 data-testid="title" className="card-title">
-          {name}
+          <b>{name}</b>
         </h6>
-        <h6>{description.slice(0, 60)}...</h6>
+        <h6>{description.slice(0, 35)}...</h6>
       </div>
     </Link>
   </div>
