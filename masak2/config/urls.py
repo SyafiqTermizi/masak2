@@ -5,7 +5,7 @@ from django.conf import settings
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="recipes/recipes.html")),
+    path("", TemplateView.as_view(template_name="recipes/index.html")),
     path("api/", include("config.api")),
     path("admin/", admin.site.urls),
 ]
