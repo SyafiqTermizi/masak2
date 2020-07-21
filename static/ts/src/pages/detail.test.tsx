@@ -61,8 +61,8 @@ test("Detail page should render correctly with given props", () => {
   expect(image.getAttribute("src")).toBe("imageurl");
 
   const title = getByTestId("title");
-  expect(title.innerHTML).toBe("name");
+  expect(title.innerHTML).toBe("<b>name</b>");
 
   const descrption = getByTestId("description");
-  expect(descrption.innerHTML).toBe("description");
+  expect(descrption.innerHTML).toBe("<b>description</b>");
 });

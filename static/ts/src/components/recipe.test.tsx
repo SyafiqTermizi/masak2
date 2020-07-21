@@ -8,6 +8,7 @@ test("test Recipe component should render correctly with given props", () => {
   const props = {
     id: 1,
     name: "name",
+    description: "lorem ipsum",
     medias: [
       {
         media_type: "IMG",
@@ -31,5 +32,8 @@ test("test Recipe component should render correctly with given props", () => {
   expect(image.getAttribute("src")).toBe("test");
 
   const title = getByTestId("title");
-  expect(title.innerHTML).toBe("name");
+  expect(title.innerHTML).toBe("<b>name</b>");
+
+  const description = getByTestId("description");
+  expect(description.innerHTML).toBe("lorem ipsum...");
 });

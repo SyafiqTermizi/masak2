@@ -25,7 +25,7 @@ export const Recipe: React.FC<Props> = ({ id, name, medias, description }) => (
         <h6 data-testid="title" className="card-title">
           <b>{name}</b>
         </h6>
-        <h6>{description.slice(0, 35)}...</h6>
+        <h6 data-testid="description">{description.slice(0, 35)}...</h6>
       </div>
     </Link>
   </div>
