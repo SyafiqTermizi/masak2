@@ -5,6 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      window.user = {
+        username: "{{ request.user }}",
+        isAuthenticated: "{{ request.user.is_authenticated }}" === "True" ? true: false,
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
