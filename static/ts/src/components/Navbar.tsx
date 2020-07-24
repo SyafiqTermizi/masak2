@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 
+import axios from "../axiosConfig";
+
 export const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div className="container">
@@ -26,15 +28,31 @@ export const Navbar = () => (
               <b>Home</b>
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink
-              activeClassName="active"
-              className="nav-link btn btn-light"
-              to="/create"
-            >
-              <b>Create</b>
-            </NavLink>
-          </li>
+          {!window.user.isAuthenticated && (
+            <li className="nav-item">
+              <a href="/auth/login" className="nav-link btn btn-light">
+                <b>Login</b>
+              </a>
+            </li>
+          )}
+          {window.user.isAuthenticated && (
+            <>
+              <li className="nav-item">
+                <NavLink
+                  activeClassName="active"
+                  className="nav-link btn btn-light"
+                  to="/create"
+                >
+                  <b>Create</b>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <a href="/auth/logout" className="nav-link btn btn-light">
+                  <b>Logout</b>
+                </a>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

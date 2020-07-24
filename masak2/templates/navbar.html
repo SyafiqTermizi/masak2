@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link btn btn-light" href="/#/home">
+            <b>Home</b>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/auth/login" class="nav-link btn btn-light">
+            <b>Login</b>
+          </a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a activeclass="active" class="nav-link btn btn-light" to="/create">
+            <b>Create</b>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/auth/logout" class="nav-link btn btn-light">
+            <b>Logout</b>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

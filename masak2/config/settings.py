@@ -135,3 +135,5 @@ MEDIA_ROOT = "medias/"
 MEDIA_URL = "/medias/"
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+LOGOUT_REDIRECT_URL = "/#/home"

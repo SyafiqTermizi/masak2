@@ -6,23 +6,32 @@
 {% endblock title %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-12">
+{% include "navbar.html" %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-4 offset-md-4">
+      <br>
+      <br>
+      <br>
+      <div class="card">
+          <div class="card-body">
             <form method="post">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label class="form-label" for="">Username</label>
-                    <input type="text" class="form-control" name="username">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="">Password</label>
-                    <input type="password" class="form-control" name="password">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+              {% csrf_token %}
+              <div class="mb-3">
+                <label class="form-label" for="">Username</label>
+                <input type="text" class="form-control" name="username">
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="">Password</label>
+                <input type="password" class="form-control" name="password">
+              </div>
+              <div class="mb-3"><input type="hidden" type="text" name="next" value="/"></div>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        </div>
+          </div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock content %}
 
