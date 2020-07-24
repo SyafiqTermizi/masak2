@@ -7,10 +7,10 @@ from django.shortcuts import HttpResponseRedirect, render
 @csrf_protect
 def login_view(request):
     if request.method == "POST":
-        email = request.POST.get("email")
+        username = request.POST.get("username")
         password = request.POST.get("password")
 
-        user = authenticate(request, email=email, password=password)
+        user = authenticate(request, username=username, password=password)
 
         if user:
             login(request, user)

@@ -6,7 +6,8 @@ UserModel = get_user_model()
 
 
 class EmailBackend(ModelBackend):
-    def authenticate(self, request, email=None, password=None):
+    def authenticate(self, request, username=None, password=None):
+        email = username
 
         if email is None or password is None:
             return
