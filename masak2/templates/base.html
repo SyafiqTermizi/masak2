@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}
+    <title>Masak2</title>
+    {% endblock title %} {% block head_script %}
+    <script></script>
+    {% endblock head_script %}
+  </head>
+  <body>
+    {% block content %} {% endblock content %}
+    {% block body_script %}
+    <script src="{% static "bundles/main.js" %}"></script>
+    {% endblock body_script %}
+  </body>
+</html>

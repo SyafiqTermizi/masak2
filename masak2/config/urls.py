@@ -8,6 +8,7 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="recipes/index.html")),
     path("api/", include("config.api")),
     path("admin/", admin.site.urls),
+    path("auth/", include("django.contrib.auth.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

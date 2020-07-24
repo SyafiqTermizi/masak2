@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Masak2</title>
+{% endblock title %}
+
+{% block head_script %}
+<script>
+  window.user = {
+    username: "{{ request.user }}",
+    isAuthenticated: "{{ request.user.is_authenticated }}" === "True" ? true: false,
+  }
+</script>
+{% endblock head_script %}
+
+{% block content %}
+<div id="root"></div>
+{% endblock content %}
+
+{% block body_script %}
+<script src="{% static "bundles/style.js" %}"></script>
+<script src="{% static "bundles/main.js" %}"></script>
+{% endblock body_script %}
