@@ -3,8 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 
-import axios from "../axiosConfig";
-
 export const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div className="container">
@@ -30,7 +28,7 @@ export const Navbar = () => (
           </li>
           {!window.user.isAuthenticated && (
             <li className="nav-item">
-              <a href="/auth/login" className="nav-link btn btn-light">
+              <a href="/users/login" className="nav-link btn btn-light">
                 <b>Login</b>
               </a>
             </li>
@@ -47,7 +45,7 @@ export const Navbar = () => (
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a href="/auth/logout" className="nav-link btn btn-light">
+                <a href="/users/logout" className="nav-link btn btn-light">
                   <b>Logout</b>
                 </a>
               </li>
