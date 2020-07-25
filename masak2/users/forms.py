@@ -6,9 +6,7 @@ class LoginForm(forms.Form):
     username = forms.CharField(
         min_length=5, max_length=255, required=True, label="Username or Email"
     )
-    password = forms.CharField(
-        widget=forms.PasswordInput(), min_length=5, required=True
-    )
+    password = forms.CharField(widget=forms.PasswordInput(), required=True)
 
     def __init__(self, request=None, *args, **kwargs):
         self.user_cache = None
