@@ -3,17 +3,19 @@ from django.contrib.auth import login, authenticate
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import HttpResponseRedirect, render
 
+from .forms import LoginForm
+
 
 @csrf_protect
 def login_view(request):
+
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
+        form = LoginForm(request, request.POST)
 
-        user = authenticate(request, username=username, password=password)
-
-        if user:
-            login(request, user)
+        if form.is_valid():
+            login(request, form.get_user())
             return HttpResponseRedirect("/#/home")
+    else:
+        form = LoginForm()
 
-    return render(request, "registration/login.html")
+    return render(request, "registration/login.html", context={"form": form})

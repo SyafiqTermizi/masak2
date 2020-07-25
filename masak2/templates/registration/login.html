@@ -14,22 +14,48 @@
       <br>
       <br>
       <div class="card">
-          <div class="card-body">
-            <form method="post">
-              {% csrf_token %}
-              <div class="mb-3">
-                <label class="form-label" for="">Username or Email</label>
-                <input type="text" class="form-control" name="username">
-              </div>
-              <div class="mb-3">
-                <label class="form-label" for="">Password</label>
-                <input type="password" class="form-control" name="password">
-              </div>
-              <div class="mb-3"><input type="hidden" type="text" name="next" value="/"></div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label" for="">Username or Email</label>
+              <input type="text" class="form-control" name="username">
+              {% if form.errors %}
+                {% for field in form %}
+                  {% for error in field.errors %}
+                    {% if field.name == "username" %}
+                      <small style="color: red;">{{error}}</small>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="">Password</label>
+              <input type="password" class="form-control" name="password">
+              {% if form.errors %}
+                {% for field in form %}
+                  {% for error in field.errors %}
+                    {% if field.name == "password" %}
+                      <small style="color: red;">{{error}}</small>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mb-3"><input type="hidden" type="text" name="next" value="/"></div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
       </div>
+      <br>
+      {% if form.errors %}
+        {% for error in form.non_field_errors %}
+          <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>
