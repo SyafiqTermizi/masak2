@@ -13,18 +13,6 @@ class LoginForm(forms.Form):
         self.request = request
         return super().__init__(*args, **kwargs)
 
-    def clean_username(self):
-        username = self.cleaned_data.get("username")
-        if username:
-            return username
-        raise forms.ValidationError("Username is required")
-
-    def clean_password(self):
-        password = self.cleaned_data.get("password")
-        if password:
-            return password
-        raise forms.ValidationError("Password is required")
-
     def clean(self):
         username = self.cleaned_data.get("username")
         password = self.cleaned_data.get("password")
