@@ -1,13 +1,18 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   handleInput: (searchTerm: string) => void;
   handleSearch: () => void;
+  isFiltered: Boolean;
 }
 
-export const SearchBar: React.FC<Props> = ({ handleInput, handleSearch }) => (
+export const SearchBar: React.FC<Props> = ({
+  handleInput,
+  handleSearch,
+  isFiltered,
+}) => (
   <div className="row mt-5 mb-3 justify-content-md-center search-bar">
     <div className="col-12 mt-3 col-md-4">
       <div className="input-group mb-3">
@@ -26,8 +31,13 @@ export const SearchBar: React.FC<Props> = ({ handleInput, handleSearch }) => (
           className="btn btn-outline-secondary"
           type="button"
           id="button-addon2"
+          onClick={handleSearch}
         >
-          <FontAwesomeIcon icon={faSearch} />
+          {isFiltered ? (
+            <FontAwesomeIcon icon={faTimes} />
+          ) : (
+            <FontAwesomeIcon icon={faSearch} />
+          )}
         </button>
       </div>
     </div>

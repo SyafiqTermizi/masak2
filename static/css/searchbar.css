@@ -18,3 +18,7 @@
 .search-bar .btn-outline-secondary:hover {
   color: black;
 }
+
+.search-bar .btn-outline-secondary:focus {
+  box-shadow: none;
+}

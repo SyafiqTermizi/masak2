@@ -7,6 +7,7 @@ import {
   retrieveRecipes,
   RecipeState,
   searchRecipe,
+  retrieveRecipe,
 } from "@syafiqtermizi/masak2-store/lib/recipes";
 
 import { SearchBar } from "../components/SearchBar";
@@ -25,11 +26,17 @@ export const Recipes: React.FC<Props> = ({
   retrieveRecipes,
   searchRecipe,
 }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [isFiltered, setIsFiltered] = useState<Boolean>(false);
 
   const handleSearch = () => {
-    if (searchTerm) {
+    if (searchTerm && !isFiltered) {
       searchRecipe(searchTerm);
+      setIsFiltered(true);
+    } else if (isFiltered) {
+      setSearchTerm("");
+      setIsFiltered(false);
+      retrieveRecipes();
     }
   };
 
@@ -58,7 +65,11 @@ export const Recipes: React.FC<Props> = ({
 
   return (
     <>
-      <SearchBar handleInput={setSearchTerm} handleSearch={handleSearch} />
+      <SearchBar
+        handleInput={setSearchTerm}
+        handleSearch={handleSearch}
+        isFiltered={isFiltered}
+      />
       <div className="row recipes-container">{elem}</div>
     </>
   );
