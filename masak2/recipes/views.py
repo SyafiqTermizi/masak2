@@ -17,10 +17,17 @@ class RecipeViewSet(ModelViewSet):
         search_term = self.request.query_params.get("q")
 
         if search_term:
-            vectors = SearchVector("name") + SearchVector("groups__ingredients__name__name")
-            query = SearchQuery(search_term, search_type='phrase')
-            # TODO: make search result have distinct name
-            return Recipe.objects.annotate(rank=SearchRank(vectors, query)).order_by('-rank').distinct()
+            vectors = SearchVector("name", weight="A") + SearchVector(
+                "steps__step", weight="D"
+            )
+            query = SearchQuery(search_term, search_type="phrase")
+            rank = SearchRank(vectors, query)
+
+            return set(
+                Recipe.objects.annotate(search=vectors, rank=rank)
+                .filter(search=query)
+                .order_by("-rank")
+            )
         return super().get_queryset()
 
     def create(self, request, *args, **kwargs):
