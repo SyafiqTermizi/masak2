@@ -1,26 +1,38 @@
 import * as React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { StateTree } from "@syafiqtermizi/masak2-store";
 import { MediaState } from "@syafiqtermizi/masak2-store/lib/medias";
 import {
   retrieveRecipes,
   RecipeState,
+  searchRecipe,
 } from "@syafiqtermizi/masak2-store/lib/recipes";
 
+import { SearchBar } from "../components/SearchBar";
 import { Recipe } from "../components/Recipe";
 
 interface Props {
   recipes: RecipeState;
   medias: MediaState;
   retrieveRecipes: () => any;
+  searchRecipe: (searchTerm: string) => void;
 }
 
 export const Recipes: React.FC<Props> = ({
   recipes,
   medias,
   retrieveRecipes,
+  searchRecipe,
 }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = () => {
+    if (searchTerm) {
+      searchRecipe(searchTerm);
+    }
+  };
+
   useEffect(() => {
     if (Object.keys(recipes).length === 1) {
       retrieveRecipes();
@@ -44,7 +56,12 @@ export const Recipes: React.FC<Props> = ({
     );
   });
 
-  return <div className="row mt-5 recipes-container">{elem}</div>;
+  return (
+    <>
+      <SearchBar handleInput={setSearchTerm} handleSearch={handleSearch} />
+      <div className="row recipes-container">{elem}</div>
+    </>
+  );
 };
 
 const mapStateToProps = (state: StateTree) => ({
@@ -54,6 +71,7 @@ const mapStateToProps = (state: StateTree) => ({
 
 const mapDispatchToProps = {
   retrieveRecipes,
+  searchRecipe,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipes);
