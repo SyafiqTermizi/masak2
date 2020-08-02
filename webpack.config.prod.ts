@@ -9,6 +9,7 @@ const config: webpack.Configuration = {
   devtool: "inline-source-map",
   entry: {
     main: "./static/ts/src/Index",
+    bootstrapjs: "./static/js/index",
     style: "./static/css/main.css",
   },
   module: {
