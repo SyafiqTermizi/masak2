@@ -53,7 +53,7 @@ export const Detail: React.FC<Props> = ({
   return (
     <>
       <div className="row mt-5 justify-content-md-center">
-        <div className="col-8">
+        <div className="col-md-8 col-sm-12">
           <h3 data-testid="title">
             <b>{recipe?.name}</b>
           </h3>
@@ -70,7 +70,7 @@ export const Detail: React.FC<Props> = ({
         </div>
       </div>
       <div className="row mt-3 justify-content-md-center">
-        <div className="col-8">
+        <div className="col-md-8 col-sm-12">
           {recipe && recipe.medias.length > 0 && (
             <img
               src={recipe?.medias[0].media}
@@ -83,7 +83,7 @@ export const Detail: React.FC<Props> = ({
         </div>
       </div>
       <div className="row justify-content-md-center mt-3">
-        <div className="col-8">
+        <div className="col-md-8 col-sm-12">
           <h6 data-testid="description">
             <b>{recipe?.description}</b>
           </h6>
@@ -91,7 +91,7 @@ export const Detail: React.FC<Props> = ({
         </div>
       </div>
       <div className="row mt-3 justify-content-md-center detail-list">
-        <div className="col-8">
+        <div className="col-md-8 col-sm-12">
           <h4>Ingredients</h4>
           <ul>
             {recipe?.groups.map((group) =>
@@ -110,7 +110,7 @@ export const Detail: React.FC<Props> = ({
         </div>
       </div>
       <div className="row mt-3 justify-content-md-center detail-list">
-        <div className="col-8">
+        <div className="col-md-8 col-sm-12">
           <h4>Directions</h4>
           <ul>
             {recipe?.steps.map((step) => (
@@ -120,7 +120,7 @@ export const Detail: React.FC<Props> = ({
         </div>
       </div>
       <div className="row mt-3 pb-5 justify-content-md-center">
-        <div className="col-8">
+        <div className="col-md-8 col-sm-12">
           <button type="button" className="btn btn-block btn-outline-dark">
             I made it!
           </button>

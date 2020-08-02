@@ -3,12 +3,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .recipes-item {
-  width: 250px !important;
-  margin: 15px !important;
+  width: 22% !important;
+  min-width: 200px;
+  margin: 1% !important;
 }
 
 @media (max-width: 641px) {
