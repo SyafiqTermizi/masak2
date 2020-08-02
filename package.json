@@ -54,7 +54,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@syafiqtermizi/masak2-store": "^1.1.2",
+    "@syafiqtermizi/masak2-store": "github:syafiqtermizi/masak2-store",
     "bootstrap": "^5.0.0-alpha1",
     "formik": "^2.1.5",
     "popper.js": "^1.16.1",
