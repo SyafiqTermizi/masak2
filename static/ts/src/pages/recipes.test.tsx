@@ -45,6 +45,7 @@ test("Recipes component should render correctly with given props", () => {
       },
     },
     retrieveRecipes: () => null,
+    searchRecipe: () => null,
   };
   const { getAllByRole } = render(
     <HashRouter>

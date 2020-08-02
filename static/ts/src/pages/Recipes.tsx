@@ -7,8 +7,9 @@ import {
   retrieveRecipes,
   RecipeState,
   searchRecipe,
-  retrieveRecipe,
 } from "@syafiqtermizi/masak2-store/lib/recipes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import { SearchBar } from "../components/SearchBar";
 import { Recipe } from "../components/Recipe";
@@ -33,11 +34,13 @@ export const Recipes: React.FC<Props> = ({
     if (searchTerm && !isFiltered) {
       searchRecipe(searchTerm);
       setIsFiltered(true);
-    } else if (isFiltered) {
-      setSearchTerm("");
-      setIsFiltered(false);
-      retrieveRecipes();
     }
+  };
+
+  const clearFilter = () => {
+    setSearchTerm("");
+    setIsFiltered(false);
+    retrieveRecipes();
   };
 
   useEffect(() => {
@@ -65,11 +68,16 @@ export const Recipes: React.FC<Props> = ({
 
   return (
     <>
-      <SearchBar
-        handleInput={setSearchTerm}
-        handleSearch={handleSearch}
-        isFiltered={isFiltered}
-      />
+      {isFiltered ? (
+        <h2 className="mt-5 mb-3">
+          Recipes containing "{searchTerm}" &nbsp;
+          <button className="btn btn-light">
+            <FontAwesomeIcon icon={faTimes} onClick={clearFilter} />
+          </button>
+        </h2>
+      ) : (
+        <SearchBar handleInput={setSearchTerm} handleSearch={handleSearch} />
+      )}
       <div className="row recipes-container">{elem}</div>
     </>
   );
