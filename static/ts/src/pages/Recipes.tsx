@@ -9,7 +9,7 @@ import {
   searchRecipe,
 } from "@syafiqtermizi/masak2-store/lib/recipes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { SearchBar } from "../components/SearchBar";
 import { Recipe } from "../components/Recipe";
@@ -44,7 +44,11 @@ export const Recipes: React.FC<Props> = ({
   };
 
   useEffect(() => {
-    if (Object.keys(recipes).length === 1) {
+    if (
+      Object.keys(recipes).length === 1 &&
+      recipes[1] &&
+      recipes[1].name === ""
+    ) {
       retrieveRecipes();
     }
   }, []);
@@ -68,16 +72,29 @@ export const Recipes: React.FC<Props> = ({
 
   return (
     <>
-      {isFiltered ? (
-        <h2 className="mt-5 mb-3">
-          Recipes containing "{searchTerm}" &nbsp;
-          <button className="btn btn-light">
-            <FontAwesomeIcon icon={faTimes} onClick={clearFilter} />
+      <div className="row mt-5 mb-2">
+        <div className="mt-1 col-6">
+          {isFiltered ? (
+            <h2>
+              Recipes containing "{searchTerm}" &nbsp;
+              <button className="btn btn-light" onClick={clearFilter}>
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+            </h2>
+          ) : (
+            <SearchBar
+              handleInput={setSearchTerm}
+              handleSearch={handleSearch}
+            />
+          )}
+        </div>
+        <div className="col-6 text-right">
+          <button className="btn btn-light" onClick={clearFilter}>
+            Refresh &nbsp;
+            <FontAwesomeIcon icon={faSyncAlt} />
           </button>
-        </h2>
-      ) : (
-        <SearchBar handleInput={setSearchTerm} handleSearch={handleSearch} />
-      )}
+        </div>
+      </div>
       <div className="row recipes-container">{elem}</div>
     </>
   );

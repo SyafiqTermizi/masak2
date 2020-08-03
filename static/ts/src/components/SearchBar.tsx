@@ -8,29 +8,25 @@ interface Props {
 }
 
 export const SearchBar: React.FC<Props> = ({ handleInput, handleSearch }) => (
-  <div className="row mt-5 mb-3 justify-content-md-center search-bar">
-    <div className="col-12 mt-3 col-md-4">
-      <div className="input-group mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search Recipes or ingredients"
-          onChange={(e) => handleInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleSearch();
-            }
-          }}
-        />
-        <button
-          className="btn btn-outline-secondary"
-          type="button"
-          id="button-addon2"
-          onClick={handleSearch}
-        >
-          <FontAwesomeIcon icon={faSearch} />
-        </button>
-      </div>
-    </div>
+  <div className="input-group mb-3 search-bar">
+    <input
+      type="text"
+      className="form-control"
+      placeholder="Search Recipes or ingredients"
+      onChange={(e) => handleInput(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          handleSearch();
+        }
+      }}
+    />
+    <button
+      className="btn btn-outline-secondary"
+      type="button"
+      id="button-addon2"
+      onClick={handleSearch}
+    >
+      <FontAwesomeIcon icon={faSearch} />
+    </button>
   </div>
 );
