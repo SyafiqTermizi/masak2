@@ -3,7 +3,6 @@
 @import "./navbar.css";
 @import "./recipes.css";
 @import "./detail.css";
-@import "./searchbar.css";
 
 body {
   font-size: 14px;
