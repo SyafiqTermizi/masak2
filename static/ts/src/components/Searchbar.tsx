@@ -15,7 +15,7 @@ export const SearchBar: React.FC<Props> = ({
   handleSearch,
   clearSearchTerm,
 }) => (
-  <div className="row mt-5 mb-3">
+  <div className="row mt-5 mb-3 px-2">
     <div className="input-group mb-3 search-bar">
       <input
         type="text"
