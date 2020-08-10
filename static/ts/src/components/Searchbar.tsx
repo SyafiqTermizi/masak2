@@ -30,6 +30,7 @@ export const SearchBar: React.FC<Props> = ({
         }}
       />
       <button
+        data-testid="search-button"
         className="btn btn-outline-secondary"
         type="button"
         id="button-addon2"
