@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
+from tags.models import Tag
+
 User = get_user_model()
 
 
@@ -11,6 +13,7 @@ class Recipe(models.Model):
     created_by = models.ForeignKey(
         to=User, on_delete=models.SET_NULL, null=True, related_name="recipes"
     )
+    tag = models.ManyToManyField(to=Tag, related_name="recipes")
 
     def __str__(self):
         return self.name
