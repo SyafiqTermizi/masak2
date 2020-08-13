@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 
 from recipes.models import Recipe
 from steps.models import Step
+from tags.models import Tag
 from ingredients.models import (
     IngredientGroup,
     Ingredient,
@@ -82,3 +83,8 @@ def recipe_data(recipe):
         ],
         "steps": [{"step": "steps"}],
     }
+
+
+@pytest.fixture
+def tag():
+    return Tag(name="testtag")
