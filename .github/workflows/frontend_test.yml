@@ -7,5 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install modules
         run: npm install
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Run tests
         run: npm run test
