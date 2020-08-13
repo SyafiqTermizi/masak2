@@ -25,7 +25,7 @@ test("SearchBar button should change to 'clear filter' when searchTerm have valu
   const setSearchTerm = (term: string) => null;
   const clearSearchTerm = () => null;
 
-  const { getByTestId, getByPlaceholderText } = render(
+  const { getByTestId } = render(
     <SearchBar
       handleSearch={() => handleSearch()}
       setSearchTerm={setSearchTerm}

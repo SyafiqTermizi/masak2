@@ -7,6 +7,7 @@ import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
 
 import axios from "../axiosConfig";
 import { textToIngredient, textToStep } from "../utils";
+import { TagsInput } from "../components/TagsInput";
 
 interface Props {
   retrieveRecipe: (id: number) => any;
@@ -15,6 +16,7 @@ interface Props {
 const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
+  const [tags, setTags] = useState<string[]>([]);
 
   const history = useHistory();
 
@@ -23,6 +25,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
       ...values,
       groups: textToIngredient(values["ingredients"]),
       steps: textToStep(values["steps"]),
+      tags,
     };
 
     const form = new FormData();
@@ -64,7 +67,13 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
           }}
         >
           {({ setFieldValue, errors }) => (
-            <Form>
+            <Form
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                }
+              }}
+            >
               <div className="mb-3">
                 <Field
                   placeholder="Recipe Name"
@@ -146,7 +155,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="steps">steps</label>
+                <label htmlFor="steps">Steps</label>
                 <Field
                   as="textarea"
                   name="steps"
@@ -159,6 +168,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                   required={true}
                 />
               </div>
+              <TagsInput tags={tags} setTags={setTags} />
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>
