@@ -1,7 +1,5 @@
 import * as React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { render } from "@testing-library/react";
 
 import { SearchBar } from "./Searchbar";
 
