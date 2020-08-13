@@ -1,4 +1,5 @@
-![Unit Test](https://github.com/SyafiqTermizi/masak2/workflows/Unit%20Test/badge.svg)
+![Backend Test](https://github.com/SyafiqTermizi/masak2/workflows/Backend%20Test/badge.svg)
+![Front End Test](https://github.com/SyafiqTermizi/masak2/workflows/Front%20End%20Test/badge.svg)
 
 # masak2
 
