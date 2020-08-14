@@ -46,8 +46,12 @@ class RecipeSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         step_arr = validated_data.pop("steps")
         groups_arr = validated_data.pop("groups")
+        tags = validated_data.pop("tags")
 
         recipe = Recipe.objects.create(**validated_data)
+
+        for tag in tags:
+            recipe.tags.create(**tag)
 
         steps = []
         for step in step_arr:
