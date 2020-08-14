@@ -1,9 +1,11 @@
 import * as React from "react";
 import { useState } from "react";
 
+import { Tag } from "@syafiqtermizi/masak2-store/lib/tags";
+
 interface Props {
-  tags: string[];
-  setTags: (tag: string[]) => void;
+  tags: Tag[];
+  setTags: (tag: Tag[]) => void;
 }
 
 export const TagsInput: React.FC<Props> = ({ tags, setTags }) => {
@@ -14,7 +16,7 @@ export const TagsInput: React.FC<Props> = ({ tags, setTags }) => {
       <div className="mb-3">
         {tags.map((t) => (
           <span
-            key={t}
+            key={t.name}
             className="badge rounded-pill bg-secondary mr-2"
             onClick={() => {
               const tempTags = [...tags];
@@ -22,7 +24,7 @@ export const TagsInput: React.FC<Props> = ({ tags, setTags }) => {
               setTags(tempTags);
             }}
           >
-            {t}
+            {t.name}
           </span>
         ))}
       </div>
@@ -37,8 +39,11 @@ export const TagsInput: React.FC<Props> = ({ tags, setTags }) => {
           onChange={(e) => setTag(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
+              if (tags.find((t) => t.name === tag)) {
+                return;
+              }
               const tempTags = [...tags];
-              tempTags.push(tag);
+              tempTags.push({ name: tag, image: "" });
               setTags(tempTags);
               setTag("");
             }

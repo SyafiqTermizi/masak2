@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Formik, Form, Field } from "formik";
 import { useHistory } from "react-router-dom";
 import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
+import { Tag } from "@syafiqtermizi/masak2-store/lib/tags";
 
 import axios from "../axiosConfig";
 import { textToIngredient, textToStep } from "../utils";
@@ -16,7 +17,7 @@ interface Props {
 const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
   const [imageURL, setImageURL] = useState("");
   const [imageName, setImageName] = useState("");
-  const [tags, setTags] = useState<string[]>([]);
+  const [tags, setTags] = useState<Tag[]>([]);
 
   const history = useHistory();
 
