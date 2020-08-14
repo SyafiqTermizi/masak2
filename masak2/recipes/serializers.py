@@ -3,6 +3,7 @@ from rest_framework import serializers
 from steps.models import Step
 from steps.serializers import StepSerializer
 from ingredients.serializers import GroupSerializer
+from tags.serializers import TagSerializer
 from ingredients.models import (
     IngredientGroup,
     IngredientName,
@@ -26,6 +27,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     medias = MediaSerializer(many=True, read_only=True)
     steps = StepSerializer(many=True)
     groups = GroupSerializer(many=True)
+    tags = TagSerializer(many=True)
 
     class Meta:
         model = Recipe
@@ -38,6 +40,7 @@ class RecipeSerializer(serializers.ModelSerializer):
             "medias",
             "groups",
             "steps",
+            "tags",
         )
 
     def create(self, validated_data):
