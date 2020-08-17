@@ -68,6 +68,7 @@ def recipe_data(recipe):
         "name": "recipe name",
         "description": "description",
         "difficulty": 1,
+        "tags": [{"name": "test", "media": "test", "id": 1}],
         "groups": [
             {
                 "name": "",

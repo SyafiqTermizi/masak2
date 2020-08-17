@@ -5,21 +5,20 @@ from recipes.serializers import RecipeSerializer
 pytestmark = pytest.mark.django_db
 
 
-def test_serialize_recipe_serializer(recipe):
+def test_serialize_recipe_serializer(recipe_data):
     """
     RecipeSerializer should serialize data correctly
     """
+    serializer = RecipeSerializer(data=recipe_data)
+    serializer.is_valid()
+    recipe = serializer.save()
     serialized_recipe = RecipeSerializer(instance=recipe)
-    assert serialized_recipe.data == {
-        "id": None,
-        "name": recipe.name,
-        "description": "",
-        "difficulty": None,
-        "created_by": None,
-        "medias": [],
-        "groups": [],
-        "steps": [],
-    }
+
+    assert serialized_recipe.data["id"] == recipe.id
+    assert serialized_recipe.data["name"] == recipe.name
+    assert serialized_recipe.data["description"] == recipe.description
+    assert serialized_recipe.data["difficulty"] == recipe.difficulty
+    assert serialized_recipe.data["created_by"] == recipe.created_by
 
 
 def test_deserialize_recipe_serializer(recipe_data):
@@ -38,6 +37,7 @@ def test_deserialize_recipe_serializer(recipe_data):
                 "name": "recipe name",
                 "description": "description",
                 "difficulty": 1,
+                "tags": [{"name": "test", "media": "test"}],
                 "groups": [
                     {
                         "name": "",
