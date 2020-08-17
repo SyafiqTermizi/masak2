@@ -5,7 +5,11 @@ interface Props {
 }
 
 export const Tag: React.FC<Props> = ({ tag }) => (
-  <a href="#" className="tags-item mx-2 mt-2 btn btn-outline-dark btn-sm">
+  <a
+    data-testid="tag"
+    href="#"
+    className="tags-item mx-2 mt-2 btn btn-outline-dark btn-sm"
+  >
     {tag}
   </a>
 );
