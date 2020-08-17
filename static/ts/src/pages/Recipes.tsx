@@ -78,13 +78,13 @@ export const Recipes: React.FC<Props> = ({
       />
       {searchTerm && (
         <div className="row">
-          <div className="col-12 mb-3">
+          <div className="col-12 mb-2">
             <h3>You are searching for "{searchTerm}"</h3>
           </div>
         </div>
       )}
       <TagsContainer tags={tags} />
-      <div className="row recipes-container">{elem}</div>
+      <div className="row mt-3 recipes-container">{elem}</div>
     </>
   );
 };
