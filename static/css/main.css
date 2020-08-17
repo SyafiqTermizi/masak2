@@ -4,6 +4,7 @@
 @import "./recipes.css";
 @import "./detail.css";
 @import "./searchbar.css";
+@import "./tags.css";
 
 body {
   font-size: 14px;

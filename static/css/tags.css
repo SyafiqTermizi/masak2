@@ -1,0 +1,10 @@
+.tags-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.tags-item {
+  border-radius: 30px;
+}
