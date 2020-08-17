@@ -45,6 +45,14 @@ test("Recipes component should render correctly with given props", () => {
       },
     },
     searchTerm: "",
+    tags: [
+      {
+        name: "test",
+        media: "test",
+        id: 1,
+      },
+    ],
+    retrieveTags: () => null,
     retrieveRecipes: () => null,
     searchRecipe: () => null,
     setSearchTerm: () => null,
@@ -57,5 +65,5 @@ test("Recipes component should render correctly with given props", () => {
   );
 
   const links = getAllByRole("link");
-  expect(links.length).toBe(2);
+  expect(links.length).toBe(3);
 });

@@ -10,7 +10,7 @@ interface Props {
 export const TagsContainer: React.FC<Props> = ({ tags }) => (
   <div className="tags-container">
     {tags.map((tag) => (
-      <Tag tag={tag.name} />
+      <Tag key={tag.name} tag={tag.name} />
     ))}
   </div>
 );
