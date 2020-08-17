@@ -1,11 +1,13 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
 
+import { Tag } from "@syafiqtermizi/masak2-store/lib/tags";
+
 import { TagsInput } from "./TagsInput";
 
 test("TagsInput should render correctly", () => {
-  let tags: string[] = [];
-  const setTags = (params: string[]) => {
+  let tags: Tag[] = [];
+  const setTags = (params: Tag[]) => {
     tags = [...tags, ...params];
   };
   const { findByPlaceholderText } = render(
