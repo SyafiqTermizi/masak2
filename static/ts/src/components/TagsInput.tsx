@@ -30,8 +30,8 @@ export const TagsInput: React.FC<Props> = ({ tags, setTags }) => {
       </div>
       <div className="mb-3">
         <label htmlFor="tags">Tags</label>
-        <input
-          type="text"
+        <textarea
+          rows={1}
           name="tags"
           className="form-control"
           placeholder="Add a tag (press enter when done)"
@@ -43,7 +43,7 @@ export const TagsInput: React.FC<Props> = ({ tags, setTags }) => {
                 return;
               }
               const tempTags = [...tags];
-              tempTags.push({ name: tag, image: "" });
+              tempTags.push({ name: tag });
               setTags(tempTags);
               setTag("");
             }

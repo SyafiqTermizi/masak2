@@ -44,7 +44,10 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
           history.push(`/detail/${res.data.recipe}`)
         )
       )
-      .catch((err) => actions.setErrors(err.response.data));
+      .catch((err) => {
+        actions.setErrors(err.response.data);
+        console.log(err.response.data);
+      });
   };
 
   const handleFileUpload = (file: any, setValue: any) => {
@@ -68,13 +71,7 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
           }}
         >
           {({ setFieldValue, errors }) => (
-            <Form
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                }
-              }}
-            >
+            <Form>
               <div className="mb-3">
                 <Field
                   placeholder="Recipe Name"
