@@ -48,9 +48,7 @@ export const Recipes: React.FC<Props> = ({
 
   useEffect(() => {
     retrieveRecipes();
-    if (tags.length === 0) {
-      retrieveTags();
-    }
+    retrieveTags();
   }, []);
 
   const elem = Object.keys(recipes).map((id) => {
