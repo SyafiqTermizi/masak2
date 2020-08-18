@@ -1,3 +1,4 @@
+from django.db import IntegrityError
 from rest_framework import serializers
 
 from steps.models import Step
@@ -52,7 +53,10 @@ class RecipeSerializer(serializers.ModelSerializer):
 
         # create tags
         for tag in tags:
-            recipe.tags.create(**tag)
+            try:
+                recipe.tags.create(**tag)
+            except IntegrityError:
+                pass
 
         # create steps
         steps = []
