@@ -49,7 +49,7 @@ export const SearchContainer: React.FC<Props> = ({
         clearSearchTerm={() => clearSearch()}
       />
       {stateSearchTerm && (
-        <div className="row">
+        <div data-testid="search-term" className="row">
           <div className="col-12 mb-2">
             <h3>You are searching for "{stateSearchTerm}"</h3>
           </div>
