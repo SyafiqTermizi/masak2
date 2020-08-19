@@ -11,7 +11,11 @@ import {
   retrieveRecipes,
   RecipeState,
 } from "@syafiqtermizi/masak2-store/lib/recipes";
-import { retrieveTags, Tag } from "@syafiqtermizi/masak2-store/lib/tags";
+import {
+  retrieveTags,
+  selectTag,
+  Tag,
+} from "@syafiqtermizi/masak2-store/lib/tags";
 
 import { TagsContainer } from "../components/TagsContainer";
 import { Recipe } from "../components/Recipe";
@@ -26,6 +30,7 @@ interface Props {
   clearSearchTerm: () => void;
   retrieveRecipes: () => any;
   retrieveTags: () => void;
+  selectTag: (tagName: string) => void;
 }
 
 export const Recipes: React.FC<Props> = ({
@@ -37,6 +42,7 @@ export const Recipes: React.FC<Props> = ({
   clearSearchTerm,
   retrieveRecipes,
   retrieveTags,
+  selectTag,
 }) => {
   const handleSearch = () => {
     if (searchTerm.length > 2) retrieveRecipes();
@@ -83,7 +89,7 @@ export const Recipes: React.FC<Props> = ({
           </div>
         </div>
       )}
-      <TagsContainer tags={tags} />
+      <TagsContainer tags={tags} selectTag={selectTag} />
       <div className="row mt-3 recipes-container">{elem}</div>
     </>
   );
@@ -101,6 +107,7 @@ const mapDispatchToProps = {
   setSearchTerm,
   clearSearchTerm,
   retrieveTags,
+  selectTag,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipes);
