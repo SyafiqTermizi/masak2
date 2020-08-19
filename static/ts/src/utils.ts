@@ -20,3 +20,21 @@ export const textToStep = (text: string) => {
   }));
   return steps;
 };
+
+export const numberToDifficulty = (num: number): string => {
+  const rate: { [idx: string]: string } = {
+    "1": "Easy",
+    "2": "Intermediate",
+    "3": "Hard",
+  };
+  return rate[num.toString()];
+};
+
+export const numberToColor = (num: number): string => {
+  const rate: { [idx: string]: string } = {
+    "1": "bg-success",
+    "2": "bg-warning",
+    "3": "bg-danger",
+  };
+  return rate[num.toString()];
+};
