@@ -14,7 +14,9 @@ class RecipeViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
+        qs = super().get_queryset()
         search_term = self.request.query_params.get("q")
+        tag_name = self.request.query_params.get("t")
 
         if search_term:
             vectors = SearchVector("name", weight="A") + SearchVector(
@@ -23,12 +25,16 @@ class RecipeViewSet(ModelViewSet):
             query = SearchQuery(search_term, search_type="phrase")
             rank = SearchRank(vectors, query)
 
-            return set(
-                Recipe.objects.annotate(search=vectors, rank=rank)
+            qs = (
+                qs.annotate(search=vectors, rank=rank)
                 .filter(search=query)
                 .order_by("-rank")
             )
-        return super().get_queryset()
+
+        if tag_name:
+            qs = qs.filter(tags__name__iexact=tag_name)
+
+        return qs
 
     def create(self, request, *args, **kwargs):
         recipe_serializer = self.get_serializer(data=request.data)
