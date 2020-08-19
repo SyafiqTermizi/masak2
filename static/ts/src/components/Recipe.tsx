@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const Recipe: React.FC<Props> = ({ id, name, medias, description }) => (
-  <div className="recipes-item">
+  <div data-testid="recipe" className="recipes-item">
     <Link role="link" to={`/detail/${id}`}>
       <div className="card">
         {medias.length >= 1 && (
