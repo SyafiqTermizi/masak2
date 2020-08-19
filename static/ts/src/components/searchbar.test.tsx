@@ -5,6 +5,7 @@ import { SearchBar } from "./Searchbar";
 
 test("SearchBar input should have the value 'search term'", () => {
   const props = {
+    stateSearchTerm: "",
     searchTerm: "search term",
     setSearchTerm: (param: string) => null,
     handleSearch: () => null,
@@ -19,14 +20,16 @@ test("SearchBar input should have the value 'search term'", () => {
   expect(input.value).toBe("search term");
 });
 
-test("SearchBar button should change to 'clear filter' when searchTerm have value", () => {
-  let searchTerm = "values";
+test("SearchBar button should change to 'clear filter' when stateSearchTerm have value", () => {
+  const stateSearchTerm = "values";
+  let searchTerm = "";
   const handleSearch = () => null;
   const setSearchTerm = (term: string) => null;
   const clearSearchTerm = () => null;
 
   const { getByTestId } = render(
     <SearchBar
+      stateSearchTerm={stateSearchTerm}
       handleSearch={() => handleSearch()}
       setSearchTerm={setSearchTerm}
       searchTerm={searchTerm}
