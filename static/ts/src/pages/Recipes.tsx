@@ -93,7 +93,7 @@ const mapStateToProps = (state: StateTree) => ({
   recipes: state.recipe,
   medias: state.media,
   searchTerm: state.search.searchTerm,
-  tags: state.tag,
+  tags: state.tag.tags,
 });
 
 const mapDispatchToProps = {
