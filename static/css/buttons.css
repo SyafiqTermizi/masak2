@@ -11,3 +11,11 @@
 .btn-light:focus {
   box-shadow: none !important;
 }
+
+.btn-outline-dark:hover {
+  background-color: lightgray;
+}
+
+.btn-dark:hover {
+  background-color: lightgray;
+}

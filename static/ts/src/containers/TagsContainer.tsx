@@ -13,12 +13,14 @@ import { Tag } from "../components/Tag";
 
 interface Props {
   tags: iTag[];
+  selectedTag: string;
   retrieveTags: () => void;
   selectTag: (tagName: string) => void;
 }
 
 export const TagsContainer: React.FC<Props> = ({
   tags,
+  selectedTag,
   selectTag,
   retrieveTags,
 }) => {
@@ -29,7 +31,12 @@ export const TagsContainer: React.FC<Props> = ({
   return (
     <div className="tags-container">
       {tags.map((tag) => (
-        <Tag key={tag.name} tag={tag.name} handleClick={selectTag} />
+        <Tag
+          key={tag.name}
+          tag={tag.name}
+          selectedTag={selectedTag}
+          setTag={selectTag}
+        />
       ))}
     </div>
   );
@@ -37,6 +44,7 @@ export const TagsContainer: React.FC<Props> = ({
 
 const mapStateToProps = (state: StateTree) => ({
   tags: state.tag.tags,
+  selectedTag: state.tag.selectedTagName,
 });
 
 const mapDispatchToProps = {
