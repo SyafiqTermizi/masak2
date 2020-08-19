@@ -9,6 +9,7 @@ test("test Recipe component should render correctly with given props", () => {
     id: 1,
     name: "name",
     description: "lorem ipsum",
+    difficulty: 1,
     medias: [
       {
         media_type: "IMG",

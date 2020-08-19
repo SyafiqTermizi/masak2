@@ -36,6 +36,7 @@ export const RecipeContainer: React.FC<Props> = ({
           id={recipe.id}
           name={recipe.name}
           description={recipe.description}
+          difficulty={recipe.difficulty}
           medias={recipeMedias}
         />
       )
