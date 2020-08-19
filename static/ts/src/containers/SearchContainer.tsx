@@ -1,9 +1,10 @@
 import * as React from "react";
+import { useState } from "react";
 import { connect } from "react-redux";
 import { StateTree } from "@syafiqtermizi/masak2-store";
 
 import {
-  setSearchTerm,
+  setSearchTerm as setStateSearchTerm,
   clearSearchTerm,
 } from "@syafiqtermizi/masak2-store/lib/search";
 import { retrieveRecipes } from "@syafiqtermizi/masak2-store/lib/recipes";
@@ -11,39 +12,46 @@ import { retrieveRecipes } from "@syafiqtermizi/masak2-store/lib/recipes";
 import { SearchBar } from "../components/Searchbar";
 
 interface Props {
-  searchTerm: string;
-  setSearchTerm: (searchTerm: string) => void;
+  stateSearchTerm: string;
+  setStateSearchTerm: (searchTerm: string) => void;
   clearSearchTerm: () => void;
   retrieveRecipes: () => void;
 }
 
 export const SearchContainer: React.FC<Props> = ({
-  searchTerm,
+  stateSearchTerm,
   clearSearchTerm,
-  setSearchTerm,
+  setStateSearchTerm,
   retrieveRecipes,
 }) => {
+  const [localSearchTerm, setLocalSearchTerm] = useState("");
+
   const handleSearch = () => {
-    if (searchTerm.length > 2) retrieveRecipes();
+    if (localSearchTerm.length > 2) {
+      setStateSearchTerm(localSearchTerm);
+      retrieveRecipes();
+    }
   };
 
   const clearSearch = () => {
     clearSearchTerm();
+    setLocalSearchTerm("");
     retrieveRecipes();
   };
 
   return (
     <>
       <SearchBar
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
+        stateSearchTerm={stateSearchTerm}
+        searchTerm={localSearchTerm}
+        setSearchTerm={setLocalSearchTerm}
         handleSearch={() => handleSearch()}
         clearSearchTerm={() => clearSearch()}
       />
-      {searchTerm && (
+      {stateSearchTerm && (
         <div className="row">
           <div className="col-12 mb-2">
-            <h3>You are searching for "{searchTerm}"</h3>
+            <h3>You are searching for "{stateSearchTerm}"</h3>
           </div>
         </div>
       )}
@@ -52,11 +60,11 @@ export const SearchContainer: React.FC<Props> = ({
 };
 
 const mapStateToProps = (state: StateTree) => ({
-  searchTerm: state.search.searchTerm,
+  stateSearchTerm: state.search.searchTerm,
 });
 
 const mapDispatchToProps = {
-  setSearchTerm,
+  setStateSearchTerm,
   clearSearchTerm,
   retrieveRecipes,
 };

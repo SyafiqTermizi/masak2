@@ -4,6 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   searchTerm: string;
+  stateSearchTerm: string;
   setSearchTerm: (param: string) => void;
   handleSearch: () => void;
   clearSearchTerm: () => void;
@@ -11,6 +12,7 @@ interface Props {
 
 export const SearchBar: React.FC<Props> = ({
   searchTerm,
+  stateSearchTerm,
   setSearchTerm,
   handleSearch,
   clearSearchTerm,
@@ -42,7 +44,11 @@ export const SearchBar: React.FC<Props> = ({
           }
         }}
       >
-        {searchTerm ? <b>Clear filter</b> : <FontAwesomeIcon icon={faSearch} />}
+        {stateSearchTerm ? (
+          <b>Clear filter</b>
+        ) : (
+          <FontAwesomeIcon icon={faSearch} />
+        )}
       </button>
     </div>
   </div>
