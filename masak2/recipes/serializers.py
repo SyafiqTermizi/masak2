@@ -12,6 +12,8 @@ from ingredients.models import (
     IngredientUnit,
 )
 
+from tags.models import Tag
+
 from .models import Recipe, Media
 
 
@@ -28,7 +30,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     medias = MediaSerializer(many=True, read_only=True)
     steps = StepSerializer(many=True)
     groups = GroupSerializer(many=True)
-    tags = TagSerializer(many=True)
+    tags = TagSerializer(many=True, required=False)
 
     class Meta:
         model = Recipe
@@ -56,7 +58,9 @@ class RecipeSerializer(serializers.ModelSerializer):
             try:
                 recipe.tags.create(**tag)
             except IntegrityError:
-                pass
+                t = Tag.objects.get(name=tag["name"])
+                recipe.tags.add(t)
+                recipe.save()
 
         # create steps
         steps = []
@@ -81,5 +85,4 @@ class RecipeSerializer(serializers.ModelSerializer):
                 Ingredient.objects.create(
                     name=name, group=group, unit=unit, **ingredient,
                 )
-
         return recipe
