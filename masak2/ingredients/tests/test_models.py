@@ -1,5 +1,7 @@
 import pytest
 
+pytestmark = pytest.mark.django_db
+
 
 def test_unit_str(unit):
     assert unit.__str__() == str(unit)

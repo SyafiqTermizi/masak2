@@ -2,13 +2,19 @@ import pytest
 
 from ingredients.serializers import IngredientSerializer
 
+pytestmark = pytest.mark.django_db
 
-def test_serialize_ingredient_serializer(ingredient, ingredient_data):
+
+def test_serialize_ingredient_serializer(ingredient):
     """
     IngredientSerializer should serialize ingredient instance correctly
     """
     serialized_ingredient = IngredientSerializer(instance=ingredient)
-    assert serialized_ingredient.data == ingredient_data
+
+    assert serialized_ingredient.data["name"] == ingredient.name.name
+    assert serialized_ingredient.data["unit"] == ingredient.unit.name
+    assert serialized_ingredient.data["group"] == ingredient.group.id
+    assert serialized_ingredient.data["amount"] == ingredient.amount
 
 
 def test_deserialize_ingredient_serializer(ingredient_data):

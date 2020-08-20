@@ -16,28 +16,13 @@ UserModel = get_user_model()
 
 
 @pytest.fixture
-def recipe():
-    return Recipe(name="recipe", created_by=None)
-
-
-@pytest.fixture
-def group(recipe):
-    return IngredientGroup(name="group", recipe=recipe)
-
-
-@pytest.fixture
 def name():
-    return IngredientName(name="name")
+    return IngredientName.objects.create(name="name")
 
 
 @pytest.fixture
 def unit():
-    return IngredientUnit(name="unit")
-
-
-@pytest.fixture
-def ingredient(name, unit, group):
-    return Ingredient(name=name, unit=unit, amount="1", group=group)
+    return IngredientUnit.objects.create(name="unit")
 
 
 @pytest.fixture
@@ -47,7 +32,26 @@ def step(recipe):
 
 @pytest.fixture
 def user():
-    return UserModel(username="username", password="password", email="email")
+    return UserModel.objects.create(
+        username="username", password="password", email="email"
+    )
+
+
+@pytest.fixture
+def recipe(user):
+    return Recipe.objects.create(
+        name="recipe", created_by=user, description="test", difficulty=1
+    )
+
+
+@pytest.fixture
+def ingredient(name, unit, group):
+    return Ingredient.objects.create(name=name, unit=unit, amount="1", group=group)
+
+
+@pytest.fixture
+def group(recipe):
+    return IngredientGroup.objects.create(name="group", recipe=recipe)
 
 
 @pytest.fixture
