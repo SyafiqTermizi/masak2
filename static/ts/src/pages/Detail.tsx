@@ -12,7 +12,7 @@ import {
   toggleIngredient,
 } from "@syafiqtermizi/masak2-store/lib/ingredients";
 
-import { numberToDifficulty, numberToColor } from "../utils";
+import { Difficulty } from "../components/Difficulty";
 
 interface Recipe {
   id: number;
@@ -61,14 +61,8 @@ export const Detail: React.FC<Props> = ({
           </h3>
           <div className="detail-title">
             <div>
-              <span
-                className={`badge rounded-pill ${numberToColor(
-                  recipe.difficulty
-                )}`}
-              >
-                {numberToDifficulty(recipe.difficulty)}
-              </span>{" "}
-              <b>.</b> By {recipe.created_by}
+              <Difficulty difficultyNumber={recipe.difficulty} /> <b>.</b> By{" "}
+              {recipe.created_by}
             </div>
             <div className="btn btn-sm btn-light">
               <FontAwesomeIcon icon={faHeart} /> Save
