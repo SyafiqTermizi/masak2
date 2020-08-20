@@ -9,6 +9,7 @@
 <script>
   window.user = {
     username: "{{ request.user }}",
+    userId: "{{ request.user.id }}",
     isAuthenticated: "{{ request.user.is_authenticated }}" === "True" ? true: false,
   }
 </script>
