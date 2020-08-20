@@ -2,7 +2,10 @@ from django.contrib.auth.views import LogoutView
 from django.contrib.auth import login, authenticate
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import HttpResponseRedirect, render
+from rest_framework import generics
 
+from .serializers import SavedRecipeSerializer
+from .models import SavedRecipe
 from .forms import LoginForm
 
 
@@ -19,3 +22,10 @@ def login_view(request):
         form = LoginForm()
 
     return render(request, "registration/login.html", context={"form": form})
+
+
+class SavedRecipeViewAPIView(generics.RetrieveUpdateAPIView):
+    lookup_field = "user_id"
+    lookup_url_kwarg = "user_id"
+    serializer_class = SavedRecipeSerializer
+    queryset = SavedRecipe.objects.all()
