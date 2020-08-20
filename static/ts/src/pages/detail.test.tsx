@@ -5,6 +5,11 @@ import { HashRouter } from "react-router-dom";
 import { Detail } from "./Detail";
 
 test("Detail page should render correctly with given props", () => {
+  window.user = {
+    isAuthenticated: false,
+    username: "test",
+    userId: "1",
+  };
   const propsFunc = () => ({
     id: 1,
     name: "name",
