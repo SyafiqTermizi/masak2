@@ -56,10 +56,11 @@ test("Detail page should render correctly with given props", () => {
     <HashRouter>
       <Detail
         getRecipe={propsFunc}
-        toggleIngredient={(id) => null}
+        toggleIngredient={() => null}
         retrieveRecipe={(id) => id}
         savedRecipes={[1]}
-        retrieveSavedRecipes={(id) => null}
+        retrieveSavedRecipes={() => null}
+        addSavedRecipe={() => null}
       />
     </HashRouter>
   );

@@ -1,27 +1,30 @@
 import * as React from "react";
 import { useEffect } from "react";
 
+import { AxiosInstance } from "axios";
+
 import { connect } from "react-redux";
 
 import { useParams } from "react-router-dom";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { StateTree } from "@syafiqtermizi/masak2-store";
 
 import { Step } from "@syafiqtermizi/masak2-store/lib/steps";
 import { Media } from "@syafiqtermizi/masak2-store/lib/medias";
 import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
-import { retrieveSavedRecipes } from "@syafiqtermizi/masak2-store/lib/savedRecipes";
+import {
+  retrieveSavedRecipes,
+  addSavedRecipe,
+} from "@syafiqtermizi/masak2-store/lib/savedRecipes";
 import {
   Ingredient,
   toggleIngredient,
 } from "@syafiqtermizi/masak2-store/lib/ingredients";
 
-import axios from "../axiosConfig";
+import { Steps } from "../components/Steps";
 import { Difficulty } from "../components/Difficulty";
 import { GroupsIngredients } from "../components/GroupsIngredients";
-import { Steps } from "../components/Steps";
+import { SaveRecipeButton } from "../components/SaveRecipeButton";
 
 interface Recipe {
   id: number;
@@ -44,6 +47,11 @@ interface PropsFromDispatch {
   retrieveRecipe: (id: number) => any;
   toggleIngredient: (id: number) => void;
   retrieveSavedRecipes: (userId: number) => void;
+  addSavedRecipe: (
+    axios: AxiosInstance,
+    userId: number,
+    recipeId: number
+  ) => void;
 }
 
 interface PropsFromState {
@@ -58,6 +66,7 @@ export const Detail: React.FC<Props> = ({
   retrieveRecipe,
   toggleIngredient,
   retrieveSavedRecipes,
+  addSavedRecipe,
 }) => {
   const { id } = useParams();
   let recipe = getRecipe(id);
@@ -73,7 +82,8 @@ export const Detail: React.FC<Props> = ({
 
   return (
     <>
-      <div className="row mt-5 justify-content-md-center">
+      <div className="row mt-5"></div>
+      <div className="row mt-3 justify-content-md-center">
         <div className="col-md-8 col-sm-12">
           <h3 data-testid="title">
             <b>{recipe?.name}</b>
@@ -85,25 +95,11 @@ export const Detail: React.FC<Props> = ({
               )}{" "}
               <b>.</b> By {recipe.created_by}
             </div>
-            <button
-              className={`btn btn-sm ${
-                savedRecipes.includes(recipe.id)
-                  ? "btn-custom-danger"
-                  : "btn-light"
-              }`}
-              disabled={!window.user.isAuthenticated}
-              onClick={() => {
-                if (!window.user.isAuthenticated) return;
-                axios
-                  .put(`/savedrecipes/${window.user.userId}`, {
-                    recipe_id: recipe.id,
-                  })
-                  .then((res) => console.log(res))
-                  .catch((err) => console.log(err.response.data));
-              }}
-            >
-              <FontAwesomeIcon icon={faHeart} /> Save
-            </button>
+            <SaveRecipeButton
+              savedRecipes={savedRecipes}
+              recipeId={recipe.id}
+              addSavedRecipe={addSavedRecipe}
+            />
           </div>
         </div>
       </div>
@@ -120,7 +116,7 @@ export const Detail: React.FC<Props> = ({
           )}
         </div>
       </div>
-      <div className="row justify-content-md-center mt-3">
+      <div className="row mt-3 justify-content-md-center">
         <div className="col-md-8 col-sm-12">
           <h6 data-testid="description">
             <b>{recipe?.description}</b>
@@ -133,7 +129,7 @@ export const Detail: React.FC<Props> = ({
         toggleIngredient={toggleIngredient}
       />
       <Steps steps={recipe.steps} />
-      <div className="row mt-3 pb-5 justify-content-md-center">
+      <div className="row mt-3 justify-content-md-center pb-5">
         <div className="col-md-8 col-sm-12">
           <button type="button" className="btn btn-block btn-outline-dark">
             I made it!
@@ -169,6 +165,7 @@ const mapDispatchToProps = {
   retrieveRecipe,
   toggleIngredient,
   retrieveSavedRecipes,
+  addSavedRecipe,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
