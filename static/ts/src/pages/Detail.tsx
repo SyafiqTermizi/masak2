@@ -23,9 +23,10 @@ import {
 
 import { Steps } from "../components/Steps";
 import { Difficulty } from "../components/Difficulty";
-import { SaveRecipeButton } from "../components/SaveRecipeButton";
 import { DetailContainer } from "../components/DetailContainer";
+import { SaveRecipeButton } from "../components/SaveRecipeButton";
 import { GroupsIngredients } from "../components/GroupsIngredients";
+import { SingleImage } from "../components/SingleImage";
 
 interface Recipe {
   id: number;
@@ -99,17 +100,14 @@ export const Detail: React.FC<Props> = ({
           />
         </div>
       </DetailContainer>
-      <DetailContainer marginTopClass="mt-3">
-        {recipe.medias.length > 0 && (
-          <img
-            src={recipe.medias[0].media}
-            alt={recipe.name}
-            width="100%"
-            height="400px"
-            className="detail-image"
-          />
-        )}
-      </DetailContainer>
+      {recipe.medias.length > 0 && (
+        <SingleImage
+          mediaUrl={recipe.medias[0].media}
+          altName={recipe.name}
+          width="100%"
+          height="400px"
+        />
+      )}
       <DetailContainer marginTopClass="mt-3">
         <h6 data-testid="description">
           <b>{recipe.description}</b>
