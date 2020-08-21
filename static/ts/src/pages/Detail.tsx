@@ -1,12 +1,8 @@
 import * as React from "react";
 import { useEffect } from "react";
-
 import { AxiosInstance } from "axios";
-
 import { connect } from "react-redux";
-
 import { useParams } from "react-router-dom";
-
 import { StateTree } from "@syafiqtermizi/masak2-store";
 
 import { Step } from "@syafiqtermizi/masak2-store/lib/steps";
@@ -22,11 +18,10 @@ import {
 } from "@syafiqtermizi/masak2-store/lib/ingredients";
 
 import { Steps } from "../components/Steps";
-import { Difficulty } from "../components/Difficulty";
-import { DetailContainer } from "../components/DetailContainer";
-import { SaveRecipeButton } from "../components/SaveRecipeButton";
-import { GroupsIngredients } from "../components/GroupsIngredients";
 import { SingleImage } from "../components/SingleImage";
+import { DetailHeader } from "../components/DetailHeader";
+import { DetailContainer } from "../components/DetailContainer";
+import { GroupsIngredients } from "../components/GroupsIngredients";
 
 interface Recipe {
   id: number;
@@ -84,36 +79,24 @@ export const Detail: React.FC<Props> = ({
 
   return (
     <>
-      <DetailContainer marginTopClass="mt-5">
-        <h3 data-testid="title">
-          <b>{recipe?.name}</b>
-        </h3>
-        <div className="detail-title">
-          <div>
-            <Difficulty difficultyNumber={recipe.difficulty} /> <b>.</b> By{" "}
-            {recipe.created_by}
-          </div>
-          <SaveRecipeButton
-            savedRecipes={savedRecipes}
-            recipeId={recipe.id}
-            addSavedRecipe={addSavedRecipe}
+      <DetailHeader
+        name={recipe.name}
+        difficulty={recipe.difficulty}
+        created_by={recipe.created_by}
+        savedRecipes={savedRecipes}
+        id={recipe.id}
+        description={recipe.description}
+        addSavedRecipe={addSavedRecipe}
+      >
+        {recipe.medias.length > 0 && (
+          <SingleImage
+            mediaUrl={recipe.medias[0].media}
+            altName={recipe.name}
+            width="100%"
+            height="400px"
           />
-        </div>
-      </DetailContainer>
-      {recipe.medias.length > 0 && (
-        <SingleImage
-          mediaUrl={recipe.medias[0].media}
-          altName={recipe.name}
-          width="100%"
-          height="400px"
-        />
-      )}
-      <DetailContainer marginTopClass="mt-3">
-        <h6 data-testid="description">
-          <b>{recipe.description}</b>
-        </h6>
-        <hr />
-      </DetailContainer>
+        )}
+      </DetailHeader>
       <GroupsIngredients
         groups={recipe.groups}
         toggleIngredient={toggleIngredient}
@@ -131,9 +114,11 @@ export const Detail: React.FC<Props> = ({
 const mapStateToProps = (state: StateTree): PropsFromState => ({
   getRecipe: (id: string) => ({
     ...state.recipe[id],
+
     medias: Object.values(state.media).filter(
       (media) => media.recipe === parseInt(id)
     ),
+
     groups: Object.values(state.group)
       .filter((group) => group.recipe === parseInt(id))
       .map((group) => ({
@@ -142,6 +127,7 @@ const mapStateToProps = (state: StateTree): PropsFromState => ({
           (ingredient) => ingredient.group === group.id
         ),
       })),
+
     steps: Object.values(state.step).filter(
       (step) => step.recipe === parseInt(id)
     ),
