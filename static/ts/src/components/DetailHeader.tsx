@@ -36,7 +36,8 @@ export const DetailHeader: React.FC<Props> = ({
       </h3>
       <div className="detail-title">
         <div>
-          <Difficulty difficultyNumber={difficulty} /> <b>.</b> By {created_by}
+          {difficulty && <Difficulty difficultyNumber={difficulty} />} <b>.</b>{" "}
+          By {created_by}
         </div>
         <SaveRecipeButton
           savedRecipes={savedRecipes}

@@ -6,7 +6,7 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 
 import { Navbar } from "./components/Navbar";
 import RecipeForm from "./pages/Form";
-import Detail from "./pages/Detail";
+import { Detail } from "./pages/Detail";
 import { Recipes } from "./pages/Recipes";
 
 const Elem = () => (
