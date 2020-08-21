@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { Ingredient } from "@syafiqtermizi/masak2-store/lib/ingredients";
 
+import { DetailContainer } from "./DetailContainer";
+
 interface Group {
   id: number;
   name: string;
@@ -19,25 +21,23 @@ export const GroupsIngredients: React.FC<Props> = ({
   toggleIngredient,
 }) => {
   return (
-    <div className="row mt-3 justify-content-md-center detail-list">
-      <div className="col-md-8 col-sm-12">
-        <h4>Ingredients</h4>
-        <ul>
-          {groups.map((group) =>
-            group.ingredients.map((ingredient) => (
-              <li
-                data-testid="ingredient"
-                className={ingredient.isDone ? "ingredient-done" : ""}
-                key={ingredient.id}
-                onClick={() => toggleIngredient(ingredient.id)}
-              >
-                {ingredient.amount} {ingredient.unit} {ingredient.name}
-              </li>
-            ))
-          )}
-        </ul>
-        <hr />
-      </div>
-    </div>
+    <DetailContainer marginTopClass="mt-3" extraClass="detail-list">
+      <h4>Ingredients</h4>
+      <ul>
+        {groups.map((group) =>
+          group.ingredients.map((ingredient) => (
+            <li
+              data-testid="ingredient"
+              className={ingredient.isDone ? "ingredient-done" : ""}
+              key={ingredient.id}
+              onClick={() => toggleIngredient(ingredient.id)}
+            >
+              {ingredient.amount} {ingredient.unit} {ingredient.name}
+            </li>
+          ))
+        )}
+      </ul>
+      <hr />
+    </DetailContainer>
   );
 };

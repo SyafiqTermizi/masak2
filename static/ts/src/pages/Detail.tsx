@@ -23,8 +23,9 @@ import {
 
 import { Steps } from "../components/Steps";
 import { Difficulty } from "../components/Difficulty";
-import { GroupsIngredients } from "../components/GroupsIngredients";
 import { SaveRecipeButton } from "../components/SaveRecipeButton";
+import { DetailContainer } from "../components/DetailContainer";
+import { GroupsIngredients } from "../components/GroupsIngredients";
 
 interface Recipe {
   id: number;
@@ -82,60 +83,49 @@ export const Detail: React.FC<Props> = ({
 
   return (
     <>
-      <div className="row mt-5"></div>
-      <div className="row mt-3 justify-content-md-center">
-        <div className="col-md-8 col-sm-12">
-          <h3 data-testid="title">
-            <b>{recipe?.name}</b>
-          </h3>
-          <div className="detail-title">
-            <div>
-              {recipe.difficulty && (
-                <Difficulty difficultyNumber={recipe.difficulty} />
-              )}{" "}
-              <b>.</b> By {recipe.created_by}
-            </div>
-            <SaveRecipeButton
-              savedRecipes={savedRecipes}
-              recipeId={recipe.id}
-              addSavedRecipe={addSavedRecipe}
-            />
+      <DetailContainer marginTopClass="mt-5">
+        <h3 data-testid="title">
+          <b>{recipe?.name}</b>
+        </h3>
+        <div className="detail-title">
+          <div>
+            <Difficulty difficultyNumber={recipe.difficulty} /> <b>.</b> By{" "}
+            {recipe.created_by}
           </div>
+          <SaveRecipeButton
+            savedRecipes={savedRecipes}
+            recipeId={recipe.id}
+            addSavedRecipe={addSavedRecipe}
+          />
         </div>
-      </div>
-      <div className="row mt-3 justify-content-md-center">
-        <div className="col-md-8 col-sm-12">
-          {recipe.medias.length > 0 && (
-            <img
-              src={recipe?.medias[0].media}
-              alt={recipe?.name}
-              width="100%"
-              height="400px"
-              className="detail-image"
-            />
-          )}
-        </div>
-      </div>
-      <div className="row mt-3 justify-content-md-center">
-        <div className="col-md-8 col-sm-12">
-          <h6 data-testid="description">
-            <b>{recipe?.description}</b>
-          </h6>
-          <hr />
-        </div>
-      </div>
+      </DetailContainer>
+      <DetailContainer marginTopClass="mt-3">
+        {recipe.medias.length > 0 && (
+          <img
+            src={recipe.medias[0].media}
+            alt={recipe.name}
+            width="100%"
+            height="400px"
+            className="detail-image"
+          />
+        )}
+      </DetailContainer>
+      <DetailContainer marginTopClass="mt-3">
+        <h6 data-testid="description">
+          <b>{recipe.description}</b>
+        </h6>
+        <hr />
+      </DetailContainer>
       <GroupsIngredients
         groups={recipe.groups}
         toggleIngredient={toggleIngredient}
       />
       <Steps steps={recipe.steps} />
-      <div className="row mt-3 justify-content-md-center pb-5">
-        <div className="col-md-8 col-sm-12">
-          <button type="button" className="btn btn-block btn-outline-dark">
-            I made it!
-          </button>
-        </div>
-      </div>
+      <DetailContainer marginTopClass="mt-3" extraClass="pb-5">
+        <button type="button" className="btn btn-block btn-outline-dark">
+          I made it!
+        </button>
+      </DetailContainer>
     </>
   );
 };
