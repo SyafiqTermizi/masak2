@@ -1,17 +1,24 @@
 import * as React from "react";
+import { useEffect } from "react";
+
 import { connect } from "react-redux";
+
 import { useParams } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { StateTree } from "@syafiqtermizi/masak2-store";
+
 import { Step } from "@syafiqtermizi/masak2-store/lib/steps";
 import { Media } from "@syafiqtermizi/masak2-store/lib/medias";
 import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
+import { retrieveSavedRecipes } from "@syafiqtermizi/masak2-store/lib/savedRecipes";
 import {
   Ingredient,
   toggleIngredient,
 } from "@syafiqtermizi/masak2-store/lib/ingredients";
 
+import axios from "../axiosConfig";
 import { Difficulty } from "../components/Difficulty";
 
 interface Recipe {
@@ -34,23 +41,33 @@ interface Recipe {
 interface PropsFromDispatch {
   retrieveRecipe: (id: number) => any;
   toggleIngredient: (id: number) => void;
+  retrieveSavedRecipes: (userId: number) => void;
 }
 
 interface PropsFromState {
   getRecipe: (id: string) => Recipe;
+  savedRecipes: number[];
 }
 interface Props extends PropsFromState, PropsFromDispatch {}
 
 export const Detail: React.FC<Props> = ({
   getRecipe,
+  savedRecipes,
   retrieveRecipe,
   toggleIngredient,
+  retrieveSavedRecipes,
 }) => {
   const { id } = useParams();
   let recipe = getRecipe(id);
-  if (!recipe.name) {
-    retrieveRecipe(parseInt(id)).then(() => (recipe = getRecipe(id)));
-  }
+
+  useEffect(() => {
+    if (!recipe.name) {
+      retrieveRecipe(parseInt(id)).then(() => (recipe = getRecipe(id)));
+    }
+    if (window.user.userId) {
+      retrieveSavedRecipes(parseInt(window.user.userId));
+    }
+  });
 
   return (
     <>
@@ -61,12 +78,30 @@ export const Detail: React.FC<Props> = ({
           </h3>
           <div className="detail-title">
             <div>
-              <Difficulty difficultyNumber={recipe.difficulty} /> <b>.</b> By{" "}
-              {recipe.created_by}
+              {recipe.difficulty && (
+                <Difficulty difficultyNumber={recipe.difficulty} />
+              )}{" "}
+              <b>.</b> By {recipe.created_by}
             </div>
-            <div className="btn btn-sm btn-light">
+            <button
+              className={`btn btn-sm ${
+                savedRecipes.includes(recipe.id)
+                  ? "btn-custom-danger"
+                  : "btn-light"
+              }`}
+              disabled={!window.user.isAuthenticated}
+              onClick={() => {
+                if (!window.user.isAuthenticated) return;
+                axios
+                  .put(`/savedrecipes/${window.user.userId}`, {
+                    recipe_id: recipe.id,
+                  })
+                  .then((res) => console.log(res))
+                  .catch((err) => console.log(err.response.data));
+              }}
+            >
               <FontAwesomeIcon icon={faHeart} /> Save
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -149,11 +184,13 @@ const mapStateToProps = (state: StateTree): PropsFromState => ({
       (step) => step.recipe === parseInt(id)
     ),
   }),
+  savedRecipes: state.savedRecipes.recipes,
 });
 
 const mapDispatchToProps = {
   retrieveRecipe,
   toggleIngredient,
+  retrieveSavedRecipes,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);

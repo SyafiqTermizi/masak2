@@ -19,3 +19,18 @@
 .btn-dark:hover {
   background-color: lightgray;
 }
+
+.btn-custom-danger {
+  border-radius: 25px;
+  border: none;
+  background-color: palevioletred;
+  color: white;
+}
+
+.btn-custom-danger:hover {
+  background-color: palevioletred;
+}
+
+.btn-custom-danger:focus {
+  box-shadow: none !important;
+}
