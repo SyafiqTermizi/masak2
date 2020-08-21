@@ -58,6 +58,8 @@ test("Detail page should render correctly with given props", () => {
         getRecipe={propsFunc}
         toggleIngredient={(id) => null}
         retrieveRecipe={(id) => id}
+        savedRecipes={[1]}
+        retrieveSavedRecipes={(id) => null}
       />
     </HashRouter>
   );

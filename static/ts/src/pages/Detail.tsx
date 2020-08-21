@@ -20,6 +20,8 @@ import {
 
 import axios from "../axiosConfig";
 import { Difficulty } from "../components/Difficulty";
+import { GroupsIngredients } from "../components/GroupsIngredients";
+import { Steps } from "../components/Steps";
 
 interface Recipe {
   id: number;
@@ -67,7 +69,7 @@ export const Detail: React.FC<Props> = ({
     if (window.user.userId) {
       retrieveSavedRecipes(parseInt(window.user.userId));
     }
-  });
+  }, []);
 
   return (
     <>
@@ -107,7 +109,7 @@ export const Detail: React.FC<Props> = ({
       </div>
       <div className="row mt-3 justify-content-md-center">
         <div className="col-md-8 col-sm-12">
-          {recipe && recipe.medias.length > 0 && (
+          {recipe.medias.length > 0 && (
             <img
               src={recipe?.medias[0].media}
               alt={recipe?.name}
@@ -126,35 +128,11 @@ export const Detail: React.FC<Props> = ({
           <hr />
         </div>
       </div>
-      <div className="row mt-3 justify-content-md-center detail-list">
-        <div className="col-md-8 col-sm-12">
-          <h4>Ingredients</h4>
-          <ul>
-            {recipe?.groups.map((group) =>
-              group.ingredients.map((ingredient) => (
-                <li
-                  className={ingredient.isDone ? "ingredient-done" : ""}
-                  key={ingredient.id}
-                  onClick={() => toggleIngredient(ingredient.id)}
-                >
-                  {ingredient.amount} {ingredient.unit} {ingredient.name}
-                </li>
-              ))
-            )}
-          </ul>
-          <hr />
-        </div>
-      </div>
-      <div className="row mt-3 justify-content-md-center detail-list">
-        <div className="col-md-8 col-sm-12">
-          <h4>Directions</h4>
-          <ul>
-            {recipe?.steps.map((step) => (
-              <li key={step.id}>{step.step}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <GroupsIngredients
+        groups={recipe.groups}
+        toggleIngredient={toggleIngredient}
+      />
+      <Steps steps={recipe.steps} />
       <div className="row mt-3 pb-5 justify-content-md-center">
         <div className="col-md-8 col-sm-12">
           <button type="button" className="btn btn-block btn-outline-dark">
