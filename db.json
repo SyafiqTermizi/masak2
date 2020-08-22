@@ -3,31 +3,38 @@
   "model": "users.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$216000$SOBSc4MARmRf$pWONfE+AmyqbsdNtaPT3emFUoGxbLJFvgJk0MrhMsgk=",
-    "last_login": "2020-08-18T08:18:18.314Z",
+    "password": "pbkdf2_sha256$216000$c09KdG22j0uv$BLW77cuQKOfo4TCMG7d9h6rq8BDICI4Je6DIMBQPQQw=",
+    "last_login": "2020-08-22T17:03:36.775Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
     "last_name": "",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-08-18T07:53:25.571Z",
+    "date_joined": "2020-08-22T17:02:01.723Z",
     "email": "admin@example.com",
     "groups": [],
     "user_permissions": []
   }
 },
 {
+  "model": "users.savedrecipe",
+  "pk": 2,
+  "fields": {
+    "user": 1
+  }
+},
+{
   "model": "recipes.recipe",
   "pk": 1,
   "fields": {
-    "name": "Frozen Vegetable Stir-Fry",
-    "description": "Soy sauce and peanut butter add a nice Thai-style flavor to this stir-fry. Using frozen vegetables makes it a very quick and tasty vegetable side dish.",
-    "difficulty": 1,
+    "name": "Air Fryer Chicken Thighs",
+    "description": "Tasty, quick, chicken thighs, with juicy meat and crispy skin; you will love this chicken that is ready for the table in less than 30 minutes!",
+    "difficulty": 3,
     "created_by": 1,
+    "created_at": "2020-08-22T17:08:45.153Z",
     "tags": [
-      1,
-      2
+      1
     ]
   }
 },
@@ -35,12 +42,13 @@
   "model": "recipes.recipe",
   "pk": 2,
   "fields": {
-    "name": "Air Fryer Lemon Pepper Shrimp",
-    "description": "These easy-to-make air fryer shrimp can be served with a salad or on top of rice or pasta. Also great as a cold appetizer.",
+    "name": "Air Fryer Potato Wedges",
+    "description": "Perfectly crisp and seasoned potato wedges straight out of your air fryer. It doesn't get any easier than this!",
     "difficulty": 2,
     "created_by": 1,
+    "created_at": "2020-08-22T17:11:43.440Z",
     "tags": [
-      3
+      1
     ]
   }
 },
@@ -48,11 +56,13 @@
   "model": "recipes.recipe",
   "pk": 3,
   "fields": {
-    "name": "Blueberry Muffin Cake",
-    "description": "A delicious breakfast coffee cake that tastes like your favorite blueberry muffins.",
+    "name": "Spicy Grilled Shrimp",
+    "description": "So fast and easy to prepare, these shrimp are destined to be the hit of any barbeque. And, weather not permitting, they work great under the broiler, too.",
     "difficulty": 2,
     "created_by": 1,
+    "created_at": "2020-08-22T17:17:32.355Z",
     "tags": [
+      3,
       4
     ]
   }
@@ -61,11 +71,130 @@
   "model": "recipes.recipe",
   "pk": 4,
   "fields": {
-    "name": "Spiced Orange Olive Oil Cake",
-    "description": "With just a touch of sweetness, this olive oil cake has a hint of orange zest and five-spice powder. If you don't eat it all the first day, cut it into cubes and layer with whipped cream and oranges, or toast and slather with honey.",
+    "name": "Chicken Souvlaki with Tzatziki Sauce",
+    "description": "Greek kabobs. Fantastic flavor for chicken. The marinade can also be used for pork.",
     "difficulty": 3,
     "created_by": 1,
-    "tags": []
+    "created_at": "2020-08-22T17:20:39.992Z",
+    "tags": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 5,
+  "fields": {
+    "name": "Eggs Benedict Casserole",
+    "description": "Overnight Eggs Benedict! Easy to make ahead, perfect for brunch or a special occasion or overnight house guests.",
+    "difficulty": 3,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:24:52.601Z",
+    "tags": [
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 6,
+  "fields": {
+    "name": "Strawberry Oatmeal Breakfast Smoothie",
+    "description": "This is a fast vegan smoothie with a deep pink color and a rich, creamy texture. VERY filling, and perfect for people in a rush in the morning. You don't have to give up a good breakfast when it's this fast to make! I use vitamin fortified soy milk.",
+    "difficulty": 1,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:27:36.988Z",
+    "tags": [
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 7,
+  "fields": {
+    "name": "Waffles",
+    "description": "You can keep the batter covered in the fridge for up to a week. Just be sure to whisk well before using it again. You may also use whole wheat flour for this recipe.",
+    "difficulty": 1,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:30:22.328Z",
+    "tags": [
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 8,
+  "fields": {
+    "name": "Easy Sugar Cookies",
+    "description": "Quick and easy sugar cookies! They are really good, plain or with candies in them. My friend uses chocolate mints on top, and they're great!",
+    "difficulty": 1,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:33:53.704Z",
+    "tags": [
+      13
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 9,
+  "fields": {
+    "name": "Classic Peanut Butter Cookies",
+    "description": "Makes great cookies!",
+    "difficulty": 2,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:36:34.538Z",
+    "tags": [
+      13
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 10,
+  "fields": {
+    "name": "The Best Lemon Bars",
+    "description": "Tart, rich and perfection, all rolled into one! Wow your friends with this simple recipe. Hint: No Substitutions!",
+    "difficulty": 2,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:41:00.822Z",
+    "tags": [
+      13
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 11,
+  "fields": {
+    "name": "Milk Cake",
+    "description": "This cake is made with three layers: Cake, filling and topping. There are 4 types of milk in the filling and topping. This is an excellent cake for milk lovers!",
+    "difficulty": 3,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:45:54.151Z",
+    "tags": [
+      16
+    ]
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 12,
+  "fields": {
+    "name": "One Bowl Chocolate Cake",
+    "description": "This is a rich and moist chocolate cake. It only takes a few minutes to prepare the batter. Frost with your favorite chocolate frosting.",
+    "difficulty": 2,
+    "created_by": 1,
+    "created_at": "2020-08-22T17:48:55.108Z",
+    "tags": [
+      16
+    ]
   }
 },
 {
@@ -73,7 +202,7 @@
   "pk": 1,
   "fields": {
     "media_type": "IMG",
-    "media": "recipes/frozen-vege.jpg",
+    "media": "recipes/chickenthigh.jpg",
     "recipe": 1
   }
 },
@@ -82,7 +211,7 @@
   "pk": 2,
   "fields": {
     "media_type": "IMG",
-    "media": "recipes/AirFryerLemonPepperShrimp.jpg",
+    "media": "recipes/potatowedges.jpg",
     "recipe": 2
   }
 },
@@ -91,7 +220,7 @@
   "pk": 3,
   "fields": {
     "media_type": "IMG",
-    "media": "recipes/Blueberry-Muffin-Cake.jpg",
+    "media": "recipes/Grilled-Spicy-Shrimp.jpg",
     "recipe": 3
   }
 },
@@ -100,8 +229,80 @@
   "pk": 4,
   "fields": {
     "media_type": "IMG",
-    "media": "recipes/spicedorangecake.jpg",
+    "media": "recipes/souvlaki.jpg",
     "recipe": 4
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 5,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/eggsbenedict.jpg",
+    "recipe": 5
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 6,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/smoothie.jpg",
+    "recipe": 6
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 7,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/waffles.jpg",
+    "recipe": 7
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 8,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/sugarcookie.jpg",
+    "recipe": 8
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 9,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/peanutbuttercookie.jpg",
+    "recipe": 9
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 10,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/lemonbars.jpg",
+    "recipe": 10
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 11,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/whitecake.jpg",
+    "recipe": 11
+  }
+},
+{
+  "model": "recipes.media",
+  "pk": 12,
+  "fields": {
+    "media_type": "IMG",
+    "media": "recipes/cake.jpg",
+    "recipe": 12
   }
 },
 {
@@ -137,248 +338,697 @@
   }
 },
 {
+  "model": "ingredients.ingredientgroup",
+  "pk": 5,
+  "fields": {
+    "name": "",
+    "recipe": 5
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 6,
+  "fields": {
+    "name": "",
+    "recipe": 6
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 7,
+  "fields": {
+    "name": "",
+    "recipe": 7
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 8,
+  "fields": {
+    "name": "",
+    "recipe": 8
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 9,
+  "fields": {
+    "name": "",
+    "recipe": 9
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 10,
+  "fields": {
+    "name": "",
+    "recipe": 10
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 11,
+  "fields": {
+    "name": "",
+    "recipe": 11
+  }
+},
+{
+  "model": "ingredients.ingredientgroup",
+  "pk": 12,
+  "fields": {
+    "name": "",
+    "recipe": 12
+  }
+},
+{
   "model": "ingredients.ingredientname",
   "pk": 1,
   "fields": {
-    "name": "2 tablespoons soy sauce"
+    "name": "4 eaches skin-on, boneless chicken thighs"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 2,
   "fields": {
-    "name": "1 tablespoon brown sugar"
+    "name": "2 teaspoons extra-virgin olive oil"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 3,
   "fields": {
-    "name": "2 teaspoons garlic powder"
+    "name": "1 teaspoon smoked paprika"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 4,
   "fields": {
-    "name": "2 teaspoons peanut butter"
+    "name": "¾ teaspoon garlic powder"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 5,
   "fields": {
-    "name": "2 teaspoons olive oil"
+    "name": "½ teaspoon salt"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 6,
   "fields": {
-    "name": "1 (16 ounces) package frozen mixed vegetables"
+    "name": "½ teaspoon ground black pepper"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 7,
   "fields": {
-    "name": "1 tablespoon olive oil"
+    "name": "2 medium Russet potatoes, cut into wedges"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 8,
   "fields": {
-    "name": "1 lemon, juiced"
+    "name": "1 ½ tablespoon olive oil"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 9,
   "fields": {
-    "name": "1 teaspoon lemon pepper"
+    "name": "½ teaspoon paprika"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 10,
   "fields": {
-    "name": "¼ teaspoon paprika"
+    "name": "½ teaspoon parsley flakes"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 11,
   "fields": {
-    "name": "¼ teaspoon garlic powder"
+    "name": "½ teaspoon chili powder"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 12,
   "fields": {
-    "name": "12 ounces uncooked medium shrimp, peeled and deveined"
+    "name": "½ teaspoon of sea salt"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 13,
   "fields": {
-    "name": "1 lemon, sliced"
+    "name": "⅛ teaspoon ground black pepper"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 14,
   "fields": {
-    "name": "1 serving cooking spray"
+    "name": "1 large clove garlic"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 15,
   "fields": {
-    "name": "1 cup blueberries"
+    "name": "1 teaspoon coarse salt"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 16,
   "fields": {
-    "name": "1 ½ cups all-purpose flour, divided"
+    "name": "½ teaspoon cayenne pepper"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 17,
   "fields": {
-    "name": "½ cup white sugar"
+    "name": "1 teaspoon paprika"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 18,
   "fields": {
-    "name": "¼ cup of vegetable oil"
+    "name": "2 tablespoons olive oil"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 19,
   "fields": {
-    "name": "½ cup milk"
+    "name": "2 teaspoons lemon juice"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 20,
   "fields": {
-    "name": "1 egg"
+    "name": "2 pounds large shrimp, peeled and deveined"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 21,
   "fields": {
-    "name": "1 teaspoon vanilla extract"
+    "name": "8 wedges lemon, for garnish"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 22,
   "fields": {
-    "name": "3 teaspoons baking powder"
+    "name": "¼ cup olive oil"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 23,
   "fields": {
-    "name": "½ teaspoon salt"
+    "name": "2 tablespoons lemon juice"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 24,
   "fields": {
-    "name": "½ cup brown sugar"
+    "name": "2 cloves garlic, minced"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 25,
   "fields": {
-    "name": "⅓ cup all-purpose flour"
+    "name": "1 teaspoon dried oregano"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 26,
   "fields": {
-    "name": "2 teaspoons cinnamon"
+    "name": "1 ½ pounds skinless, boneless chicken breast halves - cut into bite-sized pieces"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 27,
   "fields": {
-    "name": "¼ cup butter"
+    "name": "1 (6 ounce) container plain Greek-style yogurt"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 28,
   "fields": {
-    "name": "4 large eggs eggs"
+    "name": "½ cucumber - peeled, seeded, and grated"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 29,
   "fields": {
-    "name": "¾ cup white sugar"
+    "name": "1 tablespoon olive oil"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 30,
   "fields": {
-    "name": "⅔ cup extra-virgin olive oil"
+    "name": "2 teaspoons white vinegar"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 31,
   "fields": {
-    "name": "2 tablespoons fresh orange zest"
+    "name": "1 clove garlic, minced"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 32,
   "fields": {
-    "name": "1 teaspoon Chinese five-spice powder"
+    "name": "1 pinch salt"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 33,
   "fields": {
-    "name": "1 ½ cups all-purpose flour"
+    "name": "6 eaches wooden skewers, or as needed"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 34,
   "fields": {
-    "name": "1 tablespoon baking powder"
+    "name": "1 serving cooking spray"
   }
 },
 {
   "model": "ingredients.ingredientname",
   "pk": 35,
   "fields": {
-    "name": "1 pinch salt"
+    "name": "8 large eggs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 36,
+  "fields": {
+    "name": "2 cups of milk"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 37,
+  "fields": {
+    "name": "3 medium (4-1/8\" long)s green onions, chopped"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 38,
+  "fields": {
+    "name": "1 teaspoon onion powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 39,
+  "fields": {
+    "name": "1 teaspoon salt"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 40,
+  "fields": {
+    "name": "¾ pound Canadian bacon, cut into 1/2-inch dice"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 41,
+  "fields": {
+    "name": "6 eaches English muffins, cut into 1/2-inch dice"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 42,
+  "fields": {
+    "name": "1 (.9 ounce) package hollandaise sauce mix"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 43,
+  "fields": {
+    "name": "1 cup milk"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 44,
+  "fields": {
+    "name": "¼ cup margarine"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 45,
+  "fields": {
+    "name": "1 cup soy milk"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 46,
+  "fields": {
+    "name": "½ cup rolled oats"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 47,
+  "fields": {
+    "name": "1 banana, broken into chunks"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 48,
+  "fields": {
+    "name": "14 berry (blank)s frozen strawberries"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 49,
+  "fields": {
+    "name": "½ teaspoon vanilla extract"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 50,
+  "fields": {
+    "name": "1 ½ teaspoons white sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 51,
+  "fields": {
+    "name": "2 large eggs eggs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 52,
+  "fields": {
+    "name": "2 cups all-purpose flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 53,
+  "fields": {
+    "name": "1 ¾ cups milk"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 54,
+  "fields": {
+    "name": "½ cup of vegetable oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 55,
+  "fields": {
+    "name": "1 tablespoon white sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 56,
+  "fields": {
+    "name": "4 teaspoons baking powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 57,
+  "fields": {
+    "name": "¼ teaspoon salt"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 58,
+  "fields": {
+    "name": "2 ¾ cups all-purpose flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 59,
+  "fields": {
+    "name": "1 teaspoon baking soda"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 60,
+  "fields": {
+    "name": "½ teaspoon baking powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 61,
+  "fields": {
+    "name": "1 cup butter, softened"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 62,
+  "fields": {
+    "name": "1 ½ cups white sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 63,
+  "fields": {
+    "name": "1 egg"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 64,
+  "fields": {
+    "name": "1 teaspoon vanilla extract"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 65,
+  "fields": {
+    "name": "1 cup unsalted butter"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 66,
+  "fields": {
+    "name": "1 cup crunchy peanut butter"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 67,
+  "fields": {
+    "name": "1 cup white sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 68,
+  "fields": {
+    "name": "1 cup packed brown sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 69,
+  "fields": {
+    "name": "2 ½ cups all-purpose flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 70,
+  "fields": {
+    "name": "1 teaspoon baking powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 71,
+  "fields": {
+    "name": "1 ½ teaspoons baking soda"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 72,
+  "fields": {
+    "name": "½ cup white sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 73,
+  "fields": {
+    "name": "4 large eggs eggs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 74,
+  "fields": {
+    "name": "¼ cup all-purpose flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 75,
+  "fields": {
+    "name": "2 fruit, without seeds lemons, juiced"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 76,
+  "fields": {
+    "name": "1 ½ cups all-purpose flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 77,
+  "fields": {
+    "name": "½ cup unsalted butter"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 78,
+  "fields": {
+    "name": "5 large eggs eggs"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 79,
+  "fields": {
+    "name": "2 cups whole milk"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 80,
+  "fields": {
+    "name": "1 (14 ounce) can sweetened condensed milk"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 81,
+  "fields": {
+    "name": "1 (12 fluid ounce) can evaporate milk"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 82,
+  "fields": {
+    "name": "1 ½ cups heavy whipping cream"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 83,
+  "fields": {
+    "name": "1 cup white"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 84,
+  "fields": {
+    "name": "2 cups white sugar"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 85,
+  "fields": {
+    "name": "1 ¾ cups all-purpose flour"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 86,
+  "fields": {
+    "name": "¾ cup unsweetened cocoa powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 87,
+  "fields": {
+    "name": "1 ½ teaspoons baking powder"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 88,
+  "fields": {
+    "name": "½ cup vegetable oil"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 89,
+  "fields": {
+    "name": "2 teaspoons vanilla extract"
+  }
+},
+{
+  "model": "ingredients.ingredientname",
+  "pk": 90,
+  "fields": {
+    "name": "1 cup boiling water"
   }
 },
 {
@@ -620,7 +1270,7 @@
     "unit": null,
     "amount": "",
     "note": "",
-    "group": 3
+    "group": 4
   }
 },
 {
@@ -631,7 +1281,7 @@
     "unit": null,
     "amount": "",
     "note": "",
-    "group": 3
+    "group": 4
   }
 },
 {
@@ -642,7 +1292,7 @@
     "unit": null,
     "amount": "",
     "note": "",
-    "group": 3
+    "group": 4
   }
 },
 {
@@ -653,36 +1303,36 @@
     "unit": null,
     "amount": "",
     "note": "",
-    "group": 3
+    "group": 4
   }
 },
 {
   "model": "ingredients.ingredient",
   "pk": 26,
   "fields": {
-    "name": 26,
+    "name": 5,
     "unit": null,
     "amount": "",
     "note": "",
-    "group": 3
+    "group": 4
   }
 },
 {
   "model": "ingredients.ingredient",
   "pk": 27,
   "fields": {
-    "name": 27,
+    "name": 26,
     "unit": null,
     "amount": "",
     "note": "",
-    "group": 3
+    "group": 4
   }
 },
 {
   "model": "ingredients.ingredient",
   "pk": 28,
   "fields": {
-    "name": 28,
+    "name": 27,
     "unit": null,
     "amount": "",
     "note": "",
@@ -693,7 +1343,7 @@
   "model": "ingredients.ingredient",
   "pk": 29,
   "fields": {
-    "name": 29,
+    "name": 28,
     "unit": null,
     "amount": "",
     "note": "",
@@ -704,7 +1354,7 @@
   "model": "ingredients.ingredient",
   "pk": 30,
   "fields": {
-    "name": 30,
+    "name": 29,
     "unit": null,
     "amount": "",
     "note": "",
@@ -715,7 +1365,7 @@
   "model": "ingredients.ingredient",
   "pk": 31,
   "fields": {
-    "name": 31,
+    "name": 30,
     "unit": null,
     "amount": "",
     "note": "",
@@ -726,7 +1376,7 @@
   "model": "ingredients.ingredient",
   "pk": 32,
   "fields": {
-    "name": 32,
+    "name": 31,
     "unit": null,
     "amount": "",
     "note": "",
@@ -737,7 +1387,7 @@
   "model": "ingredients.ingredient",
   "pk": 33,
   "fields": {
-    "name": 33,
+    "name": 32,
     "unit": null,
     "amount": "",
     "note": "",
@@ -748,7 +1398,7 @@
   "model": "ingredients.ingredient",
   "pk": 34,
   "fields": {
-    "name": 34,
+    "name": 33,
     "unit": null,
     "amount": "",
     "note": "",
@@ -759,11 +1409,781 @@
   "model": "ingredients.ingredient",
   "pk": 35,
   "fields": {
+    "name": 34,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 36,
+  "fields": {
     "name": 35,
     "unit": null,
     "amount": "",
     "note": "",
-    "group": 4
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 37,
+  "fields": {
+    "name": 36,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 38,
+  "fields": {
+    "name": 37,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 39,
+  "fields": {
+    "name": 38,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 40,
+  "fields": {
+    "name": 39,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 41,
+  "fields": {
+    "name": 40,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 42,
+  "fields": {
+    "name": 41,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 43,
+  "fields": {
+    "name": 9,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 44,
+  "fields": {
+    "name": 42,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 45,
+  "fields": {
+    "name": 43,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 46,
+  "fields": {
+    "name": 44,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 5
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 47,
+  "fields": {
+    "name": 45,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 48,
+  "fields": {
+    "name": 46,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 49,
+  "fields": {
+    "name": 47,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 50,
+  "fields": {
+    "name": 48,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 51,
+  "fields": {
+    "name": 49,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 52,
+  "fields": {
+    "name": 50,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 6
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 53,
+  "fields": {
+    "name": 51,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 54,
+  "fields": {
+    "name": 52,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 55,
+  "fields": {
+    "name": 53,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 56,
+  "fields": {
+    "name": 54,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 57,
+  "fields": {
+    "name": 55,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 58,
+  "fields": {
+    "name": 56,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 59,
+  "fields": {
+    "name": 57,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 60,
+  "fields": {
+    "name": 49,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 7
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 61,
+  "fields": {
+    "name": 58,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 62,
+  "fields": {
+    "name": 59,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 63,
+  "fields": {
+    "name": 60,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 64,
+  "fields": {
+    "name": 61,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 65,
+  "fields": {
+    "name": 62,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 66,
+  "fields": {
+    "name": 63,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 67,
+  "fields": {
+    "name": 64,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 8
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 68,
+  "fields": {
+    "name": 65,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 69,
+  "fields": {
+    "name": 66,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 70,
+  "fields": {
+    "name": 67,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 71,
+  "fields": {
+    "name": 68,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 72,
+  "fields": {
+    "name": 51,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 73,
+  "fields": {
+    "name": 69,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 74,
+  "fields": {
+    "name": 70,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 75,
+  "fields": {
+    "name": 5,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 76,
+  "fields": {
+    "name": 71,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 9
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 77,
+  "fields": {
+    "name": 61,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 10
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 78,
+  "fields": {
+    "name": 72,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 10
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 79,
+  "fields": {
+    "name": 52,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 10
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 80,
+  "fields": {
+    "name": 73,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 10
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 81,
+  "fields": {
+    "name": 74,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 10
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 82,
+  "fields": {
+    "name": 75,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 10
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 83,
+  "fields": {
+    "name": 76,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 84,
+  "fields": {
+    "name": 70,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 85,
+  "fields": {
+    "name": 77,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 86,
+  "fields": {
+    "name": 67,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 87,
+  "fields": {
+    "name": 78,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 88,
+  "fields": {
+    "name": 49,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 89,
+  "fields": {
+    "name": 79,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 90,
+  "fields": {
+    "name": 80,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 91,
+  "fields": {
+    "name": 81,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 92,
+  "fields": {
+    "name": 82,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 93,
+  "fields": {
+    "name": 83,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 94,
+  "fields": {
+    "name": 64,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 11
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 95,
+  "fields": {
+    "name": 84,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 96,
+  "fields": {
+    "name": 85,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 97,
+  "fields": {
+    "name": 86,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 98,
+  "fields": {
+    "name": 87,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 99,
+  "fields": {
+    "name": 71,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 100,
+  "fields": {
+    "name": 39,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 101,
+  "fields": {
+    "name": 51,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 102,
+  "fields": {
+    "name": 43,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 103,
+  "fields": {
+    "name": 88,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 104,
+  "fields": {
+    "name": 89,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 105,
+  "fields": {
+    "name": 90,
+    "unit": null,
+    "amount": "",
+    "note": "",
+    "group": 12
   }
 },
 {
@@ -771,7 +2191,7 @@
   "pk": 1,
   "fields": {
     "recipe": 1,
-    "step": "Combine soy sauce, brown sugar, garlic powder, and peanut butter in a small bowl."
+    "step": "Preheat an air fryer to 400 degrees F (200 degrees C)."
   }
 },
 {
@@ -779,23 +2199,23 @@
   "pk": 2,
   "fields": {
     "recipe": 1,
-    "step": "Heat oil in a large skillet over medium heat; cook and stir frozen vegetables until just tender, 5 to 7 minutes. Remove from heat and fold in soy sauce mixture."
+    "step": "Pat chicken thighs dry with a paper towel and brush the skin-side of each piece with olive oil. Place chicken thighs, skin-side down, in a single layer on a plate."
   }
 },
 {
   "model": "steps.step",
   "pk": 3,
   "fields": {
-    "recipe": 2,
-    "step": "Preheat an air fryer to 400 degrees F (200 degrees C)."
+    "recipe": 1,
+    "step": "Combine the smoked paprika, garlic powder, salt, and pepper in a bowl and sprinkle half the seasoning mixture evenly over the 4 chicken thighs. Turn thighs over and evenly sprinkle remaining seasoning mixture on top. Place chicken thighs in the air fryer basket in a single layer, skin-side up."
   }
 },
 {
   "model": "steps.step",
   "pk": 4,
   "fields": {
-    "recipe": 2,
-    "step": "Combine olive oil, lemon juice, lemon pepper, paprika, and garlic powder in a bowl. Add shrimp and toss until coated."
+    "recipe": 1,
+    "step": "Fry in the preheated air fryer until chicken is brown and juices run clear, about 18 minutes. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C)."
   }
 },
 {
@@ -803,31 +2223,31 @@
   "pk": 5,
   "fields": {
     "recipe": 2,
-    "step": "Place shrimp in the air fryer and cook until pink and firm, 6 to 8 minutes. Serve with lemon slices."
+    "step": "Preheat air fryer to 400 degrees F (200 degrees C)."
   }
 },
 {
   "model": "steps.step",
   "pk": 6,
   "fields": {
-    "recipe": 3,
-    "step": "Preheat the oven to 400 degrees F (200 degrees C). Spray an 8x8-inch baking pan with cooking spray."
+    "recipe": 2,
+    "step": "Place potato wedges in a large bowl. Add olive oil, paprika, parsley, chili, salt, and pepper and mix well to combine."
   }
 },
 {
   "model": "steps.step",
   "pk": 7,
   "fields": {
-    "recipe": 3,
-    "step": "Toss blueberries and 1/2 cup of flour in a small bowl until blueberries are coated. Set aside."
+    "recipe": 2,
+    "step": "Place 8 wedges in the basket of the air fryer and cook for 10 minutes."
   }
 },
 {
   "model": "steps.step",
   "pk": 8,
   "fields": {
-    "recipe": 3,
-    "step": "Beat together sugar and oil with an electric mixer in a large bowl. Add milk, egg, and vanilla extract. Mix remaining 1 cup flour, baking powder, and salt in a small bowl. Add flour mixture to sugar mixture; mix until just combined. fold in blueberry mixture. Pour batter into the prepared baking pan."
+    "recipe": 2,
+    "step": "Flip wedges with tongs and cook for an additional 5 minutes. Repeat with the remaining 8 wedges."
   }
 },
 {
@@ -835,7 +2255,7 @@
   "pk": 9,
   "fields": {
     "recipe": 3,
-    "step": "Mix together brown sugar, 1/3 cup flour, and cinnamon in a bowl. Cut in butter until the topping mixture is crumbly. Sprinkle on top of the cake batter."
+    "step": "Preheat grill for medium heat."
   }
 },
 {
@@ -843,15 +2263,15 @@
   "pk": 10,
   "fields": {
     "recipe": 3,
-    "step": "Bake in the preheated oven until a toothpick inserted in the center comes out clean, about 30 minutes. Remove from oven and allow to cool before serving."
+    "step": "In a small bowl, crush the garlic with the salt. Mix in cayenne pepper and paprika, and then stir in olive oil and lemon juice to form a paste. In a large bowl, toss shrimp with garlic paste until evenly coated."
   }
 },
 {
   "model": "steps.step",
   "pk": 11,
   "fields": {
-    "recipe": 4,
-    "step": "Preheat oven to 350 degrees F (175 degrees C). Lightly oil and flour a loaf pan."
+    "recipe": 3,
+    "step": "Lightly oil grill grate. Cook shrimp for 2 to 3 minutes per side, or until opaque. Transfer to a serving dish, garnish with lemon wedges, and serve."
   }
 },
 {
@@ -859,7 +2279,7 @@
   "pk": 12,
   "fields": {
     "recipe": 4,
-    "step": "Beat eggs in a bowl until lightened in color. Add sugar, olive oil, orange zest, and five-spice powder and beat until smooth. Fold flour, baking powder, and salt into egg mixture until batter is just mixed. Pour batter into the prepared loaf pan."
+    "step": "Combine 1/4 cup olive oil, lemon juice, 2 cloves minced garlic, oregano, and 1/2 teaspoon salt in a large resealable bag. Add chicken, coat with the marinade, squeeze out excess air, and seal the bag. Marinate in the refrigerator for 2 hours."
   }
 },
 {
@@ -867,22 +2287,278 @@
   "pk": 13,
   "fields": {
     "recipe": 4,
-    "step": "Bake in the preheated oven until a toothpick inserted in the center comes out clean, about 45 minutes. Cool in the pan for 10 minutes. Remove cake from the pan and cool on a wire rack."
+    "step": "Mix yogurt, cucumber, 1 tablespoon olive oil, vinegar, 1 clove minced garlic, and 1 pinch salt together in a bowl. Refrigerate tzatziki sauce for flavors to blend, 1 to 2 hours."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 14,
+  "fields": {
+    "recipe": 4,
+    "step": "Preheat an outdoor grill for medium-high heat and lightly oil the grate. Soak wooden skewers in a bowl of water for about 15 minutes."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 15,
+  "fields": {
+    "recipe": 4,
+    "step": "Remove chicken from marinade and thread onto the soaked skewers. Discard unused marinade."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 16,
+  "fields": {
+    "recipe": 4,
+    "step": "Cook the skewers on the preheated grill, turning frequently until nicely browned on all sides and chicken is no longer pink in the center, about 8 minutes per side. Serve with tzatziki sauce."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 17,
+  "fields": {
+    "recipe": 5,
+    "step": "Spray a 9x13-inch baking dish with cooking spray."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 18,
+  "fields": {
+    "recipe": 5,
+    "step": "Whisk eggs, 2 cups milk, green onions, onion powder, and salt together in a large bowl until well mixed."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 19,
+  "fields": {
+    "recipe": 5,
+    "step": "Layer half the Canadian bacon in the prepared baking dish. Spread English muffins over meat and top with remaining Canadian bacon. Pour egg mixture over casserole. Cover baking dish with plastic wrap and refrigerate overnight."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 20,
+  "fields": {
+    "recipe": 5,
+    "step": "Preheat the oven to 375 degrees F (190 degrees C)."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 21,
+  "fields": {
+    "recipe": 5,
+    "step": "Sprinkle casserole with paprika; cover with aluminum foil."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 22,
+  "fields": {
+    "recipe": 5,
+    "step": "Bake in preheated oven until eggs are nearly set, about 30 minutes; remove foil. Continue baking until eggs are completely set, about 15 more minutes."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 23,
+  "fields": {
+    "recipe": 5,
+    "step": "Whisk hollandaise sauce mix with 1 cup milk in a saucepan. Add margarine and bring to a boil, stirring frequently. Reduce heat to medium-low, simmer, and stir until thickened, about 1 minute. Drizzle sauce over casserole to serve."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 24,
+  "fields": {
+    "recipe": 6,
+    "step": "In a blender, combine soy milk, oats, banana and strawberries. Add vanilla and sugar if desired. Blend until smooth. Pour into glasses and serve."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 25,
+  "fields": {
+    "recipe": 7,
+    "step": "Preheat waffle iron. Beat eggs in a large bowl with hand beater until fluffy. Beat in flour, milk, vegetable oil, sugar, baking powder, salt and vanilla, just until smooth."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 26,
+  "fields": {
+    "recipe": 7,
+    "step": "Spray preheated waffle iron with non-stick cooking spray. Pour mix onto hot waffle iron. Cook until golden brown. Serve hot."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 27,
+  "fields": {
+    "recipe": 8,
+    "step": "Preheat oven to 375 degrees F (190 degrees C). In a small bowl, stir together flour, baking soda, and baking powder. Set aside."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 28,
+  "fields": {
+    "recipe": 8,
+    "step": "In a large bowl, cream together the butter and sugar until smooth. Beat in egg and vanilla. Gradually blend in the dry ingredients. Roll rounded teaspoonfuls of dough into balls, and place onto ungreased cookie sheets."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 29,
+  "fields": {
+    "recipe": 8,
+    "step": "Bake 8 to 10 minutes in the preheated oven, or until golden. Let stand on cookie sheet two minutes before removing to cool on wire racks."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 30,
+  "fields": {
+    "recipe": 9,
+    "step": "Cream butter, peanut butter, and sugars together in a bowl; beat in eggs."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 31,
+  "fields": {
+    "recipe": 9,
+    "step": "In a separate bowl, sift flour, baking powder, baking soda, and salt; stir into butter mixture. Put the dough in the refrigerator for 1 hour."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 32,
+  "fields": {
+    "recipe": 9,
+    "step": "Roll dough into 1 inch balls and put on baking sheets. Flatten each ball with a fork, making a crisscross pattern. Bake in a preheated 375 degrees F oven for about 10 minutes or until cookies begins to brown."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 33,
+  "fields": {
+    "recipe": 10,
+    "step": "Preheat oven to 350 degrees F (175 degrees C)."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 34,
+  "fields": {
+    "recipe": 10,
+    "step": "In a medium bowl, blend together softened butter, 2 cups flour and 1/2 cup sugar. Press into the bottom of an ungreased 9x13 inch pan."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 35,
+  "fields": {
+    "recipe": 10,
+    "step": "Bake for 15 to 20 minutes in the preheated oven, or until firm and golden. In another bowl, whisk together the remaining 1 1/2 cups sugar and 1/4 cup flour. Whisk in the eggs and lemon juice. Pour over the baked crust."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 36,
+  "fields": {
+    "recipe": 10,
+    "step": "Bake for an additional 20 minutes in the preheated oven. The bars will firm up as they cool. For a festive tray, make another pan using limes instead of lemons and adding a drop of green food coloring to give a very pale green. After both pans have cooled, cut into uniform 2 inch squares and arrange in a checker board fashion."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 37,
+  "fields": {
+    "recipe": 11,
+    "step": "Preheat oven to 350 degrees F (175 degrees C). Grease and flour one 9x13 inch baking pan."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 38,
+  "fields": {
+    "recipe": 11,
+    "step": "Sift flour and baking powder together and set aside."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 39,
+  "fields": {
+    "recipe": 11,
+    "step": "Cream butter or margarine and the 1 cup sugar together until fluffy. Add eggs and the 1/2 teaspoon vanilla extract; beat well."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 40,
+  "fields": {
+    "recipe": 11,
+    "step": "Add the flour mixture to the butter mixture 2 tablespoons at a time; mix until well blended. Pour batter into prepared pan."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 41,
+  "fields": {
+    "recipe": 11,
+    "step": "Bake at 350 degrees F (175 degrees C) for 30 minutes. Pierce cake several times with a fork."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 42,
+  "fields": {
+    "recipe": 11,
+    "step": "Combine the whole milk, condensed milk, and evaporated milk together. Pour over the top of the cooled cake."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 43,
+  "fields": {
+    "recipe": 11,
+    "step": "Whip whipping cream, the remaining 1 cup of the sugar, and the remaining 1 teaspoon vanilla together until thick. Spread over the top of cake. Be sure and keep cake refrigerated, enjoy!"
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 44,
+  "fields": {
+    "recipe": 12,
+    "step": "Preheat oven to 350 degrees F (175 degrees C). Grease and flour two nine-inch round pans."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 45,
+  "fields": {
+    "recipe": 12,
+    "step": "In a large bowl, stir together the sugar, flour, cocoa, baking powder, baking soda, and salt. Add the eggs, milk, oil, and vanilla, mix for 2 minutes on medium speed of mixer. Stir in the boiling water last. The batter will be thin. Pour evenly into the prepared pans."
+  }
+},
+{
+  "model": "steps.step",
+  "pk": 46,
+  "fields": {
+    "recipe": 12,
+    "step": "Bake 30 to 35 minutes in the preheated oven, until the cake tests done with a toothpick. Cool in the pans for 10 minutes, then remove to a wire rack to cool completely."
   }
 },
 {
   "model": "tags.tag",
   "pk": 1,
   "fields": {
-    "name": "Quarantine Cooking",
-    "image": ""
-  }
-},
-{
-  "model": "tags.tag",
-  "pk": 2,
-  "fields": {
-    "name": "Easy",
+    "name": "Air Fryer",
     "image": ""
   }
 },
@@ -890,7 +2566,7 @@
   "model": "tags.tag",
   "pk": 3,
   "fields": {
-    "name": "Air Fryer Recipes",
+    "name": "BBQ",
     "image": ""
   }
 },
@@ -898,7 +2574,39 @@
   "model": "tags.tag",
   "pk": 4,
   "fields": {
-    "name": "Cake Recipes",
+    "name": "Grilling",
+    "image": ""
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 7,
+  "fields": {
+    "name": "Breakfast",
+    "image": ""
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 8,
+  "fields": {
+    "name": "Brunch",
+    "image": ""
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 13,
+  "fields": {
+    "name": "Cookie",
+    "image": ""
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 16,
+  "fields": {
+    "name": "Cake",
     "image": ""
   }
 }
