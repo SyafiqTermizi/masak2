@@ -43,7 +43,7 @@ export const SearchContainer: React.FC<Props> = ({
     <>
       <SearchBar
         stateSearchTerm={stateSearchTerm}
-        searchTerm={localSearchTerm}
+        localSearchTerm={localSearchTerm}
         setSearchTerm={setLocalSearchTerm}
         handleSearch={() => handleSearch()}
         clearSearchTerm={() => clearSearch()}

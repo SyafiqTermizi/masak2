@@ -6,7 +6,7 @@ import { SearchBar } from "./Searchbar";
 test("SearchBar input should have the value 'search term'", () => {
   const props = {
     stateSearchTerm: "",
-    searchTerm: "search term",
+    localSearchTerm: "search term",
     setSearchTerm: (param: string) => null,
     handleSearch: () => null,
     clearSearchTerm: () => null,
@@ -32,7 +32,7 @@ test("SearchBar button should change to 'clear filter' when stateSearchTerm have
       stateSearchTerm={stateSearchTerm}
       handleSearch={() => handleSearch()}
       setSearchTerm={setSearchTerm}
-      searchTerm={searchTerm}
+      localSearchTerm={searchTerm}
       clearSearchTerm={() => clearSearchTerm()}
     />
   );

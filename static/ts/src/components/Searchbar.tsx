@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
-  searchTerm: string;
+  localSearchTerm: string;
   stateSearchTerm: string;
   setSearchTerm: (param: string) => void;
   handleSearch: () => void;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const SearchBar: React.FC<Props> = ({
-  searchTerm,
+  localSearchTerm,
   stateSearchTerm,
   setSearchTerm,
   handleSearch,
@@ -23,7 +23,7 @@ export const SearchBar: React.FC<Props> = ({
         type="text"
         className="form-control"
         placeholder="Search Recipes or ingredients"
-        value={searchTerm}
+        value={localSearchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -37,7 +37,7 @@ export const SearchBar: React.FC<Props> = ({
         type="button"
         id="button-addon2"
         onClick={() => {
-          if (searchTerm) {
+          if (stateSearchTerm) {
             clearSearchTerm();
           } else {
             handleSearch();
