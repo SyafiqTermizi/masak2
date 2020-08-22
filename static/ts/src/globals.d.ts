@@ -9,5 +9,6 @@ interface User {
 declare global {
   interface Window {
     user: User;
+    API_BASE_URL: string;
   }
 }

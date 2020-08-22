@@ -12,6 +12,7 @@
     userId: "{{ request.user.id }}",
     isAuthenticated: "{{ request.user.is_authenticated }}" === "True" ? true: false,
   }
+  window.API_BASE_URL="{{ API_BASE_URL }}"
 </script>
 {% endblock head_script %}
 
