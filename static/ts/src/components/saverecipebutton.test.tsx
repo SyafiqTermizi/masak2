@@ -12,6 +12,7 @@ test("SaveRecipeButton should have btn-custom-danger className because savedReci
     savedRecipes: [1, 2],
     recipeId: 1,
     addSavedRecipe: () => null,
+    removeSavedRecipe: () => null,
   };
 
   const { getByTestId } = render(<SaveRecipeButton {...props} />);
@@ -30,6 +31,7 @@ test("SaveRecipeButton should have btn-light className because savedRecipe dont 
     savedRecipes: [1, 2],
     recipeId: 3,
     addSavedRecipe: () => null,
+    removeSavedRecipe: () => null,
   };
 
   const { getByTestId } = render(<SaveRecipeButton {...props} />);

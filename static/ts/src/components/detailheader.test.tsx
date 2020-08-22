@@ -17,6 +17,7 @@ test("DetailHeader should render correctly given props", () => {
     id: 1,
     description: "test",
     addSavedRecipe: () => null,
+    removeSavedRecipe: () => null,
   };
 
   const { getByTestId } = render(<DetailHeader {...props} />);
