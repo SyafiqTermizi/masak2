@@ -8,6 +8,7 @@ import { retrieveRecipe } from "@syafiqtermizi/masak2-store/lib/recipes";
 import {
   retrieveSavedRecipes,
   addSavedRecipe,
+  removeSavedRecipe,
 } from "@syafiqtermizi/masak2-store/lib/savedRecipes";
 
 import { DetailHeader } from "../components/DetailHeader";
@@ -34,6 +35,11 @@ interface PropFromDispatch {
     userId: number,
     recipeId: number
   ) => void;
+  removeSavedRecipe: (
+    axiosParam: AxiosInstance,
+    userId: number,
+    recipeId: number
+  ) => void;
   retrieveRecipe: (recipeId: number) => any;
   retrieveSavedRecipes: (userId: number) => void;
 }
@@ -49,6 +55,7 @@ export const HeaderContainer: React.FC<Props> = ({
   savedRecipes,
   recipeId,
   addSavedRecipe,
+  removeSavedRecipe,
   retrieveRecipe,
   retrieveSavedRecipes,
 }) => {
@@ -72,6 +79,7 @@ export const HeaderContainer: React.FC<Props> = ({
       id={recipe.id}
       description={recipe.description}
       addSavedRecipe={addSavedRecipe}
+      removeSavedRecipe={removeSavedRecipe}
     >
       {recipe.medias.length > 0 && (
         <SingleImage
@@ -99,6 +107,7 @@ const mapDispatchToProps = {
   addSavedRecipe,
   retrieveRecipe,
   retrieveSavedRecipes,
+  removeSavedRecipe,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);

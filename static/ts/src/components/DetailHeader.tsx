@@ -17,6 +17,11 @@ interface Props {
     userId: number,
     recipeId: number
   ) => void;
+  removeSavedRecipe: (
+    axios: AxiosInstance,
+    userId: number,
+    recipeId: number
+  ) => void;
 }
 
 export const DetailHeader: React.FC<Props> = ({
@@ -28,6 +33,7 @@ export const DetailHeader: React.FC<Props> = ({
   description,
   children,
   addSavedRecipe,
+  removeSavedRecipe,
 }) => (
   <>
     <DetailContainer marginTopClass="mt-5">
@@ -43,6 +49,7 @@ export const DetailHeader: React.FC<Props> = ({
           savedRecipes={savedRecipes}
           recipeId={id}
           addSavedRecipe={addSavedRecipe}
+          removeSavedRecipe={removeSavedRecipe}
         />
       </div>
     </DetailContainer>

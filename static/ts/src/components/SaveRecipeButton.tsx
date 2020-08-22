@@ -13,26 +13,38 @@ interface Props {
     userId: number,
     recipeId: number
   ) => void;
+  removeSavedRecipe: (
+    axios: AxiosInstance,
+    userId: number,
+    recipeId: number
+  ) => void;
 }
 
 export const SaveRecipeButton: React.FC<Props> = ({
   savedRecipes,
   recipeId,
   addSavedRecipe,
-}) => (
-  <button
-    data-testid="save-button"
-    className={`btn btn-sm ${
-      savedRecipes.includes(recipeId) ? "btn-custom-danger" : "btn-light"
-    }`}
-    disabled={!window.user.isAuthenticated}
-    onClick={() => {
-      if (window.user.userId) {
-        addSavedRecipe(axios, parseInt(window.user.userId), recipeId);
-      }
-      return;
-    }}
-  >
-    <FontAwesomeIcon icon={faHeart} /> Save
-  </button>
-);
+  removeSavedRecipe,
+}) => {
+  const handleClick = savedRecipes.includes(recipeId)
+    ? removeSavedRecipe
+    : addSavedRecipe;
+
+  return (
+    <button
+      data-testid="save-button"
+      className={`btn btn-sm ${
+        savedRecipes.includes(recipeId) ? "btn-custom-danger" : "btn-light"
+      }`}
+      disabled={!window.user.isAuthenticated}
+      onClick={() => {
+        if (window.user.userId) {
+          handleClick(axios, parseInt(window.user.userId), recipeId);
+        }
+        return;
+      }}
+    >
+      <FontAwesomeIcon icon={faHeart} /> Save
+    </button>
+  );
+};
