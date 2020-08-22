@@ -2,10 +2,21 @@ import json
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from rest_framework.response import Response
+from django.conf import settings
+from django.views.generic import TemplateView
 from django.contrib.postgres.search import SearchVector, SearchRank, SearchQuery
 
 from .models import Recipe, Media
 from .serializers import RecipeSerializer, MediaSerializer
+
+
+class IndexViews(TemplateView):
+    template_name = "recipes/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(API_BASE_URL=settings.API_BASE_URL)
+        return context
 
 
 class RecipeViewSet(ModelViewSet):

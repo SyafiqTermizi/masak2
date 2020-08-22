@@ -144,3 +144,6 @@ MEDIA_URL = "/medias/"
 CORS_ORIGIN_ALLOW_ALL = True
 
 LOGOUT_REDIRECT_URL = "/#/home"
+
+
+API_BASE_URL = "http://localhost:8000/api"
