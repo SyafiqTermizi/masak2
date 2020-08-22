@@ -28,7 +28,7 @@ def login_view(request):
     return render(request, "registration/login.html", context={"form": form})
 
 
-class SavedRecipeViewAPIView(generics.RetrieveUpdateAPIView):
+class SavedRecipeViewAPIView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "user_id"
     lookup_url_kwarg = "user_id"
     serializer_class = SavedRecipeSerializer
@@ -47,5 +47,14 @@ class SavedRecipeViewAPIView(generics.RetrieveUpdateAPIView):
 
         instance = self.get_object()
         instance.recipes.add(serializer.recipe)
+
+        return response.Response(data=SavedRecipeSerializer(instance=instance).data)
+
+    def destroy(self, request, *args, **kwargs):
+        serializer = AddSavedRecipeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        instance = self.get_object()
+        instance.recipes.remove(serializer.recipe)
 
         return response.Response(data=SavedRecipeSerializer(instance=instance).data)
