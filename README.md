@@ -5,11 +5,10 @@
 
 ## Road Map
 
-1. Add tagging to recipe
-2. filter by category
-3. Trending recipe
-4. real button for user to "like" a recipe
-5. Pagination and infinite scroll
+1. "I made it button"
+2. Profile page
+3. Add empty page (for saved recipe and "I made it" recipes)
+4. Pagination, caching and infinite scroll
 
 ## Commands
 
