@@ -13,6 +13,7 @@ class Recipe(models.Model):
     created_by = models.ForeignKey(
         to=User, on_delete=models.SET_NULL, null=True, related_name="recipes"
     )
+    created_at = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(to=Tag, related_name="recipes")
 
     def __str__(self):
