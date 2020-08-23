@@ -69,7 +69,7 @@ class SavedRecipeViewAPIView(generics.RetrieveUpdateDestroyAPIView):
         return response.Response(data=SavedRecipeSerializer(instance=instance).data)
 
 
-class MadeRecipeViewAPIView(generics.RetrieveDestroyAPIView):
+class MadeRecipeViewAPIView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "user_id"
     lookup_url_kwarg = "user_id"
     serializer_class = MadeRecipeSerializer
@@ -88,6 +88,8 @@ class MadeRecipeViewAPIView(generics.RetrieveDestroyAPIView):
 
         instance = self.get_object()
         instance.recipes.add(serializer.recipe)
+
+        return response.Response(data=MadeRecipeSerializer(instance=instance).data)
 
     def destroy(self, request, *args, **kwargs):
         """
