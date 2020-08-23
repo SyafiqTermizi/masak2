@@ -2,16 +2,15 @@ from rest_framework import serializers
 
 from recipes.models import Recipe
 
-from .models import SavedRecipe
+from .models import SavedRecipe, MadeRecipe
 
 
-class SavedRecipeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SavedRecipe
-        fields = "__all__"
+class ValidateRecipeSerializer(serializers.Serializer):
+    """
+    This serializer check if a Recipe exist. If it doesn't exist it will raise
+    validation error
+    """
 
-
-class AddSavedRecipeSerializer(serializers.Serializer):
     recipe_id = serializers.IntegerField()
 
     def __init__(self, *args, **kwargs):
@@ -26,3 +25,15 @@ class AddSavedRecipeSerializer(serializers.Serializer):
         else:
             self.recipe = recipe
         return value
+
+
+class SavedRecipeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SavedRecipe
+        fields = "__all__"
+
+
+class MadeRecipeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MadeRecipe
+        fields = "__all__"
