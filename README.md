@@ -6,9 +6,10 @@
 ## Road Map
 
 1. "I made it button"
-2. Profile page
-3. Add empty page (for saved recipe and "I made it" recipes)
-4. Pagination, caching and infinite scroll
+2. Trim the inputs
+3. Profile page
+4. Add empty page (for saved recipe and "I made it" recipes)
+5. Pagination, caching and infinite scroll
 
 ## Commands
 
