@@ -8,8 +8,12 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from recipes.models import Recipe
 
-from .serializers import SavedRecipeSerializer, AddSavedRecipeSerializer
-from .models import SavedRecipe
+from .serializers import (
+    SavedRecipeSerializer,
+    ValidateRecipeSerializer,
+    MadeRecipeSerializer,
+)
+from .models import SavedRecipe, MadeRecipe
 from .forms import LoginForm
 
 
@@ -42,7 +46,7 @@ class SavedRecipeViewAPIView(generics.RetrieveUpdateDestroyAPIView):
         {'recipe_id': <id>}
         """
 
-        serializer = AddSavedRecipeSerializer(data=request.data)
+        serializer = ValidateRecipeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         instance = self.get_object()
@@ -51,10 +55,50 @@ class SavedRecipeViewAPIView(generics.RetrieveUpdateDestroyAPIView):
         return response.Response(data=SavedRecipeSerializer(instance=instance).data)
 
     def destroy(self, request, *args, **kwargs):
-        serializer = AddSavedRecipeSerializer(data=request.data)
+        """
+        This method is used to remove recipe from SavedRecipe. It accepts request.data
+        as follows:
+        {'recipe_id': <id>}
+        """
+        serializer = ValidateRecipeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         instance = self.get_object()
         instance.recipes.remove(serializer.recipe)
 
         return response.Response(data=SavedRecipeSerializer(instance=instance).data)
+
+
+class MadeRecipeViewAPIView(generics.RetrieveDestroyAPIView):
+    lookup_field = "user_id"
+    lookup_url_kwarg = "user_id"
+    serializer_class = MadeRecipeSerializer
+    queryset = MadeRecipe.objects.all()
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def update(self, request, *args, **kwargs):
+        """
+        This method is used to add recipe to MadeRecipe. It accepts request.data
+        as follows:
+        {'recipe_id': <id>}
+        """
+
+        serializer = ValidateRecipeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        instance = self.get_object()
+        instance.recipes.add(serializer.recipe)
+
+    def destroy(self, request, *args, **kwargs):
+        """
+        This method is used to remove recipe from MadeRecipe. It accepts request.data
+        as follows:
+        {'recipe_id': <id>}
+        """
+        serializer = ValidateRecipeSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        instance = self.get_object()
+        instance.recipes.remove(serializer.recipe)
+
+        return response.Response(data=MadeRecipeSerializer(instance=instance).data)
