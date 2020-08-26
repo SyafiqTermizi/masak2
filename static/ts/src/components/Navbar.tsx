@@ -1,7 +1,5 @@
 import * as React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">

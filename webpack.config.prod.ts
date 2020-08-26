@@ -1,7 +1,6 @@
 import * as path from "path";
 import * as webpack from "webpack";
 
-const MinifyPlugin = require("babel-minify-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const config: webpack.Configuration = {
