@@ -21,7 +21,7 @@ test("SaveRecipeButton should have btn-custom-pink className because savedRecipe
   expect(elem.className).toContain("btn-custom-pink");
 });
 
-test("SaveRecipeButton should have btn-light className because savedRecipe dont contains recipeID", () => {
+test("SaveRecipeButton should have btn-custom-outline-pink className because savedRecipe dont contains recipeID", () => {
   window.user = {
     userId: "1",
     username: "test",
@@ -37,5 +37,5 @@ test("SaveRecipeButton should have btn-light className because savedRecipe dont 
   const { getByTestId } = render(<SaveRecipeButton {...props} />);
   const elem = getByTestId("save-button");
 
-  expect(elem.className).toContain("btn-light");
+  expect(elem.className).toContain("btn-custom-outline-pink");
 });
