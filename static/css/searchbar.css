@@ -10,13 +10,14 @@
 }
 
 .search-bar .btn-outline-secondary {
-  background-color: white;
-  border-color: lightgray;
-  border-left-color: white;
+  background-color: hotpink;
+  border-color: hotpink;
+  border-left-color: hotpink;
+  color: white;
 }
 
 .search-bar .btn-outline-secondary:hover {
-  color: black;
+  color: pink;
 }
 
 .search-bar .btn-outline-secondary:focus {

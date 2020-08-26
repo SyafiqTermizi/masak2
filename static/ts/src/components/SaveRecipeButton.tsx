@@ -34,7 +34,9 @@ export const SaveRecipeButton: React.FC<Props> = ({
     <button
       data-testid="save-button"
       className={`btn btn-sm ${
-        savedRecipes.includes(recipeId) ? "btn-custom-danger" : "btn-light"
+        savedRecipes.includes(recipeId)
+          ? "btn-custom-pink"
+          : "btn-custom-outline-pink"
       }`}
       disabled={!window.user.isAuthenticated}
       onClick={() => {

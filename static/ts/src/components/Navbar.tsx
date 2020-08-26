@@ -7,7 +7,7 @@ export const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div className="container">
       <Link className="navbar-brand" to="/home">
-        <FontAwesomeIcon icon={faHamburger} size="lg" />
+        Masak2
       </Link>
       <button
         className="navbar-toggler"

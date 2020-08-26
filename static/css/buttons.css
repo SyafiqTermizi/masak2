@@ -20,17 +20,34 @@
   background-color: lightgray;
 }
 
-.btn-custom-danger {
+.btn-custom-outline-pink {
   border-radius: 25px;
-  border: none;
-  background-color: palevioletred;
+  border-color: hotpink;
+  background-color: white;
+  color: hotpink;
+}
+
+.btn-custom-outline-pink:hover {
+  background-color: hotpink;
   color: white;
 }
 
-.btn-custom-danger:hover {
-  background-color: palevioletred;
+.btn-custom-outline-pink:focus {
+  box-shadow: none !important;
 }
 
-.btn-custom-danger:focus {
+.btn-custom-pink {
+  border-radius: 25px;
+  border: none;
+  background-color: hotpink;
+  color: white;
+}
+
+.btn-custom-pink:hover {
+  background-color: white;
+  color: hotpink;
+}
+
+.btn-custom-pink:focus {
   box-shadow: none !important;
 }

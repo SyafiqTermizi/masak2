@@ -167,7 +167,11 @@ const RecipeForm: React.FC<Props> = ({ retrieveRecipe }) => {
                 />
               </div>
               <TagsInput tags={tags} setTags={setTags} />
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                style={{ backgroundColor: "hotpink", borderColor: "hotpink" }}
+              >
                 Submit
               </button>
             </Form>

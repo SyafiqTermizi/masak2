@@ -47,7 +47,7 @@ export const MadeButton: React.FC<Props> = ({
     if (window.user.userId) {
       retrieveMadeRecipes(parseInt(window.user.userId));
     }
-  });
+  }, []);
   const className = madeRecipes.includes(recipeId)
     ? "btn btn-block btn-dark"
     : "btn btn-block btn-outline-dark";
