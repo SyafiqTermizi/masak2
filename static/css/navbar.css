@@ -1,5 +1,19 @@
+@font-face {
+  font-family: "ThirdDegree";
+  src: url("./fonts/ThirdDegree.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/ThirdDegree.woff") format("woff"),
+    url("./fonts/ThirdDegree.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
 .navbar {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-family: "ThirdDegree";
+  font-size: 21px;
+  color: hotpink !important;
 }
 
 @media (max-width: 991px) {
