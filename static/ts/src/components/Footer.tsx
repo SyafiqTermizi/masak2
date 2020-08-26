@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faGithubAlt, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-export const Footer = () => (
+const Footer = () => (
   <footer
     className="footer navbar"
     style={{
@@ -29,3 +29,5 @@ export const Footer = () => (
     </div>
   </footer>
 );
+
+export default Footer;

@@ -38,11 +38,12 @@ const config: webpack.Configuration = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
+    publicPath: "/static/bundles/",
     path: path.resolve("./static/bundles/"),
     filename: "[name].js",
   },
-  plugins: [new MinifyPlugin()],
   optimization: {
+    minimize: true,
     minimizer: [new UglifyJsPlugin()],
   },
 };

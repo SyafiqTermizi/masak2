@@ -35,6 +35,7 @@ const config: webpack.Configuration = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
+    publicPath: "/static/bundles/",
     path: path.resolve("./static/bundles/"),
     filename: "[name].js",
   },

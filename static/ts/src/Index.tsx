@@ -1,14 +1,16 @@
 import * as React from "react";
+import { Suspense } from "react";
 import * as ReactDom from "react-dom";
 import { Provider } from "react-redux";
 import { store } from "@syafiqtermizi/masak2-store";
 import { HashRouter, Switch, Route } from "react-router-dom";
 
-import { Navbar } from "./components/Navbar";
-import RecipeForm from "./pages/Form";
-import { Detail } from "./pages/Detail";
 import { Recipes } from "./pages/Recipes";
-import { Footer } from "./components/Footer";
+import { Navbar } from "./components/Navbar";
+
+const Detail = React.lazy(() => import("./pages/Detail"));
+const RecipeForm = React.lazy(() => import("./pages/Form"));
+const Footer = React.lazy(() => import("./components/Footer"));
 
 const Elem = () => (
   <Provider store={store}>
@@ -18,10 +20,14 @@ const Elem = () => (
         <br />
         <Switch>
           <Route path="/create">
-            <RecipeForm />
+            <Suspense fallback={<div>loading..</div>}>
+              <RecipeForm />
+            </Suspense>
           </Route>
           <Route path="/detail/:id">
-            <Detail />
+            <Suspense fallback={<div>loading..</div>}>
+              <Detail />
+            </Suspense>
           </Route>
           <Route path="/">
             <Recipes />
@@ -29,7 +35,9 @@ const Elem = () => (
         </Switch>
       </div>
     </HashRouter>
-    <Footer />
+    <Suspense fallback={<div>loading..</div>}>
+      <Footer />
+    </Suspense>
   </Provider>
 );
 

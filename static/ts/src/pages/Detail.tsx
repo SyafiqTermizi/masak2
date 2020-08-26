@@ -6,7 +6,7 @@ import IngredientContainer from "../containers/IngredientsContainer";
 import HeaderContainer from "../containers/HeaderContainer";
 import MadeButton from "../containers/MadeButton";
 
-export const Detail: React.FC = () => {
+const Detail: React.FC = () => {
   const { id } = useParams();
 
   return (
@@ -18,3 +18,5 @@ export const Detail: React.FC = () => {
     </>
   );
 };
+
+export default Detail;
