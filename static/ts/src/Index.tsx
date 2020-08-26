@@ -8,6 +8,7 @@ import { Navbar } from "./components/Navbar";
 import RecipeForm from "./pages/Form";
 import { Detail } from "./pages/Detail";
 import { Recipes } from "./pages/Recipes";
+import { Footer } from "./components/Footer";
 
 const Elem = () => (
   <Provider store={store}>
@@ -28,6 +29,7 @@ const Elem = () => (
         </Switch>
       </div>
     </HashRouter>
+    <Footer />
   </Provider>
 );
 
