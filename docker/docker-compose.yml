@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   masak_db:
@@ -14,7 +14,7 @@ services:
     build:
       context: ../
       dockerfile: ./docker/Dockerfile
-    command: poetry run masak2/manage.py runserver 0:80
+    command: poetry run /app/masak2/manage.py runserver 0:80
     volumes:
       - ../:/app
     env_file:
