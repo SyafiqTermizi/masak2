@@ -1,7 +1,7 @@
 FROM python:3.8-alpine
 
 ENV PYTHONUNBUFFERED 1
-
+ENV PYTHONPATH /root/.cache/pypoetry/virtualenvs/masak2-9TtSrW0h-py3.8/bin/python3
 WORKDIR /app
 
 COPY pyproject.toml ./
