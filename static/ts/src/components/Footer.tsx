@@ -5,7 +5,7 @@ import { faGithubAlt, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => (
   <footer
-    className="footer navbar"
+    className="footer navbar fixed-bottom mt-5"
     style={{
       backgroundColor: "lightgray",
       height: "35px",

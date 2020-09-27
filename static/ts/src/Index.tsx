@@ -36,6 +36,9 @@ const Elem = () => (
       </div>
     </HashRouter>
     <Suspense fallback={<div>loading..</div>}>
+      <br />
+      <br />
+      <br />
       <Footer />
     </Suspense>
   </Provider>
