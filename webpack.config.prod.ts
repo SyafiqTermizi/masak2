@@ -9,13 +9,11 @@ const lines = file.split("\n");
 
 const bucket_name =
   // @ts-ignore
-  lines
-    .find((val) => val.startsWith("AWS_STORAGE_BUCKET_NAME"))
-    .split("=")[1] || "";
+  lines.find((val) => val.startsWith("AWS_STORAGE_BUCKET_NAME")).split("=")[1];
 
 const static_location =
   // @ts-ignore
-  lines.find((val) => val.startsWith("AWS_LOCATION")).split("=")[1] || "";
+  lines.find((val) => val.startsWith("AWS_LOCATION")).split("=")[1];
 
 const config: webpack.Configuration = {
   context: __dirname,
