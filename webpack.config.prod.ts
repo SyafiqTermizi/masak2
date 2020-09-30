@@ -1,7 +1,21 @@
 import * as path from "path";
 import * as webpack from "webpack";
+import * as fs from "fs";
 
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+
+const file = fs.readFileSync("./.env", "utf8");
+const lines = file.split("\n");
+
+const bucket_name =
+  // @ts-ignore
+  lines
+    .find((val) => val.startsWith("AWS_STORAGE_BUCKET_NAME"))
+    .split("=")[1] || "";
+
+const static_location =
+  // @ts-ignore
+  lines.find((val) => val.startsWith("AWS_LOCATION")).split("=")[1] || "";
 
 const config: webpack.Configuration = {
   context: __dirname,
@@ -37,7 +51,7 @@ const config: webpack.Configuration = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    publicPath: "/static/bundles/",
+    publicPath: `https://${bucket_name}.s3.amazonaws.com/${static_location}/bundles/`,
     path: path.resolve("./static/bundles/"),
     filename: "[name].js",
   },
