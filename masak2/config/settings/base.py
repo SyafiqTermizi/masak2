@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -134,14 +136,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_URL = "/static/"
-
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Custom user model
 AUTH_USER_MODEL = "users.User"
 
 MEDIA_ROOT = "medias/"
 MEDIA_URL = "/medias/"
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 
 LOGOUT_REDIRECT_URL = "/#/home"
 
