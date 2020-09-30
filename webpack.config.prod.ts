@@ -13,7 +13,7 @@ const bucket_name =
 
 const static_location =
   // @ts-ignore
-  lines.find((val) => val.startsWith("AWS_LOCATION")).split("=")[1];
+  lines.find((val) => val.startsWith("AWS_STATIC_LOCATION")).split("=")[1];
 
 const config: webpack.Configuration = {
   context: __dirname,
