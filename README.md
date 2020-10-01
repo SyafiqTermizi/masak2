@@ -3,20 +3,62 @@
 
 # masak2
 
-## Road Map
+## Setting Up Locally
 
-1. "I made it button"
-2. Trim the inputs
-3. Profile page
-4. Add empty page (for saved recipe and "I made it" recipes)
-5. Pagination, caching and infinite scroll
+### Prerequisites
 
-## Commands
+1. Make sure you have NodeJS and NPM installed
+2. Make sure you have Docker and docker-compose installed
 
-### Running test
+### Setting Up Backend App Locally
 
-pytest ./masak2 --cov-report html --cov=masak2
+1. Copy the content `.env.example` file to `.env` and change its values accordingly
+2. On your terminal run `docker-compose up`.
+3. To run migration, open another terminal and run `docker exec -it <container_name> sh`
+4. Then run `poetry run masak2/manage.py migrate`
 
-### Generating apps
+### Setting Up Frontend
 
+1. Install all front end deps by running `npm install`
+2. To start transpiling all `JSX` and `CSS` run `npm run start`
+
+### Running Test On Backend
+
+- While the backend docker container is running, run ``docker exec -it <container_name> sh` on a separate terminae
+- Then, type in `poetry run pytest ./masak2 --cov-report html --cov=masak2`
+
+### Running Test For Frontend
+
+```
+npm run test
+```
+
+### Generating New Django Apps
+
+```
 django-admin startapps <APP_NAME>
+```
+
+## Preparing for prod
+
+1. Build frontend
+
+```
+npm run build
+```
+
+2. Collect static
+
+```
+docker-compose up
+docker exec -it <container_name> sh
+poetry run masak2/manage.py collectstatic --settings config.settings.prod
+```
+
+3. Build docker container
+
+```
+docker build -f docker/prod.Dockerfile -t masak2 .
+```
+
+4. Push docker container to registry
