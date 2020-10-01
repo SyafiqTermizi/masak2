@@ -1,5 +1,8 @@
 from .base import *  # noqa
 
+DEBUG = False
+
+ALLOWED_HOSTS = []
 
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 DEFAULT_FILE_STORAGE = "utils.storages.MediaStorage"
