@@ -2,8 +2,6 @@ from .base import *  # noqa
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 DEFAULT_FILE_STORAGE = "utils.storages.MediaStorage"
 STATICFILES_STORAGE = "utils.storages.StaticStorage"
@@ -23,8 +21,6 @@ AWS_IS_GZIPPED = True
 STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{os.environ.get('AWS_STATIC_LOCATION')}/"
 
 MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
-
-# API_BASE_URL = ""
 
 CORS_ORIGIN_ALLOW_ALL = False
 
