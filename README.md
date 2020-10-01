@@ -58,7 +58,19 @@ poetry run masak2/manage.py collectstatic --settings config.settings.prod
 3. Build docker container
 
 ```
-docker build -f docker/prod.Dockerfile -t masak2 .
+docker build -t docker.pkg.github.com/syafiqtermizi/masak2/masak2:latest -f docker/prod.Dockerfile .
 ```
 
 4. Push docker container to registry
+
+   - Make sure you are logged in to github (password is your PAT https://github.com/settings/tokens)
+
+   ```
+   docker login https://docker.pkg.github.com -u syafiqtermizi
+   ```
+
+   - Push the image
+
+   ```
+   docker push docker.pkg.github.com/syafiqtermizi/masak2/masak2:latest
+   ```
