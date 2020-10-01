@@ -1,4 +1,6 @@
 .git/
+.github/
+.vscode/
 
 build
 dist
@@ -6,11 +8,17 @@ dist
 *.egg/
 *.pyc
 *.swp
+__pycache__
 
 .tox
 .coverage
-html/*
-__pycache__
+htmlcov/
 
-# Compiled Documentation
-docs/_build
+static/
+medias/
+
+
+node_modules/
+*.ts
+*.js
+*.json
