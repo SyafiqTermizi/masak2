@@ -11,7 +11,7 @@ services:
 
   masak_web:
     container_name: masak_web
-    image: masak2:latest
+    image: docker.pkg.github.com/syafiqtermizi/masak2/masak2:latest
     command: /bin/sh /app/docker/start.sh
     env_file:
       - ../.env
