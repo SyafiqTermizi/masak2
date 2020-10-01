@@ -11,9 +11,7 @@ services:
 
   masak_web:
     container_name: masak_web
-    build:
-      context: ../
-      dockerfile: ./docker/prod.Dockerfile
+    image: masak2:latest
     command: /bin/sh /app/docker/start.sh
     env_file:
       - ../.env
