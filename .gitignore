@@ -167,3 +167,7 @@ typings/
 .eslintcache
 
 static/bundles
+
+terraform/.terraform
+*tfstate*
+*.tfplan
